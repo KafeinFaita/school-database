@@ -14,5 +14,8 @@ module.exports.index_post = async (req, res) => {
     catch(err) {
         res.send(err)
     }
-    
+}
+
+module.exports.login_get = (req, res) => {
+    res.render('login')
 }
