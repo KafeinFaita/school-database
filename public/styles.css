@@ -6,8 +6,64 @@
     box-sizing:border-box;
     font-family: 'Poppins',sans-serif;
 }
+.main{
+    display:flex;
+    height: 100vh;
+}
+
+.student{
+    width: 100%;    
+}
+
+.form{
+    width: 100%;
+    background:red;
+    height:100%;
+    display:flex;
+    text-align: center;
+}
+.text{
+    color:white;
+    font-size:15px;
+    font-weight: 400;
+    line-height: 65px;
+    padding-left:20px;
+    background:#1e1e1e;
+    letter-spacing: 1px;
+}
+.form select {
+    width:75px;
+    margin:10px;
+    padding:5px;
+}
+input[type=submit]{
+    cursor: pointer;
+    background:#1b1b1b;
+    color:white;
+    width:75px;
+}
+.sideform{
+    background:#1b1b1b;
+    color:white;
+    flex-basis: 20%;
+}
+
+.user-details {
+    flex-basis: 80%;
+    background:#1b1b1b;
+    color:white;
+}
+.personal-info-title{ 
+     flex: 100%;
+     background:red;
+ }
+.text-area{
+    height:300px;
+    margin:10px 0 0 1px;
+    width:250px;
+    background:white;
+}
 .sidebar{
-    position: fixed;
     width: 250px;
     height:100%;
     left:0;
@@ -26,7 +82,7 @@
     font-size:25px;
     font-weight: 400;
     line-height: 65px;
-    text-align:center;
+    padding-left:20px;
     background:#1e1e1e;
     letter-spacing: 1px;
 }
@@ -48,16 +104,19 @@ nav ul li a{
     color:white;
     text-decoration: none;
     font-size: 16x;
-    padding-left:10px;
+    padding-left:15px;
     font-weight:100;
     display:block;
     width:100%;
     border-left:3px solid transparent;
 }
+nav i {
+    padding-right:5px;
+}
 nav ul li.active a{
-    color:cyan;
+    color:blue;
     background:#1e1e1e;
-    border-left-color:cyan;
+    border-left-color:blue;
 }
 nav ul ul{
     position:static;
@@ -82,7 +141,7 @@ nav ul ul li{
 nav ul ul li a{
     font-size:15px;
     color:#e6e6e6;
-    padding-left: 80px;
+    padding-left: 30px;
 }
 nav ul li.active ul li a{
     color:#e6e6e6;
@@ -90,7 +149,7 @@ nav ul li.active ul li a{
     border-left-color:transparent;
 }
 nav ul li li a:hover{
-    color: cyan!important;
+    color: blue!important;
     background:#1e1e1e!important;
 }
 nav ul li a span{
@@ -104,3 +163,5 @@ nav ul li a span{
 nav ul li a span.rotate{
     transform:translateY(-50%) rotate(-180deg);
 }
+
+
