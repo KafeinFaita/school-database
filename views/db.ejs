@@ -1,106 +1,120 @@
 <form class="student" action="">
-<div class="form">
-    <div class="sideform">
-        <p class="text">Student Record Management</p>
+    
+    <div class="form">
+        <div class="sideform">
+            <p class="text">Student Record Management</p>
 
-        <span>SY</span>
-        <select name="sy" id="sy" disabled>
-            <option value="test1">Test1</option>  
-        </select><br>
-        <span>Search</span>
-        <select name="search" id="search">
-            <option value="test1">Test1</option>  
-        </select><br>
-        <span>Value</span>
-        <select name="sy" id="value">
-            <option value="test1">Test1</option>  
-        </select><br>
-        <input type="submit" value="Search">
-        <div class="text-area" name="results">
+            <span>SY</span>
+            <select name="sy" id="sy" disabled>
+                <option value="test1">Test1</option>  
+            </select><br>
+            <span>Search</span>
+            <select name="search" id="search">
+                <option value="test1">Test1</option>  
+            </select><br>
+            <span>Value</span>
+            <select name="sy" id="value">
+                <option value="test1">Test1</option>  
+            </select><br>
+            <div class="button">
+                <input type="submit" value="Search">
+            </div>
+            <div class="text-area" name="results">
 
+            </div>
         </div>
-    </div>
-    <div class="user-details">
-            <div class="input-box">
-                <span class="details">Department</span>
-                <select name="department" id="department" disabled>
-                    <option value="test1">Test1</option>
-                </select>
-            </div>
-            <div class="input-box">
-                <span class="details">Grade/Level</span>
-                <select name="level" id="level" disabled>
-                    <option value="test1">Grade 1</option>
-                </select>
-            </div>
-            <div class="input-box">
-                <span class="details">LRN</span>
-                <input type="text" name="lrn">
-            </div>
-            <div class="input-box">
-                <span class="details">Section</span>
-                <input type="text" name="section">
-            </div>
-            <div class="personal-info-title">Personal Information</div>
-            <div class="input-box">
-                <span class="details">Last Name</span>
-                <input type="text" name="lastname">
-            </div>
-            <div class="input-box">
-                <span class="details">First Name</span>
-                <input type="text" name="firstname">
-            </div>
-            <div class="input-box">
-                <span class="details">Middle Name</span>
-                <input type="text" name="middlename">
-            </div>
-            <div class="input-box">
-                <span class="details">Date of Birth</span>
-                <input type="date" name="dateofbirth">
-            </div>
-            <div class="input-box">
-                <span class="details">Place of Birth</span>
-                <input type="text" name="placeofbirth">
-            </div>
-            <div class="input-box">
-                <span class="details">Religion</span>
-                <select name="level" id="level" disabled>
-                    <option value="test1">Catholic</option>
-                </select>
-            </div>
-            <div class="input-box">
-                <span class="details">Complete Address</span>
-                <input type="text" name="address">
-            </div>
-            <div class="input-box">
-                <span class="details">Nationality</span>
-                <select name="nationality" id="nationality" disabled>
-                    <option value="test1">Filipino</option>
-                </select>
-            </div>
-            <div class="input-box">
-                <span class="gender-details">Gender</span>
-                <div class="category">
-                    <label for="">
-                        <span class="dot one"></span>
-                        <span class="gender">Male</span>
-                        <input type="radio" name="gender" value="Male">
-                    </label>
-                    <label for="">
-                        <span class="dot one"></span>
-                        <span class="gender">Female</span>
-                        <input type="radio" name="gender" value="Female">
-                    </label>
-                </div>
-                <div class="input-box">
-                    <span class="details">Mobile Number</span>
-                    <input type="number" name="number">
-                </div>
-                <div class="input-box">
-                    <span class="details">Email Address</span>
-                    <input type="email" name="email">
-                </div>
-            </div>
+        
+        <div class="body">
+            <div class="container1">
+                <div class="title">Personal Information</div>
+            
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details">Department</span>
+                            <select name="department" id="department" disabled>
+                            <option value="Department">Department</option>
+                        </select>
+                        </div>
+                        <div class="input-box">
+                        <span class="details">LRN</span>
+                        <input type="text" placeholder="Enter your LRN" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Grade/Level</span>
+                        <select name="gradelevel" id="gradelevel" disabled>
+                            <option value="Grade 1">Grade 1</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Section</span>
+                        <input type="number" placeholder="Enter your section" required>
+                    </div>
+                    
+                    <div class="input-box">
+                        <span class="details">Last Name</span>
+                        <input type="text" placeholder="Enter your last name" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Date of Birth</span>
+                        <input type="date"  required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">First Name</span>
+                        <input type="text" placeholder="Enter your first name" required>
+                    </div><div class="input-box">
+                        <span class="details">Place of Birth</span>
+                        <input type="text" placeholder="Enter your place of birth" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Middle Name</span>
+                        <input type="text" placeholder="Enter your middle name" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Religion</span>
+                        <select name="religion" id="religion" disabled>
+                            <option value="Catholic">Catholic</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Complete Address</span>
+                        <input type="text" placeholder="Enter your Address" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Nationality</span>
+                        <select name="nationality" id="nationality" disabled>
+                            <option value="Filipino">Filipino</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Mobile Number</span>
+                        <input type="number" placeholder="Enter your number" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">E-mail Address</span>
+                        <input type="email" placeholder="Enter your E-mail Address" required>
+                    </div>
+                    </div>
+                    <div class="gender-details">
+                        <input type="radio" name="gender" id="dot-1">
+                        <input type="radio" name="gender" id="dot-2">
+                        <span class="gender-title">Gender</span>
+                        <div class="category">
+                        <label for="dot-1">
+                            <span class="dot one"></span>
+                            <span class="gender">Male</span>
+                        </label>
+                        <label for="dot-2">
+                            <span class="dot two"></span>
+                            <span class="gender">Female</span>
+                        </label>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Update">
+                    </div>
+                
+            
+            
         </div>
     </div>
 
