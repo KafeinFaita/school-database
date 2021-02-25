@@ -1,27 +1,28 @@
-<!DOCTYPE html>
+
 <html lang="en">
     <%- include('./partials/head.ejs') %>
 <body>
-<form action="" method="POST">
-    <div class="container"> 
+    <form action="/login" method="POST">
+        <div class="container"> 
 
-        <div class="login">
-            <h1>Login</h1>
-            <div class="user">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                <label for="username" >Username</label><br>
-                <input type="text" name="username">
-            </div>
-            <div class="pass">
-                <i class="fa fa-lock" aria-hidden="true"></i>
+            <div class="login">
+                <h1>Login</h1>
+                <div class="user">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <label for="username" >Username</label><br>
+                    <input type="text" name="username">
+                </div>
+                <div class="pass">
+                    <i class="fa fa-lock" aria-hidden="true"></i>
 
-                <label for="password">Password</label><br>
-                <input type="password" name="password">
-            </div>
-            <input class="btn" type="button" name="submit" value="Sign in">
-        </div>    
+                    <label for="password">Password</label><br>
+                    <input type="password" name="password">
+                </div>
+                <!-- <input class="btn" type="button" name="submit" value="Sign in"> -->
+                <button class='btn'>Login</button>
+            </div>    
 
-    </div>
-</form>
+        </div>
+    </form>
 </body>
 </html>
