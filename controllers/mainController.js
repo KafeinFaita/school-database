@@ -1,9 +1,25 @@
 const User = require('../models/User')
 const bcrypt = require('bcrypt')
 
+//GET requests
+
 module.exports.index_get = (req, res) => {
     res.render('index');
 }
+
+module.exports.login_get = (req, res) => {
+    res.render('login')
+}
+
+module.exports.register_get = (req, res) => {
+    res.render('register')
+}
+
+module.exports.studentRecord_get = (req, res) => {
+    res.render('student-record')
+}
+
+//POST requests
 
 module.exports.login_post = async (req, res) => {   
     try {
@@ -19,10 +35,3 @@ module.exports.login_post = async (req, res) => {
     }
 }
 
-module.exports.login_get = (req, res) => {
-    res.render('login')
-}
-
-module.exports.register_get = (req, res) => {
-    res.render('register')
-}

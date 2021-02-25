@@ -1,3 +1,144 @@
-<div class="student-record-parent">
+<html lang="en">
 
-</div>
+    <%- include('./partials/head.ejs') %>
+
+<body>
+    
+    <div class="student-record-parent">
+        <%- include('./partials/navigation.ejs') %>
+
+        <form action="" class="student-record-form">
+            <h1 class="student-record-title">STUDENT RECORD MANAGEMENT</h1>
+
+            <div class="student-record-subcontainer">
+                <div class="student-record-subcontainer-side">
+
+                    <div>
+                        <label for="sy">SY</label>
+                        <select name="sy" id="sy">
+                            <option value="opt1">Option 1</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="search">Search</label>
+                        <select name="search" id="search">
+                            <option value="opt1">Option 1</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="value">Value</label>
+                        <select name="value" id="value">
+                            <option value="opt1">Option 1</option>
+                        </select>
+                    </div>
+
+                    <input type="submit">
+
+                    <div class="search-results">
+
+                    </div>
+                </div>
+
+                <div class="student-record-subcontainer-info">
+
+                    <div class="student-record-subcontainer-body">
+                        <div class="info-input">
+                            <label for="department">Department</label>
+                            <select name="department" id="department">
+                                <option value="opt1">Option 1</option>
+                            </select>
+                        </div>
+
+                        <div class="info-input">
+                            <label for="lrn">LRN</label>
+                            <input type="text" name="lrn">
+                        </div>
+
+                        <div class="info-input">
+                            <label for="grade">Grade/Level</label>
+                            <select name="grade" id="grade">
+                                <option value="opt1">Option 1</option>
+                            </select>
+                        </div>
+
+                        <div class="info-input">
+                            <label for="section">Section</label>
+                            <input type="section" name="section">
+                        </div>
+
+                        <h2 style="flex: 100%; text-align: center">PERSONAL INFORMATION</h2>
+
+                        <div class="info-input">
+                            <label for="lastname">Last Name</label>
+                            <input type="text" name="lastname">
+                        </div>
+
+                        <div class="info-input">
+                            <label for="dob">DOB</label>
+                            <input type="date" name="dob">
+                        </div>
+
+                        <div class="info-input">
+                            <label for="firstname">First Name</label>
+                            <input type="text" name="firstname">
+                        </div>
+
+                        <div class="info-input">
+                            <label for="birthplace">Place of Birth</label>
+                            <input type="text" name="birthplace">
+                        </div>
+
+                        <div class="info-input">
+                            <label for="middlename">Middle Name</label>
+                            <input type="text" name="middlename">
+                        </div>
+
+                        <div class="info-input">
+                            <label for="religion">Religion</label>
+                            <input type="text" name="religion">
+                        </div>
+
+                        <div style="flex: 100%;">
+                            <label for="address">Complete Address</label>
+                            <input type="text" name="address" style="width: 80%">
+                        </div>
+
+                        <div class="info-input">
+                            <label for="nationality">Nationality</label>
+                            <input type="text" name="nationality">
+                        </div>
+
+                        <div class="info-input">
+                            <p>Gender:</p>
+                            <input type="radio" id="male" name="gender" value="male">
+                            <label for="male">Male</label>
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">Female</label>
+                        </div>
+
+                        <div class="info-input">
+                            <label for="mobile">Mobile Number</label>
+                            <input type="number" name="mobile">
+                        </div>
+
+                        <div class="info-input">
+                            <label for="email">Email Address</label>
+                            <input type="email" name="email">
+                        </div>
+
+                        <button>Update</button>
+
+                    </div>
+
+
+                    
+                </div>
+
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>

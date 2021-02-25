@@ -73,6 +73,7 @@ input[type="submit"] {
 .sidebar::-webkit-scrollbar {
   display: none;
 }
+
 .sidebar {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -252,3 +253,58 @@ nav ul li a span.rotate {
 }
 
 /* login and reg end */
+
+/* student record start */
+
+.student-record-parent {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.student-record-form {
+  display: flex;
+  flex-direction: column;
+  flex: 100%;
+}
+
+.student-record-title {
+  text-align: center;
+  background-color: lightblue;
+}
+
+.student-record-subcontainer {
+  display: flex;
+  background-color: lightgray;
+  height: 100%;
+}
+
+.student-record-subcontainer-side {
+  background-color: lightpink;
+  flex: 25%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.search-results {
+  height: 100%;
+  background-color: palevioletred;
+}
+
+.student-record-subcontainer-info {
+  background-color: lightseagreen;
+  flex: 75%;
+}
+
+.student-record-subcontainer-body {
+  background-color: peru;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.info-input {
+  flex: 50%;
+}
