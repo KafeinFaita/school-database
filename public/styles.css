@@ -1,42 +1,167 @@
-body {
-    font-family: "Lato", sans-serif;
+
+*{
+    margin:0;
+    padding:0;
+    user-select: none;
+    box-sizing:border-box;
+    font-family: 'Poppins',sans-serif;
+}
+.main{
+    display:flex;
+    height: 100vh;
+}
+
+.student{
+    width: 100%;    
+}
+
+.form{
+    width: 100%;
+    background:red;
+    height:100%;
+    display:flex;
+    text-align: center;
+}
+.text{
+    color:white;
+    font-size:15px;
+    font-weight: 400;
+    line-height: 65px;
+    padding-left:20px;
+    background:#1e1e1e;
+    letter-spacing: 1px;
+}
+.form select {
+    width:75px;
+    margin:10px;
+    padding:5px;
+}
+input[type=submit]{
+    cursor: pointer;
+    background:#1b1b1b;
+    color:white;
+    width:75px;
+}
+.sideform{
+    background:#1b1b1b;
+    color:white;
+    flex-basis: 30%;
+}
+
+.user-details {
+    flex-basis: 70%;
+    background:#1b1b1b;
+    color:white;
+}
+.personal-info-title{ 
+     flex: 100%;
+     background:red;
+ }
+.text-area{
+    height:300px;
+    margin:10px 0 0 1px;
+    width:250px;
+    background:white;
+}
+.sidebar{
+    width: 250px;
+    height:100%;
+    left:0;
+    background:#1b1b1b;
+    overflow-y:scroll;
+}
+.sidebar::-webkit-scrollbar{
+    display:none;
+}
+.sidebar {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
   }
-  
-  .sidenav {
+.sidebar .text{
+    color:white;
+    font-size:25px;
+    font-weight: 400;
+    line-height: 65px;
+    padding-left:20px;
+    background:#1e1e1e;
+    letter-spacing: 1px;
+}
+nav ul{
+    background: #1b1b1b;
     height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-  }
-  
-  .sidenav a {
-    padding: 8px 8px 8px 32px;
+    width: 100%;
+    list-style: none;
+}
+nav ul li{
+    line-height: 60px;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+nav ul li:last-child{
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+nav ul li a{
+    position:relative;
+    color:white;
     text-decoration: none;
-    font-size: 25px;
-    color: #818181;
+    font-size: 16x;
+    padding-left:15px;
+    font-weight:100;
+    display:block;
+    width:100%;
+    border-left:3px solid transparent;
+}
+nav i {
+    padding-right:5px;
+}
+nav ul li.active a{
+    color:blue;
+    background:#1e1e1e;
+    border-left-color:blue;
+}
+nav ul ul{
+    position:static;
+    display:none;
+}
+nav ul .csi-show.show{
     display: block;
-    transition: 0.3s;
-  }
-  
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
-  
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
+}
+nav ul .reg-show.show1{
+    display: block;
+}
+nav ul .fin-show.show2{
+    display: block;
+}
+nav ul .rep-show.show3{
+    display: block;
+}
+nav ul ul li{
+    line-height:42px;
+    border-bottom: none;
+}
+nav ul ul li a{
+    font-size:15px;
+    color:#e6e6e6;
+    padding-left: 30px;
+}
+nav ul li.active ul li a{
+    color:#e6e6e6;
+    background:#1b1b1b; 
+    border-left-color:transparent;
+}
+nav ul li li a:hover{
+    color: blue!important;
+    background:#1e1e1e!important;
+}
+nav ul li a span{
+    position:absolute;
+    top:50%;
+    right:20px;
+    transform:translate(-50%);
+    font-size:22px;
+    transition:transform 0.4s;
+}
+nav ul li a span.rotate{
+    transform:translateY(-50%) rotate(-180deg);
+}
+
+
