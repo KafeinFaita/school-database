@@ -45,11 +45,11 @@ input[type=submit]{
 .sideform{
     background:#1b1b1b;
     color:white;
-    flex-basis: 20%;
+    flex-basis: 30%;
 }
 
 .user-details {
-    flex-basis: 80%;
+    flex-basis: 70%;
     background:#1b1b1b;
     color:white;
 }
