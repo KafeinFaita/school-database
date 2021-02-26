@@ -8,7 +8,7 @@
         <%- include('./partials/navigation.ejs') %>
 
         <form action="" class="student-record-form">
-            <h1 class="student-record-title">STUDENT RECORD MANAGEMENT</h1>
+            <h1 class="student-record-title">Student Record Management</h1>
 
             <div class="student-record-subcontainer">
                 <div class="student-record-subcontainer-side">
@@ -34,7 +34,7 @@
                         </select>
                     </div>
 
-                    <input type="submit">
+                    <input class="sub" type="submit">
 
                     <div class="search-results">
 
@@ -65,10 +65,10 @@
 
                         <div class="info-input">
                             <label for="section">Section</label>
-                            <input type="section" name="section">
+                            <input type="text" name="section">
                         </div>
 
-                        <h2 style="flex: 100%; text-align: center">PERSONAL INFORMATION</h2>
+                        <h2 style="flex: 100%; text-align: center">Personal Information</h2>
 
                         <div class="info-input">
                             <label for="lastname">Last Name</label>
@@ -100,7 +100,7 @@
                             <input type="text" name="religion">
                         </div>
 
-                        <div style="flex: 100%;">
+                        <div class="info-input" style="flex: 100%;">
                             <label for="address">Complete Address</label>
                             <input type="text" name="address" style="width: 80%">
                         </div>
@@ -110,7 +110,7 @@
                             <input type="text" name="nationality">
                         </div>
 
-                        <div class="info-input">
+                        <div class="radio-input">
                             <p>Gender:</p>
                             <input type="radio" id="male" name="gender" value="male">
                             <label for="male">Male</label>
@@ -120,7 +120,7 @@
 
                         <div class="info-input">
                             <label for="mobile">Mobile Number</label>
-                            <input type="number" name="mobile">
+                            <input type="number" name="mobile" min="0">
                         </div>
 
                         <div class="info-input">
