@@ -267,15 +267,13 @@ nav ul li a span.rotate {
   flex-direction: column;
   flex: 100%;
   background-color: lightblue;
-  
-
 }
 
 .student-record-title {
   text-align: center;
   background: #1b1b1b;
-  padding:5px;
-  color:white;
+  padding: 5px;
+  color: white;
   font-weight: 100;
 }
 
@@ -290,19 +288,25 @@ nav ul li a span.rotate {
   flex-direction: column;
   padding: 10px;
 }
-input[type=submit]{
-  float:right;
+
+input[type="submit"] {
+  float: right;
 }
 .search-results {
   height: 100%;
-  border:1px solid black;
-  margin:5px;
-  border-radius:7px;
+  border: 1px solid black;
+  margin: 5px;
+  border-radius: 7px;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .student-record-subcontainer-info {
   flex: 75%;
+  margin: auto;
+  padding: auto;
 }
 
 .student-record-subcontainer-body {
@@ -311,10 +315,11 @@ input[type=submit]{
   justify-content: space-around;
   flex-wrap: wrap;
 }
-.info-input,.radio-input {
+.info-input,
+.radio-input {
   flex: 50%;
 }
-.radio-input{
+.radio-input {
   display: block;
   position: relative;
   padding-left: 35px;
@@ -325,53 +330,40 @@ input[type=submit]{
   -ms-user-select: none;
   user-select: none;
 }
-input[type=radio]{
- transform:scale(1.2);
- padding:1px;
+input[type="radio"] {
+  transform: scale(1.2);
+  padding: 1px;
 }
-.student-record-subcontainer-body .info-input input,select{
+.student-record-subcontainer-body .info-input input,
+select {
   font-family: inherit;
   width: 200px;
-  border:0;
+  border: 0;
   border-radius: 5px;
   outline: none;
-  font-size:16px;
+  font-size: 16px;
   color: #1b1b1b;
-  padding:5px;
-  margin:10px;
+  padding: 5px;
+  margin: 10px;
   transition: border-color 0.2s;
-  background:white;
+  background: white;
 }
-input[type=text]:focus,
-input[type=number]:focus,
-input[type=email]:focus{
-  border-left:5px solid lightblue;
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus {
+  border-left: 5px solid lightblue;
 }
-button{
-  height:30px;
-  width:60px;
-  border-radius:5px;
-  border:1px solid black;
-  cursor:pointer;
-  border-style:none;
-}
-button:hover{
-  background:green;
-}
-.student-record-subcontainer-info{
-  padding-left:10px;
-}
-.student-record-subcontainer-side input{
-  width:70px;
-  height:60px;
-  text-align: center;
-  border:1px solid black;
+button {
+  height: 30px;
+  width: 60px;
   border-radius: 5px;
+  border: 1px solid black;
+  cursor: pointer;
   border-style: none;
-  cursor:pointer;
-  
 }
-.student-record-subcontainer-side input:hover{
-  background:green;
+button:hover {
+  background: green;
 }
-
+.student-record-subcontainer-info {
+  padding-left: 10px;
+}
