@@ -10,44 +10,8 @@
             <h1 class="student-record-title">Student Record Management</h1>
 
             <div class="student-record-subcontainer">
-                <!-- <form class="student-record-subcontainer-side">
 
-                    <h2>Search for Student</h2>
-
-                    <div>
-                        <label for="name">First Name</label>
-                        <input type="text" name="name" class="name">
-                    </div>
-
-                    <div>
-                        <label for="sy">SY</label>
-                        <select name="sy" id="sy">
-                            <option value="opt1">Option 1</option>
-                        </select>
-                    </div>
-                    
-                    <div>
-                        <label for="search">Search</label>
-                        <select name="search" id="search">
-                            <option value="opt1">Option 1</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label for="value">Value</label>
-                        <select name="value" id="value">
-                            <option value="opt1">Option 1</option>
-                        </select>
-                    </div>
-
-                    <input type="submit" class="sub">
-
-                    <div class="search-results">
-
-                    </div>
-                </form> -->
-
-                <form action="/student-record" method="POST" class="student-record-subcontainer-info">
+                <form action="<%= url %>?_method=PUT" method="POST" class="student-record-subcontainer-info">
 
                     <div class="student-record-subcontainer-body">
                         <div class="info-input">
@@ -135,7 +99,7 @@
                         </div>
 
                         <button>Update</button>
-
+                        <input type="submit" value="Delete" formaction="<%= url %>?_method=DELETE">
                     </div>
 
                     

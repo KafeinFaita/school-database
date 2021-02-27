@@ -36,8 +36,8 @@ module.exports.studentRecord_get_one = async (req, res) => {
     
     try {
         const getStudent = await StudentRecord.findById(req.params.id)
-        console.log(getStudent)
-        res.render('student-record-one', { student: getStudent })
+     
+        res.render('student-record-one', { student: getStudent, url: req.url })
     } catch (err) {
         console.log(err)
     }
@@ -69,3 +69,29 @@ module.exports.student_record_post = async (req, res) => {
     
 }
 
+//PUT request
+
+module.exports.studentRecord_put_one = async (req, res) => {
+
+    try {
+        const updateStudent = await StudentRecord.findByIdAndUpdate(req.params.id, req.body)
+        console.log(req.params.id)
+        res.send("success")
+    } catch (err) {
+        console.log(err)
+    }
+    
+}
+
+//DELETE request
+
+module.exports.studentRecord_delete_one = async (req, res) => {
+
+    try {
+        const deleteStudent = await StudentRecord.findByIdAndDelete(req.params.id)
+        res.send("deleted")
+    } catch (err) {
+        console.log(err)
+    }
+    
+}
