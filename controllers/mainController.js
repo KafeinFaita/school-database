@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt')
 //GET requests
 
 module.exports.index_get = (req, res) => {
-    res.render('index');
+    res.redirect('/student-record')
 }
 
 module.exports.login_get = (req, res) => {
