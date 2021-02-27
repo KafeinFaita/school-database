@@ -73,7 +73,9 @@
 
                         <div class="info-input">
                             <label for="section">Section</label>
-                            <input type="text" name="section" required>
+                            <select name="section" id="section" required>
+                                
+                            </select>
                         </div>
 
                         <h2 style="flex: 100%; text-align: center">Personal Information</h2>
@@ -148,10 +150,22 @@
     </div>
 
     <script>
+
+        const sections = '<%- JSON.stringify(sections) %>'
+        const sectionsArray = JSON.parse(sections)
         
+        const sectionSelect = document.getElementById('section')
         const searchResults = document.querySelector(".search-results")
         const results = '<%- JSON.stringify(record) %>'
         const resultsArray = JSON.parse(results)
+
+        sectionsArray.forEach(section => {
+            console.log(section.name)
+            const opt = document.createElement("option")
+            opt.text = section.name
+            sectionSelect.add(opt)
+            console.log(section)
+        })
        
         resultsArray.forEach(result => {
             const a = document.createElement('a')

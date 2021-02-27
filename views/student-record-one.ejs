@@ -35,7 +35,9 @@
 
                         <div class="info-input">
                             <label for="section">Section</label>
-                            <input type="text" name="section" value='<%= student.section %>' required>
+                            <select name="section" id="section" required>
+                                
+                            </select>
                         </div>
 
                         <h2 style="flex: 100%; text-align: center">Personal Information</h2>
@@ -110,7 +112,17 @@
     </div>
 
     <script>
-        
+        const sections = '<%- JSON.stringify(sections) %>'
+        const sectionsArray = JSON.parse(sections)
+        const sectionSelect = document.getElementById('section')
+
+        sectionsArray.forEach(section => {
+            console.log(section.name)
+            const opt = document.createElement("option")
+            opt.text = section.name
+            sectionSelect.add(opt)
+            console.log(section)
+        })
     </script>
     
 </body>
