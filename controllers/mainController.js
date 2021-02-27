@@ -43,8 +43,14 @@ module.exports.studentRecord_get_one = async (req, res) => {
      
         res.render('student-record-one', { student: getStudent, url: req.url, sections })
     } catch (err) {
-        console.log(err)
+        res.render('404')
     }
+    
+}
+
+module.exports.errorPage_get = (req, res) => {
+    
+    res.render('404')
     
 }
 

@@ -5,6 +5,7 @@ const {
     login_post, 
     register_get, 
     studentRecord_get, 
+    errorPage_get,
     student_record_post, 
     studentRecord_get_one, 
     studentRecord_put_one, 
@@ -17,6 +18,7 @@ router.get('/register', register_get)
 router.get('/login', login_get);
 router.get('/student-record', studentRecord_get)
 router.get('/student-record/:id', studentRecord_get_one)
+router.get('*', errorPage_get)
 
 router.post('/login', login_post)
 router.post('/student-record', student_record_post)
