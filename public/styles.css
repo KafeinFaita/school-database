@@ -4,7 +4,8 @@
   padding: 0;
   user-select: none;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "montserrat", sans-serif;
+ 
 }
 .main {
   display: flex;
@@ -260,13 +261,14 @@ nav ul li a span.rotate {
   display: flex;
   width: 100vw;
   height: 100vh;
+  
 }
 
 .student-record-form {
   display: flex;
   flex-direction: column;
   flex: 100%;
-  background-color: lightblue;
+
 }
 
 .student-record-title {
@@ -279,21 +281,26 @@ nav ul li a span.rotate {
 
 .student-record-subcontainer {
   display: flex;
-  height: 100%;
+  height: 100%; 
 }
-
 .student-record-subcontainer-side {
   flex: 25%;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding:0;
+  text-align:center;
+  background-color:lightblue;
 }
-
-input[type="submit"] {
-  float: right;
+.student-record-subcontainer-side input{
+  height:30px;
+  border:1px solid black;
+  border-radius:5px;
 }
 .search-results {
-  height: 100%;
+  position:fixed;
+  top:50%;
+  width:250px;
+  height: 280px;
   border: 1px solid black;
   margin: 5px;
   border-radius: 7px;
@@ -302,18 +309,26 @@ input[type="submit"] {
   flex-direction: column;
   align-items: center;
 }
-
+.personal-title{
+  flex:100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight:500;
+}
 .student-record-subcontainer-info {
   flex: 75%;
   margin: auto;
   padding: auto;
 }
-
 .student-record-subcontainer-body {
   display: flex;
   width: 100%;
+  height:100%;
   justify-content: space-around;
   flex-wrap: wrap;
+  background: url(https://cdn.hipwallpaper.com/i/4/55/3w7SG1.jpg);
+  background-repeat: no-repeat;
+  background-size:cover;
 }
 .info-input,
 .radio-input {
@@ -324,7 +339,7 @@ input[type="submit"] {
   position: relative;
   padding-left: 35px;
   margin-bottom: 12px;
-  font-size: 22px;
+  font-size: 18px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -337,16 +352,16 @@ input[type="radio"] {
 .student-record-subcontainer-body .info-input input,
 select {
   font-family: inherit;
-  width: 200px;
-  border: 0;
+  width: 50%;
+  border: 1px solid black;
   border-radius: 5px;
-  outline: none;
+  outline:none;
   font-size: 16px;
   color: #1b1b1b;
   padding: 5px;
-  margin: 10px;
+  margin: 2px;
   transition: border-color 0.2s;
-  background: white;
+  background: #fff;
 }
 input[type="text"]:focus,
 input[type="number"]:focus,
@@ -355,18 +370,78 @@ input[type="email"]:focus {
 }
 button {
   height: 30px;
-  width: 60px;
-  border-radius: 5px;
-  border: 1px solid black;
+  width: 50%;
+  font-size: 15px;
+  font-weight: lighter;
+  border: 2px solid black;
+  border-radius: 30px;
   cursor: pointer;
-  border-style: none;
+  background:transparent;
+  transition:0.4s;
+  text-transform: uppercase;
 }
 button:hover {
-  background: green;
+  background:#e55039aa;
 }
 .student-record-subcontainer-info {
   padding-left: 10px;
 }
+
+/* For error page */
+.error-container{
+  background:url(https://phoenixplaza.rw/wp-content/uploads/2018/01/error-page-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color:#343434;
+}
+.error-subcontainer{
+  width:100%;
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  text-align:center;
+}
+.error-container h1  {
+  font-size:200px;
+  margin:0;
+  font-weight:900;
+  letter-spacing:20px;
+  background:url(https://as2.ftcdn.net/jpg/02/83/53/85/500_F_283538557_aAFDf1ABJYsWv842JcOWt6hiOqBA6ySX.jpg) center no-repeat;
+  -webkit-text-fill-color:transparent;
+  -webkit-background-clip: text;
+}
+.error-container h2{
+  font-size:40px
+}
+.error-container p{
+  font-size:20px;
+  margin:auto;
+}
+.error-container a{
+  text-decoration: none;
+  background:transparent;
+  color:#1b1b1b;
+  margin:12px 24px;
+  padding:12px 24px;
+  display:inline-block;
+  border-radius:25px;
+  border:3px solid black;
+  font-size:14px;
+  font-weight:bold;
+  text-transform: uppercase;
+  transition:0.4s;
+}
+.error-container a:hover{
+  background:#e55039aa;
+}
+/*  end for error page */
+
 
 /* section css */
 
@@ -374,3 +449,4 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
 }
+
