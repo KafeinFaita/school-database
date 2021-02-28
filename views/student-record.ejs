@@ -15,31 +15,13 @@
                     <h2>Search for Student</h2>
 
                     <div>
-                        <label for="name">First Name</label>
-                        <input type="text" name="name" class="name">
+                        <label for="firstname">First Name</label>
+                        <input type="text" name="firstname" class="name">
                     </div>
 
                     <div>
-                        <label for="sy">SY</label>
-                        <select name="sy" id="sy" value="opt2">
-                            <option value="opt1">Option 1</option>
-                            <option value="opt2">Option 2</option>
-                            
-                        </select>
-                    </div>
-                    
-                    <div>
-                        <label for="search">Search</label>
-                        <select name="search" id="search">
-                            <option value="opt1">Option 1</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label for="value">Value</label>
-                        <select name="value" id="value">
-                            <option value="opt1">Option 1</option>
-                        </select>
+                        <label for="lastname">Last Name</label>
+                        <input type="text" name="lastname" class="last">
                     </div>
 
                     <button class="sub">Search</button>
@@ -160,21 +142,21 @@
         const resultsArray = JSON.parse(results)
 
         sectionsArray.forEach(section => {
-            console.log(section.name)
             const opt = document.createElement("option")
             opt.text = section.name
+            opt.setAttribute('value', section.name) 
             sectionSelect.add(opt)
-            console.log(section)
         })
-       
-        resultsArray.forEach(result => {
+
+        if (Array.isArray(resultsArray)) {
+            resultsArray.forEach(result => {
             const a = document.createElement('a')
             const link = document.createTextNode(`${result.firstname} ${result.lastname}`)
             a.appendChild(link)
             a.href = `/student-record/${result._id}`
             searchResults.appendChild(a)
         })
-       
+        }             
     </script>
     
 </body>

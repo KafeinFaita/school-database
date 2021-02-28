@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    
+    <div class="section-main">
+        <%- include('./partials/navigation.ejs') %>
+
+        <div class="section-sub">
+            <form action="/section" method="POST">
+                <h2>Add Section</h2>
+                <input type="text" name="sectionName" id="sectionName">
+                
+                <button>Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        const section = '<%- JSON.stringify(sections) %>'
+        const sectionsArray = JSON.parse(section)
+        const sectionContainer = document.querySelector(".section-sub")
+
+        sectionsArray.forEach(sect => {
+            const p = document.createElement("p")
+            const text = document.createTextNode(sect.name)
+            p.appendChild(text)
+            sectionContainer.appendChild(p)
+            
+        })
+    </script>
+    
+</body>
+</html>
