@@ -39,7 +39,6 @@ module.exports.studentRecord_get = async (req, res) => {
         }
         
     } else {
-        console.log(req.query)
         res.render('student-record', { sections, record: {} })
     }  
 }
@@ -73,6 +72,10 @@ module.exports.errorPage_get = (req, res) => {
     
 }
 
+module.exports.teacher_get = (req, res) => {
+    res.render('teacher')
+}
+
 
 //POST requests
 
@@ -98,9 +101,17 @@ module.exports.student_record_post = async (req, res) => {
 }
 
 module.exports.section_post = async (req, res) => {   
+
+    console.log(req.body)
     const section = new Section({ name: req.body.sectionName})
-    const saveSection = await section.save()
-    res.redirect('/section')
+
+    try {
+        const saveSection = await section.save()
+        res.redirect('/section')
+    } catch (error) {
+        res.send('error')
+    }
+    
 }
 
 //PUT request
@@ -124,6 +135,17 @@ module.exports.studentRecord_delete_one = async (req, res) => {
     try {
         const deleteStudent = await StudentRecord.findByIdAndDelete(req.params.id)
         res.send("deleted")
+    } catch (err) {
+        console.log(err)
+    }
+    
+}
+
+module.exports.section_delete = async (req, res) => {
+
+    try {
+        const deleteSection = await Section.findByIdAndDelete(req.params.id)
+        res.redirect('/section')
     } catch (err) {
         console.log(err)
     }

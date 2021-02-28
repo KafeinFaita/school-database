@@ -12,23 +12,31 @@
                 <input type="text" name="sectionName" id="sectionName">
                 
                 <button>Submit</button>
+
+                <% sections.forEach(sect => { %>
+                    <div style="display: flex;">
+                        <h3><%= sect.name %></h3>
+                        <button type="button" class="delete-button" data-_id="<%= sect.id %>">Delete</button>
+                    </div>
+
+                <% }) %> 
             </form>
         </div>
     </div>
 
-
     <script>
-        const section = '<%- JSON.stringify(sections) %>'
-        const sectionsArray = JSON.parse(section)
-        const sectionContainer = document.querySelector(".section-sub")
+        const deleteButtons = document.querySelectorAll('.delete-button')
 
-        sectionsArray.forEach(sect => {
-            const p = document.createElement("p")
-            const text = document.createTextNode(sect.name)
-            p.appendChild(text)
-            sectionContainer.appendChild(p)
-            
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                fetch(`/section/${button.dataset._id}`, {
+                method: "DELETE"
+                })
+                .then(() => location.reload())
+                .catch(err => console.log(err))
+            })
         })
+
     </script>
     
 </body>
