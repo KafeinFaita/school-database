@@ -21,9 +21,18 @@ module.exports.studentRecord_get = async (req, res) => {
 
     const sections = await Section.find();
 
-    if (Object.keys(req.query) !== 0) {
+    if (Object.keys(req.query).length !== 0) {
+
+        const tempQuery = {};
+
+        for (let x in req.query) {
+            if (req.query[x] !== '') {
+                tempQuery[x] = new RegExp(`^${req.query[x]}$`,'i')
+            }
+        }
+
         try {
-            const searchName = await StudentRecord.find({ firstname: new RegExp(`^${req.query.name}$`,'i')})
+            const searchName = await StudentRecord.find(tempQuery)
             res.render('student-record', { record: searchName, sections })
         } catch(err) {
             console.log(err)
@@ -31,7 +40,7 @@ module.exports.studentRecord_get = async (req, res) => {
         
     } else {
         console.log(req.query)
-        res.render('student-record', { sections })
+        res.render('student-record', { sections, record: {} })
     }  
 }
 
@@ -43,14 +52,24 @@ module.exports.studentRecord_get_one = async (req, res) => {
      
         res.render('student-record-one', { student: getStudent, url: req.url, sections })
     } catch (err) {
-        res.render('404')
+        res.status(404).render('404')
     }
     
 }
 
+module.exports.section_get = async (req, res) => {
+    
+    try {
+        const sections = await Section.find()
+        res.render('section', { sections })
+    } catch (err) {
+        res.status(404).render('404')
+    }
+}
+
 module.exports.errorPage_get = (req, res) => {
     
-    res.render('404')
+    res.status(404).render('404')
     
 }
 
@@ -73,10 +92,15 @@ module.exports.login_post = async (req, res) => {
 
 module.exports.student_record_post = async (req, res) => {   
     const record = new StudentRecord(req.body)
-
     const saveRecord = await record.save()
-    res.json(record)
+    res.redirect('/student-record')
     
+}
+
+module.exports.section_post = async (req, res) => {   
+    const section = new Section({ name: req.body.sectionName})
+    const saveSection = await section.save()
+    res.redirect('/section')
 }
 
 //PUT request

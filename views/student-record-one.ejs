@@ -114,14 +114,23 @@
     <script>
         const sections = '<%- JSON.stringify(sections) %>'
         const sectionsArray = JSON.parse(sections)
+
+        const studentTemp = '<%- JSON.stringify(student) %>'
+        const studentData = JSON.parse(studentTemp)
+
         const sectionSelect = document.getElementById('section')
+
+        console.log(studentData.section)
 
         sectionsArray.forEach(section => {
             console.log(section.name)
             const opt = document.createElement("option")
             opt.text = section.name
+            if (section.name === studentData.section){
+                opt.selected = true;
+            }
+
             sectionSelect.add(opt)
-            console.log(section)
         })
     </script>
     
