@@ -238,11 +238,15 @@ nav ul li a span.rotate {
   
 }
 .student-record-subcontainer-side input{
-  margin:4px;
-  height:30px;
+  width: 75%;
   border:none;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #1b1b1b;
+  padding:9px;
+  transition: 0.4s;
   outline:none;
-  border-radius:5px;
+  background: #fff;
 }
 .student-record-subcontainer-side button{
   background: #1a598a;
@@ -253,6 +257,7 @@ nav ul li a span.rotate {
   text-transform: uppercase;
   font-weight: 700;
   padding:5px;
+  transition: 0.4s;
 
 }
 .student-record-subcontainer-side button:hover{
@@ -272,10 +277,9 @@ nav ul li a span.rotate {
 }
 .personal-title{
   flex:100%;
-  text-align: center;
+  background: linear-gradient(to top right, #99ccff 0%, #ffffff 100%);
   text-transform: uppercase;
-  font-weight:800;
-  border-radius: 50px;
+  font-weight:900;
 }
 .student-record-subcontainer-info {
   flex: 80%;
@@ -286,7 +290,6 @@ nav ul li a span.rotate {
   display: flex;
   width: 100%;
   height:100%;
-  padding-left:5%;
   justify-content: space-around;
   flex-wrap: wrap;
 }
@@ -314,7 +317,6 @@ input[type="radio"] {
 }
 .student-record-subcontainer-body .info-input input,
 select {
-  font-family: inherit;
   width: 75%;
   border:none;
   border-radius: 5px;
