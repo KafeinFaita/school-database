@@ -284,7 +284,7 @@ nav ul li a span.rotate {
   height: 100%; 
 }
 .student-record-subcontainer-side {
-  flex: 25%;
+  flex: 30%;
   display: flex;
   flex-direction: column;
   padding:0;
@@ -297,10 +297,8 @@ nav ul li a span.rotate {
   border-radius:5px;
 }
 .search-results {
-  position:fixed;
-  top:50%;
-  width:250px;
-  height: 280px;
+  width:100%;
+  height: 100%;
   border: 1px solid black;
   margin: 5px;
   border-radius: 7px;
@@ -316,9 +314,7 @@ nav ul li a span.rotate {
   font-weight:500;
 }
 .student-record-subcontainer-info {
-  flex: 75%;
-  margin: auto;
-  padding: auto;
+  flex: 70%;
 }
 .student-record-subcontainer-body {
   display: flex;
@@ -329,6 +325,8 @@ nav ul li a span.rotate {
   background: url(https://cdn.hipwallpaper.com/i/4/55/3w7SG1.jpg);
   background-repeat: no-repeat;
   background-size:cover;
+  border-top-left-radius: 200px;
+  border-bottom-left-radius: 200px;
 }
 .info-input,
 .radio-input {
@@ -352,15 +350,15 @@ input[type="radio"] {
 .student-record-subcontainer-body .info-input input,
 select {
   font-family: inherit;
-  width: 50%;
+  width: 75%;
+  height:0;
   border: 1px solid black;
   border-radius: 5px;
-  outline:none;
-  font-size: 16px;
+  outline:skyblue;
+  font-size: 14px;
   color: #1b1b1b;
-  padding: 5px;
-  margin: 2px;
-  transition: border-color 0.2s;
+  padding:15px;
+  transition: 0.4s;
   background: #fff;
 }
 input[type="text"]:focus,
@@ -369,8 +367,9 @@ input[type="email"]:focus {
   border-left: 5px solid lightblue;
 }
 button {
+  position: relative;
+  float: right;
   height: 30px;
-  width: 50%;
   font-size: 15px;
   font-weight: lighter;
   border: 2px solid black;
@@ -382,9 +381,6 @@ button {
 }
 button:hover {
   background:#e55039aa;
-}
-.student-record-subcontainer-info {
-  padding-left: 10px;
 }
 /* For error page */
 .error-container{
