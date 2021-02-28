@@ -1,10 +1,12 @@
 const User = require('../models/User')
+const Section = require('../models/Section')
+const StudentRecord = require('../models/StudentRecord')
 const bcrypt = require('bcrypt')
 
 //GET requests
 
 module.exports.index_get = (req, res) => {
-    res.render('index');
+    res.redirect('/student-record')
 }
 
 module.exports.login_get = (req, res) => {
@@ -15,9 +17,43 @@ module.exports.register_get = (req, res) => {
     res.render('register')
 }
 
-module.exports.studentRecord_get = (req, res) => {
-    res.render('student-record')
+module.exports.studentRecord_get = async (req, res) => {
+
+    const sections = await Section.find();
+
+    if (Object.keys(req.query) !== 0) {
+        try {
+            const searchName = await StudentRecord.find({ firstname: new RegExp(`^${req.query.name}$`,'i')})
+            res.render('student-record', { record: searchName, sections })
+        } catch(err) {
+            console.log(err)
+        }
+        
+    } else {
+        console.log(req.query)
+        res.render('student-record', { sections })
+    }  
 }
+
+module.exports.studentRecord_get_one = async (req, res) => {
+    
+    try {
+        const getStudent = await StudentRecord.findById(req.params.id)
+        const sections = await Section.find()
+     
+        res.render('student-record-one', { student: getStudent, url: req.url, sections })
+    } catch (err) {
+        res.render('404')
+    }
+    
+}
+
+module.exports.errorPage_get = (req, res) => {
+    
+    res.render('404')
+    
+}
+
 
 //POST requests
 
@@ -35,3 +71,37 @@ module.exports.login_post = async (req, res) => {
     }
 }
 
+module.exports.student_record_post = async (req, res) => {   
+    const record = new StudentRecord(req.body)
+
+    const saveRecord = await record.save()
+    res.json(record)
+    
+}
+
+//PUT request
+
+module.exports.studentRecord_put_one = async (req, res) => {
+
+    try {
+        const updateStudent = await StudentRecord.findByIdAndUpdate(req.params.id, req.body)
+        console.log(req.params.id)
+        res.send("success")
+    } catch (err) {
+        console.log(err)
+    }
+    
+}
+
+//DELETE request
+
+module.exports.studentRecord_delete_one = async (req, res) => {
+
+    try {
+        const deleteStudent = await StudentRecord.findByIdAndDelete(req.params.id)
+        res.send("deleted")
+    } catch (err) {
+        console.log(err)
+    }
+    
+}
