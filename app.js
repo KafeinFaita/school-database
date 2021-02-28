@@ -2,7 +2,6 @@ const express = require('express')
 const mainRoutes = require('./routes/mainRoutes')
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
-
 const app = express();
 
 app.use(express.static(__dirname + "/public"))
