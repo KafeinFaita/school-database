@@ -8,20 +8,18 @@
   font-family: "Varela Round", sans-serif;
 }
 .sidebar {
-  width: 300px;
+  width: 30%;
   height: 100vh;
   left: 0;
   background: #1b1b1b;
   overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 .sidebar::-webkit-scrollbar {
   display: none;
 }
 
-.sidebar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
 .sidebar .text {
   color: white;
   font-size: 25px;
@@ -52,7 +50,7 @@ nav ul li a {
   color: white;
   text-decoration: none;
   font-size: 16x;
-  padding-left: 15px;
+  padding-left: 10px;
   font-weight: 100;
   display: block;
   width: 100%;
@@ -83,7 +81,7 @@ nav ul .rep-show.show3 {
   display: block;
 }
 nav ul ul li {
-  line-height: 42px;
+  line-height: 60px;
   border-bottom: none;
 }
 nav ul ul li a {
@@ -102,8 +100,8 @@ nav ul li li a:hover {
 }
 nav ul li a span {
   position: absolute;
-  top: 50%;
-  right: 20px;
+  top: 30%;
+  right: 3;
   transform: translate(-50%);
   font-size: 22px;
   transition: transform 0.4s;
@@ -416,5 +414,18 @@ input[type="email"]:focus {
 
 .student-record-table-container {
   display: flex;
-  flex-wrap: wrap;
+  background-color: #99ccff;
+}
+.student-record-table-subcontainer {
+  display:flex;
+  justify-content: flex-end;
+
+}
+.student-record-table-subcontainer table{
+  border-collapse: collapse;
+  overflow: scroll;
+}
+
+.student-records {
+  width: 100%;
 }

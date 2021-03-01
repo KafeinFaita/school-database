@@ -5,47 +5,28 @@
     <div class="student-record-table-container">
 
         <%- include('./partials/navigation.ejs') %>
-        <div class="table">
-            <table border="1">
+        <div class="student-record-table-subcontainer">
+            <table border="1" class="student-records">
                 <tr>
                     <th>First Name</th>
                     <th>Middle Name</th>
                     <th>Last Name</th>
-                    <th>Gender</th>
                     <th>Grade/Level</th>
                     <th>Section</th>
                     <th>Department</th>
-                    <th>Date of Birth</th>
-                    <th>Place of Birth</th>
-                    <th>Religion</th>
-                    <th>Nationality</th>
-                    <th>Complete Address</th>
-                    <th>Mobile Number</th>
                     <th>LRN</th>
-                    <th>Mobile Number</th>
-                    <th>Email Address</th>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+
+                <% for(let x = 0;x < 10; x++) { %>
+                    <tr>
+                        <% for(let y = 0; y < 7; y++) { %>
+                            <td>asd</td>
+                        <% } %>
+                    </tr>
+                <% } %>        
             </table>
         </div>
 
-    </div>    
+    </div>   
 </body>
 </html>
