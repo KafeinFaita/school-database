@@ -19,7 +19,7 @@ module.exports.register_get = (req, res) => {
 
 module.exports.studentRecord_get = async (req, res) => {
 
-    const sections = await Section.find();
+    const sections = await Section.find()
 
     if (Object.keys(req.query).length !== 0) {
 
@@ -47,8 +47,9 @@ module.exports.studentRecord_get_one = async (req, res) => {
     
     try {
         const getStudent = await StudentRecord.findById(req.params.id)
+        console.log(getStudent)
         const sections = await Section.find()
-     
+      
         res.render('student-record-one', { student: getStudent, url: req.url, sections })
     } catch (err) {
         res.status(404).render('404')
@@ -76,8 +77,10 @@ module.exports.teacher_get = (req, res) => {
     res.render('teacher')
 }
 
-module.exports.table_get = (req, res) => {
-    res.render('recordtable')
+module.exports.table_get = async (req, res) => {
+    const record = await StudentRecord.find().populate('section').exec()
+    console.log(record)
+    res.render('recordtable', { record })
 }
 
 

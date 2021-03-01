@@ -15,7 +15,8 @@ const recordSchema = new Schema({
         required: true
     },
     section: {
-        type: String,
+        type: Schema.Types.ObjectId,
+        ref: 'section',
         required: true
     },
     lastname: {

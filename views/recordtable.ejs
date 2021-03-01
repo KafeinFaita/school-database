@@ -15,13 +15,23 @@
                     <th>Section</th>
                     <th>Department</th>
                     <th>LRN</th>
+                    <th>Actions</th>
                 </tr>
 
-                <% for(let x = 0;x < 10; x++) { %>
+                <% for(let x = 0;x < record.length ; x++) { %>
                     <tr>
-                        <% for(let y = 0; y < 7; y++) { %>
-                            <td>asd</td>
-                        <% } %>
+                            <td><%= record[x].firstname %></td>
+                            <td><%= record[x].middlename %></td>
+                            <td><%= record[x].lastname %></td>
+                            <td><%= record[x].grade %></td>
+                            <td><%= record[x].section.name %></td>
+                            <td><%= record[x].department %></td>
+                            <td><%= record[x].lrn %></td>
+                            <td>
+                                <a href="/student-record/<%= record[x]._id %>">Update</a>
+                                <a href="">Delete</a>
+                            </td>
+                       
                     </tr>
                 <% } %>        
             </table>
