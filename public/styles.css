@@ -292,6 +292,9 @@ nav ul li a span.rotate {
   height:100%;
   justify-content: space-around;
   flex-wrap: wrap;
+  padding-left:10px;
+  padding-top:10px;
+
 }
 .student-record-subcontainer-body label{
   font-size: 16px;
