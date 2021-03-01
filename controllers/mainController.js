@@ -76,6 +76,10 @@ module.exports.teacher_get = (req, res) => {
     res.render('teacher')
 }
 
+module.exports.table_get = (req, res) => {
+    res.render('recordtable')
+}
+
 
 //POST requests
 
