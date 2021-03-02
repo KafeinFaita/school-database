@@ -11,7 +11,8 @@ const recordSchema = new Schema({
         required: true
     },
     grade: {
-        type: String,
+        type: Schema.Types.ObjectId,
+        ref: 'grade',
         required: true
     },
     section: {

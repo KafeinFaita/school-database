@@ -27,9 +27,13 @@
                         </div>
 
                         <div class="info-input">
-                            <label for="grade">Grade/Level</label>
+                            <label for="grade">Grade/Level</label><br>
                             <select name="grade" id="grade" required>
-                                <option value="opt1">Option 1</option>
+                                <option value="" disabled selected>Select Grade/Level</option>
+                                <% grades.forEach(grade => { %>
+                                    <% const isGradeSelected = grade.title === student.grade.title ? 'selected' : null %> 
+                                    <option value='<%= grade._id %>' <%= isGradeSelected %>><%= grade.title %></option>
+                                <% }) %>
                             </select>
                         </div>
 
@@ -118,13 +122,13 @@
         const studentTemp = '<%- JSON.stringify(student) %>'
         const studentData = JSON.parse(studentTemp)
 
+        const male = document.getElementById('male')
+        const female = document.getElementById('female')
+
         const sectionSelect = document.getElementById('section')
 
-        console.log(studentData.section)
-        console.log(sectionsArray)
-
         sectionsArray.forEach(section => {
-            console.log(section.name)
+
             const opt = document.createElement("option")
             opt.text = section.name
             if (section.name === studentData.section.name){
@@ -133,6 +137,16 @@
 
             sectionSelect.add(opt)
         })
+
+        console.log(studentData.gender)
+
+        if (male.value === studentData.gender) {
+            male.checked = true
+        } else {
+            female.checked = true
+        }
+
+
     </script>
     
 </body>

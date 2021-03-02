@@ -1,6 +1,8 @@
 const User = require('../models/User')
 const Section = require('../models/Section')
 const StudentRecord = require('../models/StudentRecord')
+const Grade = require('../models/Grade')
+
 const bcrypt = require('bcrypt')
 
 //GET requests
@@ -18,38 +20,50 @@ module.exports.register_get = (req, res) => {
 }
 
 module.exports.studentRecord_get = async (req, res) => {
+    const record = await StudentRecord.find().populate('section grade').exec()
+    console.log(record)
+    res.render('student-record', { record })
+}
 
-    const sections = await Section.find()
+module.exports.studentSubmit_get = async (req, res) => {
 
-    if (Object.keys(req.query).length !== 0) {
+    try {
+        const sections = await Section.find()
+        const grades = await Grade.find()
 
-        const tempQuery = {};
+        if (Object.keys(req.query).length !== 0) {
 
-        for (let x in req.query) {
-            if (req.query[x] !== '') {
-                tempQuery[x] = new RegExp(`^${req.query[x]}$`,'i')
+            const tempQuery = {};
+
+            for (let x in req.query) {
+                if (req.query[x] !== '') {
+                    tempQuery[x] = new RegExp(`^${req.query[x]}$`,'i')
+                }
             }
-        }
 
-        try {
-            const searchName = await StudentRecord.find(tempQuery)
-            res.render('student-record', { record: searchName, sections })
-        } catch(err) {
-            console.log(err)
+            try {
+                const searchName = await StudentRecord.find(tempQuery)
+                res.render('student-record', { record: searchName, sections, grades })
+            } catch(err) {
+                console.log(err)
+            }
+            
+        } else {
+            res.render('student-submit', { sections, record: {}, grades })
         }
-        
-    } else {
-        res.render('student-record', { sections, record: {} })
-    }  
+    } catch (error) {
+        res.send(error)
+}  
 }
 
 module.exports.studentRecord_get_one = async (req, res) => {
     
     try {
-        const getStudent = await StudentRecord.findById(req.params.id).populate('section').exec()
+        const getStudent = await StudentRecord.findById(req.params.id).populate('section grade').exec()
         const sections = await Section.find()
+        const grades = await Grade.find()
       
-        res.render('student-record-one', { student: getStudent, url: req.url, sections })
+        res.render('student-record-one', { student: getStudent, url: req.url, sections, grades })
     } catch (err) {
         res.status(404).render('404')
     }
@@ -74,12 +88,6 @@ module.exports.errorPage_get = (req, res) => {
 
 module.exports.teacher_get = (req, res) => {
     res.render('teacher')
-}
-
-module.exports.table_get = async (req, res) => {
-    const record = await StudentRecord.find().populate('section').exec()
-    console.log(record)
-    res.render('recordtable', { record })
 }
 
 
