@@ -46,8 +46,7 @@ module.exports.studentRecord_get = async (req, res) => {
 module.exports.studentRecord_get_one = async (req, res) => {
     
     try {
-        const getStudent = await StudentRecord.findById(req.params.id)
-        console.log(getStudent)
+        const getStudent = await StudentRecord.findById(req.params.id).populate('section').exec()
         const sections = await Section.find()
       
         res.render('student-record-one', { student: getStudent, url: req.url, sections })
@@ -102,7 +101,13 @@ module.exports.login_post = async (req, res) => {
 
 module.exports.student_record_post = async (req, res) => {   
     const record = new StudentRecord(req.body)
-    const saveRecord = await record.save()
+    
+    try{
+        const saveRecord = await record.save()
+    } catch (err) {
+        res.send('Record submit failed. Please contact admin')
+    }
+    
     res.redirect('/student-record')
     
 }

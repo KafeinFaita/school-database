@@ -2,11 +2,9 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const gradeSchema = new Schema({
-    name: {
-        type: String
-    },
-    grade: {
-        type: Number
+    title: {
+        type: String,
+        required: true
     }
 })
 

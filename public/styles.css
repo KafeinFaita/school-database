@@ -417,11 +417,12 @@ input[type="email"]:focus {
   background-color: #99ccff;
 }
 .student-record-table-subcontainer {
-  display:flex;
-  justify-content: flex-end;
-
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: auto;
 }
-.student-record-table-subcontainer table{
+.student-record-table-subcontainer table {
   border-collapse: collapse;
   overflow: scroll;
 }

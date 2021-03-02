@@ -146,8 +146,9 @@
         sectionsArray.forEach(section => {
             const opt = document.createElement("option")
             opt.text = section.name
-            opt.setAttribute('value', section.name) 
+            opt.setAttribute('value', section._id) 
             sectionSelect.add(opt)
+            console.log(section._id)
         })
 
         if (Array.isArray(resultsArray)) {

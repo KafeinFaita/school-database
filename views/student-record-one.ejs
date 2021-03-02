@@ -121,12 +121,13 @@
         const sectionSelect = document.getElementById('section')
 
         console.log(studentData.section)
+        console.log(sectionsArray)
 
         sectionsArray.forEach(section => {
             console.log(section.name)
             const opt = document.createElement("option")
             opt.text = section.name
-            if (section.name === studentData.section){
+            if (section.name === studentData.section.name){
                 opt.selected = true;
             }
 
