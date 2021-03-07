@@ -139,6 +139,7 @@ module.exports.section_post = async (req, res) => {
 module.exports.studentRecord_put_one = async (req, res) => {
 
     try {
+        console.log(req.body)
         const updateStudent = await StudentRecord.findByIdAndUpdate(req.params.id, req.body)
         console.log(req.params.id)
         res.send("success")
