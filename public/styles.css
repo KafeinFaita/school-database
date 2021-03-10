@@ -9,7 +9,7 @@
 }
 .sidebar {
   width: 20%;
-  height: 100vh;
+
   background: #1b1b1b;
   overflow-y: scroll;
   -ms-overflow-style: none;
@@ -199,7 +199,8 @@ nav ul li a span.rotate {
 .student-record-parent {
   display: flex;
   width: 100vw;
-  height: 100vh;
+
+
 }
 .student-record-form {
   display: flex;
@@ -271,7 +272,7 @@ nav ul li a span.rotate {
 }
 .personal-title,.parents-title {
   flex: 100%;
-  background: linear-gradient(to top right, #99ccff 0%, #ffffff 100%);
+  
   text-transform: uppercase;
   font-weight: 900;
 }
@@ -330,8 +331,9 @@ input[type="email"]:focus {
 }
 .student-record-subcontainer-body button {
   background: #1a598a;
-  width: 50%;
-  padding: 5px;
+  width: 200px;
+  margin:10px;
+  padding: 10px;
   border-radius: 20px;
   border: none;
   text-transform: uppercase;
@@ -430,5 +432,12 @@ input[type="email"]:focus {
   width: 100%;
 }
 .parents-guardian{
-  width:100%;
+  table-layout: fixed;
+  width:98%;
+  word-wrap: break-word;
 }
+.parents-guardian td{
+  overflow: hidden;
+}
+
+
