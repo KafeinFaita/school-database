@@ -17,7 +17,11 @@
                         <div class="info-input">
                             <label for="department">Department</label>
                             <select name="department" id="department" required>
-                                <option value="opt1">Option 1</option>
+                                <option value="" disabled selected>Select Department</option>
+                                <% depts.forEach(dept => { %>
+                                    <% const isDeptSelected = dept.name === student.department.name ? 'selected' : null %> 
+                                    <option value='<%= dept._id %>' <%= isDeptSelected %>><%= dept.name %></option>
+                                <% }) %>
                             </select>
                         </div>
 

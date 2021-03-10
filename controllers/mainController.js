@@ -1,9 +1,11 @@
 const User = require('../models/User')
 const Section = require('../models/Section')
+const Dept = require('../models/Department')
 const StudentRecord = require('../models/StudentRecord')
 const Grade = require('../models/Grade')
 
 const bcrypt = require('bcrypt')
+const Department = require('../models/Department')
 
 //GET requests
 
@@ -20,7 +22,7 @@ module.exports.register_get = (req, res) => {
 }
 
 module.exports.studentRecord_get = async (req, res) => {
-    const record = await StudentRecord.find().populate('section grade').exec()
+    const record = await StudentRecord.find().populate('section grade department').exec()
     console.log(record)
     res.render('student-record', { record })
 }
@@ -30,6 +32,7 @@ module.exports.studentSubmit_get = async (req, res) => {
     try {
         const sections = await Section.find()
         const grades = await Grade.find()
+        const depts = await Dept.find()
 
         if (Object.keys(req.query).length !== 0) {
 
@@ -43,13 +46,13 @@ module.exports.studentSubmit_get = async (req, res) => {
 
             try {
                 const searchName = await StudentRecord.find(tempQuery)
-                res.render('student-record', { record: searchName, sections, grades })
+                res.render('student-record', { record: searchName, sections, grades, depts })
             } catch(err) {
                 console.log(err)
             }
             
         } else {
-            res.render('student-submit', { sections, record: {}, grades })
+            res.render('student-submit', { sections, record: {}, grades, depts })
         }
     } catch (error) {
         res.send(error)
@@ -59,11 +62,12 @@ module.exports.studentSubmit_get = async (req, res) => {
 module.exports.studentRecord_get_one = async (req, res) => {
     
     try {
-        const getStudent = await StudentRecord.findById(req.params.id).populate('section grade').exec()
+        const getStudent = await StudentRecord.findById(req.params.id).populate('section grade department').exec()
         const sections = await Section.find()
         const grades = await Grade.find()
+        const depts = await Dept.find()
       
-        res.render('student-record-one', { student: getStudent, url: req.url, sections, grades })
+        res.render('student-record-one', { student: getStudent, url: req.url, sections, grades, depts })
     } catch (err) {
         res.status(404).render('404')
     }

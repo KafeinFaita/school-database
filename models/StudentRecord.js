@@ -3,7 +3,8 @@ const Schema = mongoose.Schema
 
 const recordSchema = new Schema({
     department: {
-        type: String,
+        type: Schema.Types.ObjectId,
+        ref: 'department',
         required: true
     },
     lrn: {

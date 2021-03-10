@@ -12,6 +12,7 @@
                 <label for="search-lname">Last Name</label>
                 <input type="text" class="search-lname">
                 <button type="button" class="search">Search</button>
+                <button type="button" class="refresh">Refresh List</button>
             </div>
             
             <table border="1" class="student-records">
@@ -33,7 +34,7 @@
                         <td><%= record[x].lastname %></td>
                         <td><%= record[x].grade.title %></td>
                         <td><%= record[x].section.name %></td>
-                        <td><%= record[x].department %></td>
+                        <td><%= record[x].department.name %></td>
                         <td><%= record[x].lrn %></td>
                         <td>
                             <a href="/student-record/<%= record[x]._id %>">View Entry</a>
@@ -49,18 +50,22 @@
 
     <script>
         const search = document.querySelector('.search')
-        const data = document.querySelectorAll('.data-rows')
+        const refresh = document.querySelector('.refresh')
         const studentTable = document.querySelector('.student-records')
         const fname = document.querySelector('.search-fname')
         const lname = document.querySelector('.search-lname')
 
-
         const records = '<%- JSON.stringify(record) %>'
         const recordsData = JSON.parse(records)
+
+        refresh.addEventListener('click', () => {
+            location.reload()
+        })
 
         search.addEventListener('click', () => {
             const fnameRegex = new RegExp(`^${fname.value}$`,'i')
             const lnameRegex = new RegExp(`^${lname.value}$`,'i')
+            const data = document.querySelectorAll('.data-rows')
 
             // button does nothing if search box is empty
 
@@ -70,7 +75,10 @@
 
             //clears current displayed data to be replaced by search query results
 
-            data.forEach(tr => tr.remove())
+            data.forEach(tr => {
+                console.log('working')
+                tr.remove()
+            })
 
             //filters the records database based on the user query
 
@@ -88,6 +96,7 @@
             
             filteredRecords.forEach(rec => {
                 const tr = document.createElement('tr')
+                tr.classList.add("data-rows");
                 const info = [rec.firstname, rec.middlename, rec.lastname, rec.grade.title, rec.section.name, rec.department, rec.lrn, rec.dob]
 
                 for(let x = 0; x < 8; x++) {

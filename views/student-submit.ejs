@@ -10,7 +10,7 @@
             <h1 class="student-record-title">Student Record Management</h1>
 
             <div class="student-record-subcontainer">
-                <form class="student-record-subcontainer-side">
+                <!-- <form class="student-record-subcontainer-side">
 
                     <h2>Search for Student</h2>
 
@@ -29,7 +29,7 @@
                     <div class="search-results">
 
                     </div>
-                </form>
+                </form> -->
 
                 <form action="/student-record" method="POST" class="student-record-subcontainer-info">
 
@@ -38,7 +38,9 @@
                             <label for="department">Department</label><br>
                             <select name="department" id="department" required>
                                 <option value="" disabled selected>Select Department</option>
-                                <option value="opt1">Option 1</option>
+                                <% depts.forEach(dept => { %>
+                                    <option value='<%= dept._id %>'><%= dept.name %></option>
+                                <% }) %>
                             </select>
                         </div>
 
