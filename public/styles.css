@@ -269,7 +269,7 @@ nav ul li a span.rotate {
   border-radius: 7px;
   background-color: white;
 }
-.personal-title {
+.personal-title,.parents-title {
   flex: 100%;
   background: linear-gradient(to top right, #99ccff 0%, #ffffff 100%);
   text-transform: uppercase;
@@ -428,4 +428,7 @@ input[type="email"]:focus {
 
 .student-records {
   width: 100%;
+}
+.parents-guardian{
+  width:100%;
 }
