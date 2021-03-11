@@ -37,7 +37,7 @@
                         <div class="info-input">
                             <label for="department">Department</label><br>
                             <select name="department" id="department" required>
-                                <option value="" disabled selected>Select Department</option>
+                                <option value="" hidden disabled selected>Select Department</option>
                                 <% depts.forEach(dept => { %>
                                     <option value='<%= dept._id %>'><%= dept.name %></option>
                                 <% }) %>
@@ -52,7 +52,7 @@
                         <div class="info-input">
                             <label for="grade">Grade/Level</label><br>
                             <select name="grade" id="grade" required>
-                                <option value="" disabled selected>Select Grade/Level</option>
+                                <option value="" hidden disabled selected>Select Grade/Level</option>
                                 <% grades.forEach(grade => { %>
                                     <option value='<%= grade._id %>'><%= grade.title %></option>
                                 <% }) %>
@@ -62,7 +62,7 @@
                         <div class="info-input">
                             <label for="section">Section</label><br>
                             <select name="section" id="section" required>
-                                <option value="" disabled selected>Select Section</option>
+                                <option value=""  hidden disabled selected>Select Section</option>
                             </select>
                         </div>
 
