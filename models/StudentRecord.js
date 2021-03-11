@@ -1,16 +1,18 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+const requiredString = {
+    type: String,
+    required: true
+}
+
 const recordSchema = new Schema({
     department: {
         type: Schema.Types.ObjectId,
         ref: 'department',
         required: true
     },
-    lrn: {
-        type: Number,
-        required: true
-    },
+    lrn: requiredString,
     grade: {
         type: Schema.Types.ObjectId,
         ref: 'grade',
@@ -21,50 +23,18 @@ const recordSchema = new Schema({
         ref: 'section',
         required: true
     },
-    lastname: {
-        type: String,
-        required: true
-    },
-    dob: {
-        type: String,
-        required: true
-    },
-    firstname: {
-        type: String,
-        required: true
-    },
-    birthplace: {
-        type: String,
-        required: true
-    },
-    middlename: {
-        type: String,
-        required: true
-    },
-    religion: {
-        type: String,
-        required: true
-    },
-    address: {
-        type: String,
-        required: true
-    },
-    nationality: {
-        type: String,
-        required: true
-    },
-    gender: {
-        type: String,
-        required: true
-    },
-    mobile: {
-        type: Number,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true
-    }
+    lastname: requiredString,
+    dob: requiredString,
+    firstname: requiredString,
+    birthplace: requiredString,
+    middlename: requiredString,
+    religion: requiredString,
+    address: requiredString,
+    nationality: requiredString,
+    gender: requiredString,
+    mobile: requiredString,
+    email: requiredString,
 })
 
 module.exports = mongoose.model('student-record', recordSchema)
+

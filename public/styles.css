@@ -199,14 +199,14 @@ nav ul li a span.rotate {
 .student-record-parent {
   display: flex;
   width: 100vw;
-
-
+  height: 100%;
 }
 .student-record-form {
   display: flex;
   flex-direction: column;
   flex: 100%;
   background: linear-gradient(to top left, #0000ff 0%, #99ffcc 100%);
+  overflow: scroll;
 }
 
 .student-record-title {
@@ -270,9 +270,10 @@ nav ul li a span.rotate {
   border-radius: 7px;
   background-color: white;
 }
-.personal-title,.parents-title {
+.personal-title,
+.parents-title {
   flex: 100%;
-  
+
   text-transform: uppercase;
   font-weight: 900;
 }
@@ -332,7 +333,7 @@ input[type="email"]:focus {
 .student-record-subcontainer-body button {
   background: #1a598a;
   width: 200px;
-  margin:10px;
+  margin: 10px;
   padding: 10px;
   border-radius: 20px;
   border: none;
@@ -416,6 +417,7 @@ input[type="email"]:focus {
 .student-record-table-container {
   display: flex;
   background-color: #99ccff;
+  height: 100vh;
 }
 .student-record-table-subcontainer {
   display: flex;
@@ -431,13 +433,11 @@ input[type="email"]:focus {
 .student-records {
   width: 100%;
 }
-.parents-guardian{
+.parents-guardian {
   table-layout: fixed;
-  width:98%;
+  width: 98%;
   word-wrap: break-word;
 }
-.parents-guardian td{
+.parents-guardian td {
   overflow: hidden;
 }
-
-
