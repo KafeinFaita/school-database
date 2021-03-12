@@ -1,0 +1,42 @@
+<div class="sibling-table" style="flex:100%" >
+    <!-- <label for="sibling-rank">Sibling Rank</label><br>
+    <input type="text" name="sibling" placeholder="Enter Sibling Rank"> -->
+
+    <!-- <table>
+        <tr>
+            <th>Sibling/s Studying at CSI</th>
+            <th>Grade/Level</th>
+        </tr>
+        <tr>
+            <td><input style="width:100%;" type="text" name="sibling-one" placeholder="Search by name or LRN"></td>
+            <td><input style="width:100%;" type="number" name="siblingone-gradelevel" placeholder="Enter Grade/Level"></td>
+        </tr>
+        <tr>
+            <td><input style="width:100%;" type="text" name="sibling-two" placeholder="Enter Sibling Name"></td>
+            <td><input style="width:100%;" type="number" name="siblingtwo-gradelevel" placeholder="Enter Grade/Level"></td>
+        </tr>
+        <tr>
+            <td><input style="width:100%;" type="text" name="sibling-three" placeholder="Enter Sibling Name"></td>
+            <td><input style="width:100%;" type="number" name="siblingthree-gradelevel" placeholder="Enter Grade/Level"></td>
+        </tr>
+    </table> -->
+    <div>
+        <input type="radio" class="sibling-search-radio" name="sibling-search-radio" value="name">
+        <label for="yes">Search by name</label>
+        <input type="radio" class="sibling-search-radio" name="sibling-search-radio" value="lrn">
+        <label for="no">Search by LRN</label>
+
+    </div>
+    <input type="text" class='sibling-search-input' placeholder="Search by name or LRN"> 
+    <button type="button" class='sibling-search-button'>Search</button>
+
+    <table class="sibling-search-result" style="display: none">
+        <tr>
+            <td>First Name</td>
+            <td>Middle Name</td>
+            <td>Last Name</td>
+            <td>LRN</td>
+            <td>Action</td>
+        </tr>
+    </table>
+</div>

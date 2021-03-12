@@ -94,6 +94,16 @@ module.exports.teacher_get = (req, res) => {
     res.render('teacher')
 }
 
+module.exports.record_api_get = async (req,res) => {
+    const record = await StudentRecord.find().populate('department grade section').exec()
+    res.json(record)
+}
+
+module.exports.parent_api_get = async (req, res) => {
+    const parent = await Parent.find().populate('student').exec()
+    res.json(parent)
+}
+
 
 //POST requests
 
@@ -158,11 +168,11 @@ module.exports.student_record_post = async (req, res) => {
     console.log(record._id)
     
     try{
-        const saveRecord = await record.save((err, res) => {
+        const saveRecord = await record.save(async (err, res) => {
             if (err) {
                 console.log(err)
             } else {
-                parent.save()
+                const saveParent = await parent.save()
             }
         })
         

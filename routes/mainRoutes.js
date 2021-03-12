@@ -6,7 +6,8 @@ const {
     student_record_post, studentRecord_get_one, 
     studentRecord_put_one, studentRecord_delete_one,
     section_get, section_post, section_delete,
-    teacher_get, table_get } = require('../controllers/mainController') 
+    teacher_get, record_api_get,
+    parent_api_get } = require('../controllers/mainController') 
 
 const router = express.Router()
 
@@ -18,6 +19,8 @@ router.get('/student-record/submit', studentSubmit_get)
 router.get('/student-record/:id', studentRecord_get_one)
 router.get('/section', section_get)
 router.get('/teacher', teacher_get)
+router.get('/api/student-record', record_api_get)
+router.get('/api/parent', parent_api_get)
 router.get('*', errorPage_get)
 
 router.post('/login', login_post)

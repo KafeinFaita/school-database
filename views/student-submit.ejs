@@ -126,67 +126,22 @@
                             <input type="email" name="email" placeholder="Enter Email Address" required>
                         </div>
 
-                        <h2 class="parents-title" style="flex:100%">Parents/Guardian</h2>
-
-                        <div class="info-input" style="flex:100%">
-                            <table class="parents-guardian">
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Occupation</th>
-                                    <th>Office</th>
-                                    <th>Contact Number</th>
-                                    <th>Email Address</th>
-                                </tr>
-                                <tr>
-                                    <td><input style="width: 100%;" type="text" name="mothername" placeholder="Name of Mother" ></td>
-                                    <td><input style="width: 100%;" type="text" name="motheroccupation" placeholder="Occupation" ></td>
-                                    <td><input style="width: 100%;" type="text" name="motheroffice" placeholder="Office" ></td>
-                                    <td><input style="width: 100%;" type="number" name="mothercontact" placeholder="Contact Number" ></td>
-                                    <td><input style="width: 100%;" type="text" name="motheremail" placeholder="Email Address" ></td>
-                                </tr>
-                                <tr>
-                                    <td><input style="width: 100%;" type="text" name="fathername" placeholder="Name of Father" ></td>
-                                    <td><input style="width: 100%;" type="text" name="fatheroccupation" placeholder="Occupation" ></td>
-                                    <td><input style="width: 100%;" type="text" name="fatheroffice" placeholder="Office" ></td>
-                                    <td><input style="width: 100%;" type="number" name="fathercontact" placeholder="Contact Number" ></td>
-                                    <td><input style="width: 100%;" type="text" name="fatheremail" placeholder="Email Address" ></td>
-                                </tr>
-                                <tr>
-                                    <td><input style="width: 100%;" type="text" name="guardian" placeholder="Name of Guardian" ></td>
-                                    <td><input style="width: 100%;" type="text" name="guardianoccupation" placeholder="Occupation" ></td>
-                                    <td><input style="width: 100%;" type="text" name="guardianoffice" placeholder="Office" ></td>
-                                    <td><input style="width: 100%;" type="number" name="guardiancontact" placeholder="Contact Number" ></td>
-                                    <td><input style="width: 100%;" type="text" name="guardianemail" placeholder="Email Address" ></td>
-                                </tr>
-                            </table>
+                        <div class="radio-input" id="siblingyn">
+                            <p>Sibling/s studying at CSI?</p>
+                            <input type="radio" class="sibling-radio" name="siblingyn" value="yes">
+                            <label for="yes">Yes</label>
+                            <input type="radio" class="sibling-radio" name="siblingyn" value="no">
+                            <label for="no">No</label>
                         </div>
-                        <div class="info-input" style="flex:100%">
-                            <label for="sibling-rank">Sibling Rank</label><br>
-                            <input type="text" name="sibling" placeholder="Enter Sibling Rank">
 
-                            <table class="sibling-table">
-                                <tr>
-                                    <th>Sibling/s Studying at CSI</th>
-                                    <th>Grade/Level</th>
-                                </tr>
-                                <tr>
-                                    <td><input style="width:100%;" type="text" name="sibling-one" placeholder="Enter Sibling Name"></td>
-                                    <td><input style="width:100%;" type="number" name="siblingone-gradelevel" placeholder="Enter Grade/Level"></td>
-                                </tr>
-                                <tr>
-                                    <td><input style="width:100%;" type="text" name="sibling-two" placeholder="Enter Sibling Name"></td>
-                                    <td><input style="width:100%;" type="number" name="siblingtwo-gradelevel" placeholder="Enter Grade/Level"></td>
-                                </tr>
-                                <tr>
-                                    <td><input style="width:100%;" type="text" name="sibling-three" placeholder="Enter Sibling Name"></td>
-                                    <td><input style="width:100%;" type="number" name="siblingthree-gradelevel" placeholder="Enter Grade/Level"></td>
-                                </tr>
-                            </table>
-                        </div>
+                        <%- include('./partials/sibling-table.ejs') %>
+                        <%- include('./partials/parentsguardian.ejs') %>
+
                         <button>Submit</button>
 
-                    </div>
+                        <button type="button" class="test">Test</button>
 
+                    </div>
                     
                 </form>
 
@@ -204,6 +159,8 @@
         const results = '<%- JSON.stringify(record) %>'
         const resultsArray = JSON.parse(results)
 
+        
+
         sectionsArray.forEach(section => {
             const opt = document.createElement("option")
             opt.text = section.name
@@ -218,9 +175,13 @@
             a.appendChild(link)
             a.href = `/student-record/${result._id}`
             searchResults.appendChild(a)
-        })
-        }             
+            })
+        }
+        
     </script>
+
+
+    <script src="/scripts/siblingSearch.js"></script>
     
 </body>
 </html>
