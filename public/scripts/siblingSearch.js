@@ -6,6 +6,8 @@ const siblingSearchInput = document.querySelector('.sibling-search-input')
 const siblingSearchResult = document.querySelector('.sibling-search-result')
 const siblingsList = document.querySelector('.siblings-list')
 
+const motherName = document.querySelector('.mothername')
+
 siblingRadio.forEach(radio => {
     radio.addEventListener('change', (e) => {
         e.target.value === 'yes' ? siblingTable.style.display = 'inline-block' : siblingTable.style.display = 'none'    
@@ -55,14 +57,17 @@ siblingSearchButton.addEventListener('click', async () => {
                                 const res = await fetch('/api/parent')
                                 const parentData = await res.json()
                             
-                                const filteredParent = parentData.filter(parent => {
+                                const filteredParent = parentData.find(parent => {
                                     return parent.student.find(stud => {
-                                        console.log(stud._id, data._id)
                                         return stud._id === data._id
                                     })
-                                })
+                                }) 
+             
+                                // start here
 
-                                console.log(filteredParent)
+                                motherName.value = filteredParent.parentsguardian[0].name
+
+                                // eto border end
                             })
 
                             td.appendChild(btn)
