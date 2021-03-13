@@ -1,10 +1,10 @@
 const siblingTable = document.querySelector('.sibling-table')
 const siblingRadio = document.querySelectorAll('.sibling-radio')
-
 const siblingSearchRadio = document.querySelectorAll('.sibling-search-radio')
 const siblingSearchButton = document.querySelector('.sibling-search-button')
 const siblingSearchInput = document.querySelector('.sibling-search-input') 
 const siblingSearchResult = document.querySelector('.sibling-search-result')
+const siblingsList = document.querySelector('.siblings-list')
 
 siblingRadio.forEach(radio => {
     radio.addEventListener('change', (e) => {
@@ -15,6 +15,8 @@ siblingRadio.forEach(radio => {
 siblingSearchButton.addEventListener('click', async () => {
     const response = await fetch('/api/student-record')
     const data = await response.json()
+
+    siblingSearchResult.innerHTML = ''
 
     siblingSearchRadio.forEach(radio => {
         if (radio.checked) {
@@ -37,8 +39,33 @@ siblingSearchButton.addEventListener('click', async () => {
                             td.appendChild(text)
                             tr.appendChild(td)
                         } else {
-                            const actionText = document.createTextNode("Select")
-                            td.appendChild(actionText)
+                            const btn = document.createElement('button')
+                            btn.type = "button"
+                            btn.innerHTML = 'Select'
+
+                            btn.addEventListener('click', async () => {
+                                siblingSearchResult.style.display = "none"
+
+                                const p = document.createElement('p')
+                                const text = document.createTextNode(`${data.firstname} ${data.lastname} - ${data.lrn}`)
+                                p.appendChild(text)
+
+                                siblingsList.appendChild(p)
+
+                                const res = await fetch('/api/parent')
+                                const parentData = await res.json()
+                            
+                                const filteredParent = parentData.filter(parent => {
+                                    return parent.student.find(stud => {
+                                        console.log(stud._id, data._id)
+                                        return stud._id === data._id
+                                    })
+                                })
+
+                                console.log(filteredParent)
+                            })
+
+                            td.appendChild(btn)
                             tr.appendChild(td)
                         }     
                     }
