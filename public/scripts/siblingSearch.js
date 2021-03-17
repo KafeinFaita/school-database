@@ -18,7 +18,7 @@ const fatherOffice = document.querySelector('.fatheroffice')
 const fatherContact = document.querySelector('.fathercontact')
 const fatherEmail = document.querySelector('.fatheremail')
 
-const guardianName = document.querySelector('.guardianname')
+const guardianName = document.querySelector('.guardian')
 const guardianOccupation = document.querySelector('.guardianoccupation')
 const guardianOffice = document.querySelector('.guardianoffice')
 const guardianContact = document.querySelector('.guardiancontact')

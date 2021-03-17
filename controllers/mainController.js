@@ -140,39 +140,43 @@ module.exports.student_record_post = async (req, res) => {
         mobile: req.body.mobile,
         email: req.body.email
     })
-
-    const parent = new Parent({
-        parentsguardian: [{
-            name: req.body.mothername,
-            occupation: req.body.motheroccupation,
-            office: req.body.motheroffice,
-            contact: req.body.mothercontact,
-            email: req.body.motheremail
-        },
-        {
-            name: req.body.fathername,
-            occupation: req.body.fatheroccupation,
-            office: req.body.fatheroffice,
-            contact: req.body.fathercontact,
-            email: req.body.fatheremail
-        },
-        {
-            name: req.body.guardian,
-            occupation: req.body.guardianoccupation,
-            office: req.body.guardianoffice,
-            contact: req.body.guardiancontact,
-            email: req.body.guardianemail
-        }],
-        student: [record._id]
-    })
-    console.log(record._id)
     
     try{
         const saveRecord = await record.save(async (err, res) => {
             if (err) {
                 console.log(err)
             } else {
-                const saveParent = await parent.save()
+                if (req.body.siblingyn === "no") {
+                    const parent = new Parent({
+                        parentsguardian: [{
+                            name: req.body.mothername,
+                            occupation: req.body.motheroccupation,
+                            office: req.body.motheroffice,
+                            contact: req.body.mothercontact,
+                            email: req.body.motheremail
+                        },
+                        {
+                            name: req.body.fathername,
+                            occupation: req.body.fatheroccupation,
+                            office: req.body.fatheroffice,
+                            contact: req.body.fathercontact,
+                            email: req.body.fatheremail
+                        },
+                        {
+                            name: req.body.guardian,
+                            occupation: req.body.guardianoccupation,
+                            office: req.body.guardianoffice,
+                            contact: req.body.guardiancontact,
+                            email: req.body.guardianemail
+                        }],
+                        student: [record._id]
+                    })
+                    const saveParent = await parent.save()
+                }
+                else if (req.body.siblingyn === "yes") {
+
+                } 
+                
             }
         })
         
@@ -206,7 +210,7 @@ module.exports.studentRecord_put_one = async (req, res) => {
         console.log(req.body)
         const updateStudent = await StudentRecord.findByIdAndUpdate(req.params.id, req.body)
         console.log(req.params.id)
-        res.send("success")
+        res.redirect('/')
     } catch (err) {
         console.log(err)
     }
@@ -219,7 +223,7 @@ module.exports.studentRecord_delete_one = async (req, res) => {
 
     try {
         const deleteStudent = await StudentRecord.findByIdAndDelete(req.params.id)
-        res.send("deleted")
+        res.redirect('/')
     } catch (err) {
         console.log(err)
     }
