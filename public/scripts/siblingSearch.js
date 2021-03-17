@@ -7,6 +7,22 @@ const siblingSearchResult = document.querySelector('.sibling-search-result')
 const siblingsList = document.querySelector('.siblings-list')
 
 const motherName = document.querySelector('.mothername')
+const motherOccupation = document.querySelector('.motheroccupation')
+const motherOffice = document.querySelector('.motheroffice')
+const motherContact = document.querySelector('.mothercontact')
+const motherEmail = document.querySelector('.motheremail')
+
+const fatherName = document.querySelector('.fathername')
+const fatherOccupation = document.querySelector('.fatheroccupation')
+const fatherOffice = document.querySelector('.fatheroffice')
+const fatherContact = document.querySelector('.fathercontact')
+const fatherEmail = document.querySelector('.fatheremail')
+
+const guardianName = document.querySelector('.guardianname')
+const guardianOccupation = document.querySelector('.guardianoccupation')
+const guardianOffice = document.querySelector('.guardianoffice')
+const guardianContact = document.querySelector('.guardiancontact')
+const guardianEmail = document.querySelector('.guardianemail')
 
 siblingRadio.forEach(radio => {
     radio.addEventListener('change', (e) => {
@@ -66,7 +82,22 @@ siblingSearchButton.addEventListener('click', async () => {
                                 // start here
 
                                 motherName.value = filteredParent.parentsguardian[0].name
+                                motherOccupation.value = filteredParent.parentsguardian[0].occupation
+                                motherOffice.value = filteredParent.parentsguardian[0].office
+                                motherContact.value = filteredParent.parentsguardian[0].contact
+                                motherEmail.value = filteredParent.parentsguardian[0].email
 
+                                fatherName.value = filteredParent.parentsguardian[1].name
+                                fatherOccupation.value = filteredParent.parentsguardian[1].occupation
+                                fatherOffice.value = filteredParent.parentsguardian[1].office
+                                fatherContact.value = filteredParent.parentsguardian[1].contact
+                                fatherEmail.value = filteredParent.parentsguardian[1].email
+
+                                guardianName.value = filteredParent.parentsguardian[2].name
+                                guardianOccupation.value = filteredParent.parentsguardian[2].occupation
+                                guardianOffice.value = filteredParent.parentsguardian[2].office
+                                guardianContact.value = filteredParent.parentsguardian[2].contact
+                                guardianEmail.value = filteredParent.parentsguardian[2].email
                                 // eto border end
                             })
 
