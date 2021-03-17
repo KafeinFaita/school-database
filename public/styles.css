@@ -278,7 +278,8 @@ nav ul li a span.rotate {
 }
 .student-record-subcontainer-info {
   flex: 80%;
-  background: whitesmoke;
+  
+  
 }
 .student-record-subcontainer-body {
   display: flex;
@@ -415,11 +416,61 @@ select {
 /* record table */
 
 .student-record-table-container {
+  background:whitesmoke;
   display: flex;
-  background-color: #99ccff;
   height: 100vh;
 }
+.student-record-table-container h1{
+  background: #343434;
+  border-radius:5px;
+  color: white;
+  text-align: center;
+  font-family: "Varela Round", sans-serif;
+  text-transform: uppercase;
+  padding: 5px;
+  font-weight: 900;
+}
+.student-records a{
+  text-decoration: none;
+  color:black;
+}
+.student-record-table-container button{
+  background: #1a598a;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  color: whitesmoke;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 5px;
+  transition: 0.4s;
+}
+.student-record-table-container button:hover{
+  background:lightcyan;
+  color:black;
+}
+.student-record-table-container input{
+  width: 50%;
+  border: 0.5px solid rgba(0, 0, 0, 0.192);
+  border-radius: 5px;
+  font-size: 14px;
+  color: #1b1b1b;
+  padding: 9px;
+  margin: 5px;
+  transition: 0.4s;
+  outline: none;
+  background: #fff;
+}
+.search-div{
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin:5px;
+  padding:5px;
+}
 .student-record-table-subcontainer {
+  background: whitesmoke;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -430,12 +481,32 @@ select {
   overflow: scroll;
 }
 
-.student-records {
+.student-records::-webkit-scrollbar {
+  display:none;
+}
+.student-records{
   width: 100%;
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
+}
+.student-records td{
+  margin:5px;
+  padding:2px;
+}
+.student-records th{
+  background:#1b1b1b;
+  color:white;
+}
+.student-records tr:nth-child(even){
+  background: white;
+}
+.student-records tr:nth-child(odd){
+  background:gray;
+  color:white;
 }
 
 .parents-guardian td,
 .sibling-table td {
-  padding: 10px;
+  padding: 50px;
   overflow: hidden;
 }

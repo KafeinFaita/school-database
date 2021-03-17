@@ -5,7 +5,9 @@
     <div class="student-record-table-container">
 
         <%- include('./partials/navigation.ejs') %>
+        
         <div class="student-record-table-subcontainer">
+            <h1>Student Record Management</h1>
             <div class="search-div">
                 <label for="search-fname">First Name</label>
                 <input type="text" class="search-fname">
@@ -36,6 +38,7 @@
                         <td><%= record[x].section.name %></td>
                         <td><%= record[x].department.name %></td>
                         <td><%= record[x].lrn %></td>
+
                         <td>
                             <a href="/student-record/<%= record[x]._id %>">View Entry</a>
                         </td>
