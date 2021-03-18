@@ -215,7 +215,6 @@ nav ul li a span.rotate {
   padding: 5px;
   font-weight: 900;
 }
-
 .student-record-subcontainer {
   display: flex;
   height: 100%;
@@ -436,13 +435,15 @@ select {
 }
 .student-record-table-container button{
   background: #1a598a;
+  font-size:10px;
   border: none;
   border-radius: 30px;
+  padding: 10px;
+  margin:5px;
   cursor: pointer;
   color: whitesmoke;
   text-transform: uppercase;
   font-weight: 700;
-  padding: 5px;
   transition: 0.4s;
 }
 .student-record-table-container button:hover{
@@ -455,23 +456,33 @@ select {
   border-radius: 5px;
   font-size: 14px;
   color: #1b1b1b;
-  padding: 9px;
+  padding: 5px;
   margin: 5px;
   transition: 0.4s;
   outline: none;
   background: #fff;
 }
+.student-search-div{
+  display: flex;
+  
+}
 .search-div{
   display:flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap:nowrap;
   justify-content: center;
   margin:5px;
   padding:5px;
 }
+.student-record-table-form{
+  display:flex;
+  flex:1;
+  flex-direction: column;
+}
 .student-record-table-subcontainer {
   background: whitesmoke;
   display: flex;
+  flex:1;
   flex-direction: column;
   margin: auto;
   padding: auto;
@@ -496,13 +507,13 @@ select {
 .student-records th{
   background:#1b1b1b;
   color:white;
+  padding:3px;
 }
 .student-records tr:nth-child(even){
   background: white;
 }
 .student-records tr:nth-child(odd){
-  background:gray;
-  color:white;
+  background:rgb(207, 203, 203);
 }
 
 .parents-guardian td,
