@@ -239,7 +239,7 @@ nav ul li a span.rotate {
   outline: none;
   background: #fff;
 }
-.student-record-subcontainer-side button {
+.student-record-subcontainer-side button{
   background: #1a598a;
   border: none;
   border-radius: 30px;
@@ -277,8 +277,6 @@ nav ul li a span.rotate {
 }
 .student-record-subcontainer-info {
   flex: 80%;
-  
-  
 }
 .student-record-subcontainer-body {
   display: flex;
@@ -342,6 +340,24 @@ select {
   background: lightcyan;
   color: black;
 }
+.delete-student{
+  background: #1a598a;
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: whitesmoke;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.delete-student:hover{
+  background:lightcyan;
+  color:black;
+}
 /* For error page */
 
 .error-container {
@@ -403,6 +419,11 @@ select {
 .sibling-table {
   flex: 100%;
 }
+.parents-guardian td,
+.sibling-table td {
+  padding: 5px;
+  overflow: hidden;
+}
 /*  end for error page */
 
 /* section css */
@@ -429,10 +450,20 @@ select {
   padding: 5px;
   font-weight: 900;
 }
+
 .student-records a{
   text-decoration: none;
+  background:#1a598a;
+  padding:3px;
+  border-radius:6px;
+  color:white;
+  transition:0.4s;
+}
+.student-records a:hover{
+  background: lightcyan;
   color:black;
 }
+
 .student-record-table-container button{
   background: #1a598a;
   font-size:10px;
@@ -464,6 +495,7 @@ select {
 }
 .student-search-div{
   display: flex;
+  margin:10px;
   
 }
 .search-div{
@@ -481,6 +513,7 @@ select {
 }
 .student-record-table-subcontainer {
   background: whitesmoke;
+  margin:10px;
   display: flex;
   flex:1;
   flex-direction: column;
@@ -496,13 +529,15 @@ select {
   display:none;
 }
 .student-records{
-  width: 100%;
+  display:block;
+  height:70vh;
   -ms-overflow-style: none;  
   scrollbar-width: none; 
+  overflow:auto;
 }
 .student-records td{
   margin:5px;
-  padding:3px;
+  padding:10px;
 }
 .student-records th{
   background:#1b1b1b;
@@ -516,8 +551,4 @@ select {
   background:rgb(207, 203, 203);
 }
 
-.parents-guardian td,
-.sibling-table td {
-  padding: 50px;
-  overflow: hidden;
-}
+
