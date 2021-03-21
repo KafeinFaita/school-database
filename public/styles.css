@@ -558,6 +558,11 @@ select {
   background:whitesmoke;
   height:100%;
 }
+.inquiry-form-subcontainer{
+  display:flex;
+  border-radius:20px;
+  height:100%;
+}
 .inquiry-form-title{
   width:100%;
 }
@@ -569,13 +574,19 @@ select {
   text-transform: uppercase;
 }
 .inquiry-form{
+  text-align: center;
   margin:10px;  
+  width:50%;
+}
+.inquiry-form-side{
+  margin:10px;
+  width:50%;
 }
 .inquiry-input input[type="text"],
 .inquiry-input input[type="number"]{
   padding:10px;
   margin:10px;
-  width:50%;
+  width:90%;
   outline:none;
   border-radius:5px;
   border:none;
@@ -584,7 +595,7 @@ select {
 .inquiry-textarea{
   resize:none;
   margin:10px;
-  width: 50%;
+  width: 90%;
   height:100px;
   outline:none;
   border-radius: 5px;
@@ -605,7 +616,7 @@ select {
   font-weight: 700;
   transition: 0.4s;
 }
-.inqury-submit:hover{
+.inquiry-submit:hover{
   background: lightcyan;
   color:black;
 }
