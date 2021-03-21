@@ -7,27 +7,32 @@
         <%- include('./partials/navigation.ejs') %>
             <div class="inquiry-form-title">
                 <h1 class="inquiry-title">Inquiries</h1>
-                <form class="inquiry-form-subcontainer" action="" method="POST">
+                <form class="inquiry-form-subcontainer" action="/inquiry" method="POST">
+
                     <div class="inquiry-form">
                         <div class="inquiry-input">
                             <label for="inquirername">Inquirer Name</label><br>
-                            <input type="text" name="inquirer-name" placeholder="Enter your name">
+                            <input type="text" name="name" placeholder="Enter your name" required>
                         </div>
+
                         <div class="inquiry-input">
                             <label for="inquirercontact">Contact Number</label><br>
-                            <input type="number" name="inquirer-contact" placeholder="Enter your contact number">
+                            <input type="number" name="contact" placeholder="Enter your contact number" required>
                         </div>
+
                         <div class="inquiry-input">
                             <label for="inquireraddress">Address</label><br>
-                            <input type="text" name="inquirer-address" placeholder="Enter your Address">
+                            <input type="text" name="address" placeholder="Enter your address" required>
                         </div>
+
                         <div class="inquiry-input">
                             <label for="inquirerinquiry">Inquiry</label><br>
-                            <textarea class="inquiry-textarea" name="inquirer-inquiry" placeholder="What is your inquiry?"> 
+                            <textarea class="inquiry-textarea" name="inquiry" placeholder="What is your inquiry?" required> 
                             </textarea>
                         </div>
+
                         <div class="inquiry-input">
-                        <input class="inquiry-submit" type="submit" value="Submit">
+                            <input class="inquiry-submit" type="submit" value="Submit">
                         </div>
                     </div>
                 </form>
