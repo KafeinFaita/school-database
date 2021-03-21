@@ -3,6 +3,37 @@
 <%- include('./partials/head.ejs') %>
 
 <body>
-    <h1>INQUIRY!</h1>
+    <div class="inquiry-form-container">
+        <%- include('./partials/navigation.ejs') %>
+            <div class="inquiry-form-title">
+                <h1 class="inquiry-title">Inquiries</h1>
+                <form class="inquiry-form-subcontainer" action="" method="POST">
+                    <div class="inquiry-form">
+                        <div class="inquiry-input">
+                            <label for="inquirername">Inquirer Name</label><br>
+                            <input type="text" name="inquirer-name" placeholder="Enter your name">
+                        </div>
+                        <div class="inquiry-input">
+                            <label for="inquirercontact">Contact Number</label><br>
+                            <input type="number" name="inquirer-contact" placeholder="Enter your contact number">
+                        </div>
+                        <div class="inquiry-input">
+                            <label for="inquireraddress">Address</label><br>
+                            <input type="text" name="inquirer-address" placeholder="Enter your Address">
+                        </div>
+                        <div class="inquiry-input">
+                            <label for="inquirerinquiry">Inquiry</label><br>
+                            <textarea class="inquiry-textarea" name="inquirer-inquiry" placeholder="What is your inquiry?"> 
+                            </textarea>
+                        </div>
+                        <div class="inquiry-input">
+                        <input class="inquiry-submit" type="submit" value="Submit">
+                        </div>
+                    </div>
+                </form>
+            </div>
+    </div>
+    
+   
 </body>
 </html>
