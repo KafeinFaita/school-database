@@ -84,6 +84,10 @@ module.exports.section_get = async (req, res) => {
     }
 }
 
+module.exports.inquiry_get = (req, res) => {
+    res.render('inquiry')
+}
+
 module.exports.errorPage_get = (req, res) => {
     
     res.status(404).render('404')
@@ -140,13 +144,15 @@ module.exports.student_record_post = async (req, res) => {
         mobile: req.body.mobile,
         email: req.body.email
     })
+
+    console.log(req.body.siblingyn)
     
     try{
         const saveRecord = await record.save(async (err, res) => {
             if (err) {
                 console.log(err)
             } else {
-                if (req.body.siblingyn === "no") {
+                if (req.body.parentsyn === "yes") {
                     const parent = new Parent({
                         parentsguardian: [{
                             name: req.body.mothername,
@@ -173,9 +179,6 @@ module.exports.student_record_post = async (req, res) => {
                     })
                     const saveParent = await parent.save()
                 }
-                else if (req.body.siblingyn === "yes") {
-
-                } 
                 
             }
         })

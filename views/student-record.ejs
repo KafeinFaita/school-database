@@ -108,7 +108,7 @@
             filteredRecords.forEach(rec => {
                 const tr = document.createElement('tr')
                 tr.classList.add("data-rows");
-                const info = [rec.firstname, rec.middlename, rec.lastname, rec.grade.title, rec.section.name, rec.department, rec.lrn, rec.dob]
+                const info = [rec.firstname, rec.middlename, rec.lastname, rec.grade.title, rec.section.name, rec.department.name, rec.lrn, rec.dob]
 
                 for(let x = 0; x < 8; x++) {
                     const td = document.createElement('td')

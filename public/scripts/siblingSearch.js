@@ -24,9 +24,12 @@ const guardianOffice = document.querySelector('.guardianoffice')
 const guardianContact = document.querySelector('.guardiancontact')
 const guardianEmail = document.querySelector('.guardianemail')
 
+siblingTable.style.display = 'none'  
+
 siblingRadio.forEach(radio => {
     radio.addEventListener('change', (e) => {
-        e.target.value === 'yes' ? siblingTable.style.display = 'inline-block' : siblingTable.style.display = 'none'    
+        e.target.value === 'yes' ? siblingTable.style.display = 'inline-block' : siblingTable.style.display = 'none'  
+          
     })
 })
 
