@@ -556,7 +556,7 @@ select {
   display: flex;
   flex-direction: row;
   background:whitesmoke;
-  height:100vh;
+  height:100%;
 }
 .inquiry-form-title{
   width:100%;
@@ -574,7 +574,7 @@ select {
 .inquiry-input input[type="text"],
 .inquiry-input input[type="number"]{
   padding:10px;
-  margin:20px;
+  margin:10px;
   width:50%;
   outline:none;
   border-radius:5px;
@@ -582,7 +582,10 @@ select {
   border:1px solid rgb(102, 98, 98);
 }
 .inquiry-textarea{
-  margin:20px;
+  resize:none;
+  margin:10px;
+  width: 50%;
+  height:100px;
   outline:none;
   border-radius: 5px;
   border-style:none;
