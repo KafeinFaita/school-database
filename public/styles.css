@@ -561,7 +561,6 @@ select {
 .inquiry-form-subcontainer{
   display:flex;
   border-radius:20px;
-  height:100%;
 }
 .inquiry-form-title{
   width:100%;
@@ -579,8 +578,13 @@ select {
   width:50%;
 }
 .inquiry-form-side{
+  text-align: center;
   margin:10px;
   width:50%;
+}
+.mail-img{
+  text-align: center;
+  width:400px;
 }
 .inquiry-input input[type="text"],
 .inquiry-input input[type="number"]{

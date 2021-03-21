@@ -4,6 +4,7 @@ const Dept = require('../models/Department')
 const StudentRecord = require('../models/StudentRecord')
 const Grade = require('../models/Grade')
 const Parent = require('../models/ParentGuardian')
+const Inq = require('../models/Inq')
 
 const bcrypt = require('bcrypt')
 const Department = require('../models/Department')
@@ -193,7 +194,6 @@ module.exports.student_record_post = async (req, res) => {
 
 module.exports.section_post = async (req, res) => {   
 
-    console.log(req.body)
     const section = new Section({ name: req.body.sectionName})
 
     try {
@@ -203,6 +203,18 @@ module.exports.section_post = async (req, res) => {
         res.send('error')
     }
     
+}
+
+module.exports.inq_post = async (req, res) => {
+
+    const inquiry = new Inq(req.body)
+
+    try {
+        const saveInq = await inquiry.save()
+        res.redirect('/')
+    } catch (error) {
+        res.send('error')
+    }
 }
 
 //PUT request
