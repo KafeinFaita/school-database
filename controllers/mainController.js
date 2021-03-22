@@ -89,6 +89,10 @@ module.exports.inquiry_get = (req, res) => {
     res.render('inquiry')
 }
 
+module.exports.parents_get = (req, res) => {
+    res.render('parents')
+}
+
 module.exports.errorPage_get = (req, res) => {
     
     res.status(404).render('404')
