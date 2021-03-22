@@ -8,7 +8,7 @@
   font-family: "Varela Round", sans-serif;
 }
 .sidebar {
-  width: 25%;
+  width: 20%;
   height:100vh;
   background: #1b1b1b;
   overflow-y: scroll;
@@ -55,7 +55,7 @@ nav ul li a {
   border-left: 3px solid transparent;
 }
 nav i {
-  padding-right: 5px;
+  padding-right: 3px;
 }
 nav ul li.active a {
   color: lightblue;
@@ -99,7 +99,7 @@ nav ul li li a:hover {
 nav ul li a span {
   position: absolute;
   top: 30%;
-  right: 3;
+  right: 10px;
   transform: translate(-50%);
   font-size: 22px;
   transition: transform 0.4s;
@@ -439,7 +439,7 @@ select {
 .student-record-table-container {
   background:whitesmoke;
   display: flex;
-  height: 100vh;
+  height: 100%;
 }
 .student-record-table-container h1{
   background: #343434;
@@ -525,7 +525,6 @@ select {
   border-collapse: collapse;
   overflow: scroll;
 }
-
 .student-records::-webkit-scrollbar {
   display:none;
 }
@@ -560,10 +559,11 @@ select {
 }
 .inquiry-form-subcontainer{
   display:flex;
+  background:#e6e6e6;
   border-radius:20px;
 }
 .inquiry-form-title{
-  width:100%;
+  width:80%;
 }
 .inquiry-title{
   text-align: center;
@@ -624,4 +624,30 @@ select {
   background: lightcyan;
   color:black;
 }
-
+/* parents-tables */
+.parents-form-container{
+  background:whitesmoke;
+  display:flex;
+  flex-direction:row;
+}
+.parents-table-container{
+  justify-content: center;
+  width:80%;
+}
+.parents-title{
+  margin:0;
+  text-align:center;
+}
+.parents-table{
+  width:95%;
+  margin:5px;
+  border-collapse: collapse;
+  overflow:scroll;
+}
+.parents-table th{
+  padding:5px;
+}
+.parents-table td{
+  text-align:center;
+  padding:10px;
+}
