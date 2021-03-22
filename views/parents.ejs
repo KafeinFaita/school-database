@@ -4,13 +4,29 @@
     <%- include('./partials/head.ejs') %>
 </head>
 <body>
-    <table>
-        <tr>    
-            <th>Mother Name</th>
-            <th>Father Name</th>
-            <th>Guardian</th>
-        </tr>
-        <th></th>
-    </table>
+    <div class="parents-form-container">
+        <%- include('./partials/navigation.ejs') %>
+            <div class="parents-table-container">
+            <h1 class="parents-title">Parents</h1>  
+                <div class="parents-table-subcontainer">
+                    <div class="parents-main-table">
+                       <center> 
+                        <table class="parents-table" border="1">
+                            <tr>
+                                <th>Mother Name</th>
+                                <th>Father Name</th>
+                                <th>Guardian</th>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>Name</td>
+                                <td>Name</td>
+                            </tr>
+                        </table>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
