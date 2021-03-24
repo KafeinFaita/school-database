@@ -2,25 +2,38 @@
 <%- include('./partials/head.ejs') %>
 
 <body>
-    <div>
-        <h3>Students</h3>
-        <div class="counter" data-target="<%= studentsNum %>">0</div>
+    <div class="dashboard-main-container">
+        <%- include('./partials/navigation.ejs') %>
+        <div class="dashboard-subcontainer">
+            <h1 class="dashboard-title">School Management Dashboard</h1>
+            <div class="dashboard-titles">
+                    <div class="names1">
+                        <h3><i class="fas fa-user-graduate"></i>Students</h3>
+                        <div class="counter" data-target="<%= studentsNum %>">0</div>
+                    </div>
+                    <div class="names2">
+                        <h3><i class="fas fa-user-tie"></i>Parents / Guardians</h3>
+                        <div class="counter" data-target="<%= parentsNum %>">0</div>
+                    </div>
+                    <div class="names3">
+                        <h3><i class='fas fa-book-reader'></i>Sections</h3>
+                        <div class="counter" data-target="<%= sectionsNum %>">0</div>
+                    </div>
+                    <div class="names4">
+                        <h3><i class='fas fa-book-reader'></i>Sections</h3>
+                        <div class="counter" data-target="<%= sectionsNum %>">0</div>
+                    </div>
+            </div>
+            <div class="dashboard-chart">   
+                <div class="doughnut">
+                    <canvas id="doughnut-chart" class="chart"></canvas>
+                </div>
+                <div class="bar">      
+                    <canvas id="bar-chart" class="chart"></canvas>
+                </div>  
+            </div> 
+        </div>
     </div>
-
-    <div>
-        <h3>Parents / Guardians</h3>
-        <div class="counter" data-target="<%= parentsNum %>">0</div>
-    </div>
-
-    <div>
-        <h3>Sections</h3>
-        <div class="counter" data-target="<%= sectionsNum %>">0</div>
-    </div>
-
-    <canvas id="doughnut-chart" width="600" height="300"></canvas>
-
-    <canvas id="bar-chart" width="600" height="300"></canvas>
-
     <script src="scripts/charts.js"></script>
     <script src="/scripts/dashboard.js"></script>
 </body>

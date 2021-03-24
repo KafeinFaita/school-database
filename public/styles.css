@@ -655,3 +655,78 @@ select {
   height: 1000px;
   width: 1000px;
 }
+/* star dashboard */
+.dashboard-main-container{
+  display:flex;
+  flex-direction: row;
+  background:#ccc9c98c;
+}
+.dashboard-subcontainer{
+  width:80%;
+  height:100vh;
+}
+.dashboard-title{
+  margin:10px;
+  color:white;
+  background:#1b1b1b;
+}
+.dashboard-titles{
+  display:flex;
+  flex-direction: row;
+  text-align:center;
+  justify-content: center;
+}
+.dashboard-titles .names1,
+.dashboard-titles .names2,
+.dashboard-titles .names3,
+.dashboard-titles .names4{
+  color:white;
+  width:100%;
+  padding:10px;
+  margin:10px;
+  border-style:none;
+  border-radius:10px;
+  background:lightblue;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight:900;
+}
+.dashboard-titles .names1{
+  background:#017DEF;
+}
+.dashboard-titles .names2{
+  background:#73B748;
+}
+.dashboard-titles .names3{
+  background:#9D4A9C;
+}
+.dashboard-titles .names4{
+  background:#F27B53;
+}
+.dashboard-titles .names1 i,
+.dashboard-titles .names2 i,
+.dashboard-titles .names3 i,
+.dashboard-titles .names4 i{
+  padding:10px;
+}
+.counter{
+  font-size:x-large;
+}
+.dashboard-chart{
+  display:flex;
+  justify-content: center;
+  height:60%;
+}
+.dashboard-chart .doughnut,
+.dashboard-chart .bar{
+  background:#FFFFFF;
+  text-align: center;
+  justify-content: center;
+  width:50vw;
+  border-radius:10px;
+  margin:10px;
+  padding:10px;
+}
+.chart{
+  width:100%;
+}
