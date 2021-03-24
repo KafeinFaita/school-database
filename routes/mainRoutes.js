@@ -8,11 +8,13 @@ const {
     section_get, section_post, section_delete,
     teacher_get, record_api_get,
     parent_api_get, inquiry_get,
-    inq_post, parents_get } = require('../controllers/mainController') 
+    inq_post, parents_get,
+    dashboard_get } = require('../controllers/mainController') 
 
 const router = express.Router()
 
 router.get('/', index_get);
+router.get('/dashboard', dashboard_get)
 router.get('/register', register_get)
 router.get('/login', login_get);
 router.get('/student-record', studentRecord_get)

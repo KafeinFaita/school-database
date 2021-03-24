@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<%- include('./partials/head.ejs') %>
+
+<body>
+    <div>
+        <h3>Students</h3>
+        <div class="counter" data-target="<%= studentsNum %>">0</div>
+    </div>
+
+    <div>
+        <h3>Parents / Guardians</h3>
+        <div class="counter" data-target="<%= parentsNum %>">0</div>
+    </div>
+
+    <div>
+        <h3>Sections</h3>
+        <div class="counter" data-target="<%= sectionsNum %>">0</div>
+    </div>
+
+    <canvas id="doughnut-chart" width="600" height="300"></canvas>
+
+    <canvas id="bar-chart" width="600" height="300"></canvas>
+
+    <script src="scripts/charts.js"></script>
+    <script src="/scripts/dashboard.js"></script>
+</body>
+</html>

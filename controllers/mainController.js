@@ -15,6 +15,20 @@ module.exports.index_get = (req, res) => {
     res.redirect('/student-record')
 }
 
+module.exports.dashboard_get = async (req, res) => {
+
+    try {
+        const students = await StudentRecord.find()
+        const parents = await Parent.find()
+        const sections = await Section.find()
+
+        res.render('dashboard', { studentsNum: students.length, parentsNum: parents.length, sectionsNum: sections.length  })
+    } catch (error) {
+        res.send(error)
+    }
+    
+}
+
 module.exports.login_get = (req, res) => {
     res.render('login')
 }
@@ -89,8 +103,23 @@ module.exports.inquiry_get = (req, res) => {
     res.render('inquiry')
 }
 
-module.exports.parents_get = (req, res) => {
-    res.render('parents')
+module.exports.parents_get = async (req, res) => {
+
+    const parent = await Parent.find().populate('student').exec()
+
+    const studentNames = parent.map(par => {
+        const names = par.student.map(stud => `${stud.firstname} ${stud.lastname}`)
+        return names
+    })
+
+    const parentNames = parent.map(par => {
+        const names = par.parentsguardian.map(pg => pg.name)
+        return names
+    })
+
+    const id = parent.map(par => par._id)
+
+    res.render('parents', { studentNames, parentNames })
 }
 
 module.exports.errorPage_get = (req, res) => {
