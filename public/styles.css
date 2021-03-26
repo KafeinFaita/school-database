@@ -663,12 +663,18 @@ select {
 }
 .dashboard-subcontainer{
   width:80%;
-  height:100vh;
+  /* height:100vh; */
+  display: flex;
+  flex-direction: column;
+  
 }
 .dashboard-title{
-  margin:10px;
+  margin:0;
+  padding:10px;
   color:white;
   background:#1b1b1b;
+  text-align:center;
+  text-transform: uppercase;
 }
 .dashboard-titles{
   display:flex;
@@ -681,7 +687,7 @@ select {
 .dashboard-titles .names3,
 .dashboard-titles .names4{
   color:white;
-  width:100%;
+  width:50%;
   padding:10px;
   margin:10px;
   border-style:none;
@@ -714,19 +720,18 @@ select {
 }
 .dashboard-chart{
   display:flex;
-  justify-content: center;
-  height:60%;
+  justify-content: space-around;
+  height: 100%;
 }
-.dashboard-chart .doughnut,
-.dashboard-chart .bar{
-  background:#FFFFFF;
-  text-align: center;
-  justify-content: center;
-  width:50vw;
+.chart-container{
   border-radius:10px;
-  margin:10px;
-  padding:10px;
+  width:500px;
 }
 .chart{
-  width:100%;
+  background:whitesmoke;
+  width:500px;
+  padding:10px;
+  border-radius:10px;
 }
+
+
