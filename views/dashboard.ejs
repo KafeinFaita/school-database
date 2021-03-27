@@ -2,6 +2,7 @@
 <%- include('./partials/head.ejs') %>
 
 <body>
+    
     <div class="dashboard-main-container">
         <%- include('./partials/navigation.ejs') %>
         <div class="dashboard-subcontainer">
@@ -25,10 +26,10 @@
                     </div>
             </div>
             <div class="dashboard-chart">   
-                <div class="doughnut">
+                <div class="chart-container">
                     <canvas id="doughnut-chart" class="chart"></canvas>
                 </div>
-                <div class="bar">      
+                <div class="chart-container">
                     <canvas id="bar-chart" class="chart"></canvas>
                 </div>  
             </div> 
