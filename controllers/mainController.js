@@ -117,9 +117,9 @@ module.exports.parents_get = async (req, res) => {
         return names
     })
 
-    const id = parent.map(par => par._id)
+    const idNum = parent.map(par => par._id)
 
-    res.render('parents', { studentNames, parentNames })
+    res.render('parents', { studentNames, parentNames, idNum })
 }
 
 module.exports.errorPage_get = (req, res) => {

@@ -9,19 +9,28 @@
                 <div class="parents-table-subcontainer">
                     <div class="parents-main-table">
                        <center> 
-                        <table class="parents-table" border="1">
-                            <tr>
-                                <th>Mother Name</th>
-                                <th>Father Name</th>
-                                <th>Guardian</th>
-                            </tr>
-                            <tr>
-                                <td>Name</td>
-                                <td>Name</td>
-                                <td>Name</td>
-                            </tr>
-                        </table>
-                    </center>
+                            <table class="parents-table" border="1">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Mother Name</th>
+                                    <th>Father Name</th>
+                                    <th>Guardian</th>
+                                    <th>Related Students</th>
+                                </tr>
+                                
+                                <% for(let x = 0; x < idNum.length; x++) { %>
+                                    <tr>
+                                        <th><%= idNum[x] %></th>
+                                        <% parentNames[x].forEach(parent => { %>
+                                            <th><%= parent %></th>
+                                        <% }) %>
+                                        <th><%= studentNames[x] %></th>
+                                    </tr>
+                                    
+                                <% } %>
+                                
+                            </table>
+                        </center>
                 </div>
             </div>
         </div>

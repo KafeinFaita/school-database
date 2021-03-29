@@ -14,6 +14,8 @@
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  position: sticky;
+  top: 0;
 }
 .sidebar::-webkit-scrollbar {
   display: none;
@@ -661,9 +663,13 @@ select {
   flex-direction: row;
   background: #ccc9c98c;
 }
+
+.dashboard-main-content {
+  margin: 0 30px 0 30px;
+}
 .dashboard-subcontainer {
   width: 80%;
-  height:100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -687,7 +693,7 @@ select {
 .dashboard-titles .names4 {
   color: white;
   width: 50%;
-  padding: 10px;
+  padding: 40px 0;
   margin: 10px;
   border-style: none;
   border-radius: 10px;
@@ -719,12 +725,10 @@ select {
 }
 .dashboard-chart {
   display: flex;
-  justify-content: space-around;
   overflow: hidden;
 }
 .chart-container {
   border-radius: 10px;
-
   display: flex;
   justify-content: center;
   flex: 1;
@@ -732,119 +736,127 @@ select {
 .chart {
   background: whitesmoke;
   padding: 10px;
-  margin:5px;
+  margin: 5px;
   border-radius: 10px;
-  border:1px solid rgb(207, 204, 204);
-  width: 500px;
-  overflow:hidden;
+  border: 1px solid rgb(207, 204, 204);
+  width: 100%;
+  overflow: hidden;
 }
-.empty-container{
+
+#line-chart {
+  width: auto;
+  height: 100%;
+  padding: 0;
+  margin: auto;
+  display: block;
+}
+.empty-container {
   background: whitesmoke;
-  height:50vh;
+  height: 50vh;
   border-radius: 10px;
-  border:1px solid rgb(207, 204, 204);
-  overflow:hidden;
+  border: 1px solid rgb(207, 204, 204);
+  overflow: hidden;
+  text-align: center;
 }
-.four-containers{
-  display:flex;
+.four-containers {
+  display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  height:100vh;
-  border-radius:10px;
-  border:1px solid rgb(207, 204, 204);
+  justify-content: space-between;
+  height: 500px;
+  border-radius: 10px;
+  border: 1px solid rgb(207, 204, 204);
 }
 .container-one,
 .container-two,
-.container-three{
-  background:whitesmoke;
-  border-radius:10px;
-  border:1px solid rgb(207, 204, 204);
-  width:20%;
-}
-.container-four{
- display:flex;
- flex-direction: column;
- justify-content: space-around; 
- width:400px;
-
-}
-.social-media-one{
-  color:white;
-  text-transform: uppercase;
-  display:flex;
-  justify-content: space-around;
-  padding:10%;
-  margin:10px;
-  background:#3B5998;
-  width:95%;
-  height:20%;
+.container-three {
+  background: whitesmoke;
   border-radius: 10px;
-  border:1px solid rgb(207, 204, 204);
-  overflow:hidden;
+  border: 1px solid rgb(207, 204, 204);
+  width: 20%;
 }
-.social-media-two{
-  color:white;
-  text-transform: uppercase;
-  display:flex;
+.container-four {
+  display: flex;
+  flex-direction: column;
   justify-content: space-around;
-  padding:10%;
-  margin:10px;
-  background:#55ACEE;
-  width:95%;
-  height:20%;
-  border-radius: 10px;
-  border:1px solid rgb(207, 204, 204);
-  overflow:hidden;
+  width: 400px;
 }
-.social-media-three{
-  color:white;
+.social-media-one {
+  color: white;
   text-transform: uppercase;
-  display:flex;
+  display: flex;
   justify-content: space-around;
-  padding:10%;
-  margin:10px;
-  background:#BB0000;
-  width:95%;
-  height:20%;
+  padding: 10%;
+  margin: 10px;
+  background: #3b5998;
+  width: 95%;
+  height: 20%;
   border-radius: 10px;
-  border:1px solid rgb(207, 204, 204);
-  overflow:hidden;
+  border: 1px solid rgb(207, 204, 204);
+  overflow: hidden;
 }
-.social-media-four{
-  color:white;
+.social-media-two {
+  color: white;
   text-transform: uppercase;
-  display:flex;
+  display: flex;
   justify-content: space-around;
-  padding:10%;
-  margin:10px;
-  background:#DD4B39;
-  width:95%;
-  height:20%;
+  padding: 10%;
+  margin: 10px;
+  background: #55acee;
+  width: 95%;
+  height: 20%;
   border-radius: 10px;
-  border:1px solid rgb(207, 204, 204);
-  overflow:hidden;
+  border: 1px solid rgb(207, 204, 204);
+  overflow: hidden;
+}
+.social-media-three {
+  color: white;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-around;
+  padding: 10%;
+  margin: 10px;
+  background: #bb0000;
+  width: 95%;
+  height: 20%;
+  border-radius: 10px;
+  border: 1px solid rgb(207, 204, 204);
+  overflow: hidden;
+}
+.social-media-four {
+  color: white;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-around;
+  padding: 10%;
+  margin: 10px;
+  background: #dd4b39;
+  width: 95%;
+  height: 20%;
+  border-radius: 10px;
+  border: 1px solid rgb(207, 204, 204);
+  overflow: hidden;
 }
 .container-four .fa {
-  padding:30px;
-  border-radius:10px;
-  border-left:0;
+  padding: 30px;
+  border-radius: 10px;
+  border-left: 0;
   font-size: 20px;
-  width:0;
+  width: 0;
   align-self: center;
   text-decoration: none;
 }
-.container-four span{
+.container-four span {
   align-self: center;
 }
 .fa:hover {
   opacity: 0.7;
 }
 .fa-facebook {
-  background: #3B5998;
+  background: #3b5998;
   color: white;
 }
 .fa-twitter {
-  background: #55ACEE;
+  background: #55acee;
   color: white;
 }
 .fa-google {
@@ -855,35 +867,35 @@ select {
   background: #bb0000;
   color: white;
 }
-.facebook-btn{
-  text-decoration:none;
+.facebook-btn {
+  text-decoration: none;
   color: blue;
-  background:white;
+  background: white;
   align-self: center;
-  padding:10px;
-  border-radius:10px;
+  padding: 10px;
+  border-radius: 10px;
 }
-.twitter-btn{
-  text-decoration:none;
-  color:skyblue;
-  background:white;
-  align-self: center;
-  padding:10px;
-  border-radius:10px;
-}
-.google-btn{
+.twitter-btn {
   text-decoration: none;
-  color:rgb(180, 9, 9);
-  background:white;
+  color: skyblue;
+  background: white;
   align-self: center;
-  padding:10px;
-  border-radius:10px;
+  padding: 10px;
+  border-radius: 10px;
 }
-.youtube-btn{
+.google-btn {
   text-decoration: none;
-  color:red;
-  background:white;
+  color: rgb(180, 9, 9);
+  background: white;
   align-self: center;
-  padding:10px;
-  border-radius:10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.youtube-btn {
+  text-decoration: none;
+  color: red;
+  background: white;
+  align-self: center;
+  padding: 10px;
+  border-radius: 10px;
 }
