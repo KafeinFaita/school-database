@@ -663,7 +663,7 @@ select {
 }
 .dashboard-subcontainer {
   width: 80%;
-  /* height:100vh; */
+  height:100%;
   display: flex;
   flex-direction: column;
 }
@@ -720,6 +720,7 @@ select {
 .dashboard-chart {
   display: flex;
   justify-content: space-around;
+  overflow: hidden;
 }
 .chart-container {
   border-radius: 10px;
@@ -731,6 +732,158 @@ select {
 .chart {
   background: whitesmoke;
   padding: 10px;
+  margin:5px;
   border-radius: 10px;
-  width: 90%;
+  border:1px solid rgb(207, 204, 204);
+  width: 500px;
+  overflow:hidden;
+}
+.empty-container{
+  background: whitesmoke;
+  height:50vh;
+  border-radius: 10px;
+  border:1px solid rgb(207, 204, 204);
+  overflow:hidden;
+}
+.four-containers{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height:100vh;
+  border-radius:10px;
+  border:1px solid rgb(207, 204, 204);
+}
+.container-one,
+.container-two,
+.container-three{
+  background:whitesmoke;
+  border-radius:10px;
+  border:1px solid rgb(207, 204, 204);
+  width:20%;
+}
+.container-four{
+ display:flex;
+ flex-direction: column;
+ justify-content: space-around; 
+ width:400px;
+
+}
+.social-media-one{
+  color:white;
+  text-transform: uppercase;
+  display:flex;
+  justify-content: space-around;
+  padding:10%;
+  margin:10px;
+  background:#3B5998;
+  width:95%;
+  height:20%;
+  border-radius: 10px;
+  border:1px solid rgb(207, 204, 204);
+  overflow:hidden;
+}
+.social-media-two{
+  color:white;
+  text-transform: uppercase;
+  display:flex;
+  justify-content: space-around;
+  padding:10%;
+  margin:10px;
+  background:#55ACEE;
+  width:95%;
+  height:20%;
+  border-radius: 10px;
+  border:1px solid rgb(207, 204, 204);
+  overflow:hidden;
+}
+.social-media-three{
+  color:white;
+  text-transform: uppercase;
+  display:flex;
+  justify-content: space-around;
+  padding:10%;
+  margin:10px;
+  background:#BB0000;
+  width:95%;
+  height:20%;
+  border-radius: 10px;
+  border:1px solid rgb(207, 204, 204);
+  overflow:hidden;
+}
+.social-media-four{
+  color:white;
+  text-transform: uppercase;
+  display:flex;
+  justify-content: space-around;
+  padding:10%;
+  margin:10px;
+  background:#DD4B39;
+  width:95%;
+  height:20%;
+  border-radius: 10px;
+  border:1px solid rgb(207, 204, 204);
+  overflow:hidden;
+}
+.container-four .fa {
+  padding:30px;
+  border-radius:10px;
+  border-left:0;
+  font-size: 20px;
+  width:0;
+  align-self: center;
+  text-decoration: none;
+}
+.container-four span{
+  align-self: center;
+}
+.fa:hover {
+  opacity: 0.7;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+.facebook-btn{
+  text-decoration:none;
+  color: blue;
+  background:white;
+  align-self: center;
+  padding:10px;
+  border-radius:10px;
+}
+.twitter-btn{
+  text-decoration:none;
+  color:skyblue;
+  background:white;
+  align-self: center;
+  padding:10px;
+  border-radius:10px;
+}
+.google-btn{
+  text-decoration: none;
+  color:rgb(180, 9, 9);
+  background:white;
+  align-self: center;
+  padding:10px;
+  border-radius:10px;
+}
+.youtube-btn{
+  text-decoration: none;
+  color:red;
+  background:white;
+  align-self: center;
+  padding:10px;
+  border-radius:10px;
 }
