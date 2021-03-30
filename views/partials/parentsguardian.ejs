@@ -1,15 +1,6 @@
 <div class="info-input" style="flex:100%">
     <h2 class="parents-title" style="flex:100%">Parents/Guardian</h2>
 
-    <div class="radio-input" id="parentsyn">
-        <p>New Parents?</p>
-        <input type="radio" class="parents-radio" name="parentsyn" value="yes" checked>
-        <label for="yes">Yes</label>
-        <input type="radio" class="parents-radio" name="parentsyn" value="no" >
-        <label for="no">No</label>
-    </div>
-
-
     <table class="parents-guardian">
         <tr>
             <th>Name</th>
@@ -18,26 +9,26 @@
             <th>Contact Number</th>
             <th>Email Address</th>
         </tr>
-        <tr>
-            <td><input style="width: 100%;" type="text" class="mothername" name="mothername" placeholder="Name of Mother" ></td>
-            <td><input style="width: 100%;" type="text" class="motheroccupation" name="motheroccupation" placeholder="Occupation" ></td>
-            <td><input style="width: 100%;" type="text" class="motheroffice" name="motheroffice" placeholder="Office" ></td>
-            <td><input style="width: 100%;" type="number" class="mothercontact" name="mothercontact" placeholder="Contact Number" ></td>
-            <td><input style="width: 100%;" type="text" class="motheremail" name="motheremail" placeholder="Email Address" ></td>
+        <tr class="mother-info">
+            <td><input style="width: 100%;" type="text" class="mothername" name="mothername" placeholder="Name of Mother" value="<%= locals.parents ? parents[0].name : null %>"></td>
+            <td><input style="width: 100%;" type="text" class="motheroccupation" name="motheroccupation" placeholder="Occupation" value="<%= locals.parents ? parents[0].occupation : null %>"></td>
+            <td><input style="width: 100%;" type="text" class="motheroffice" name="motheroffice" placeholder="Office" value="<%= locals.parents ? parents[0].office : null %>"></td>
+            <td><input style="width: 100%;" type="number" class="mothercontact" name="mothercontact" placeholder="Contact Number" value="<%= locals.parents ? parents[0].contact : null %>"></td>
+            <td><input style="width: 100%;" type="text" class="motheremail" name="motheremail" placeholder="Email Address" value="<%= locals.parents ? parents[0].email : null %>"></td>
         </tr>
-        <tr>
-            <td><input style="width: 100%;" type="text" class="fathername" name="fathername" placeholder="Name of Father" ></td>
-            <td><input style="width: 100%;" type="text" class="fatheroccupation" name="fatheroccupation" placeholder="Occupation" ></td>
-            <td><input style="width: 100%;" type="text" class="fatheroffice" name="fatheroffice" placeholder="Office" ></td>
-            <td><input style="width: 100%;" type="number" class="fathercontact" name="fathercontact" placeholder="Contact Number" ></td>
-            <td><input style="width: 100%;" type="text" class="fatheremail" name="fatheremail" placeholder="Email Address" ></td>
+        <tr class="father-info">
+            <td><input style="width: 100%;" type="text" class="fathername" name="fathername" placeholder="Name of Father" value="<%= locals.parents ? parents[1].name : null %>"></td>
+            <td><input style="width: 100%;" type="text" class="fatheroccupation" name="fatheroccupation" placeholder="Occupation" value="<%= locals.parents ? parents[1].occupation : null %>"></td>
+            <td><input style="width: 100%;" type="text" class="fatheroffice" name="fatheroffice" placeholder="Office" value="<%= locals.parents ? parents[1].office : null %>"></td>
+            <td><input style="width: 100%;" type="number" class="fathercontact" name="fathercontact" placeholder="Contact Number" value="<%= locals.parents ? parents[1].contact : null %>"></td>
+            <td><input style="width: 100%;" type="text" class="fatheremail" name="fatheremail" placeholder="Email Address" value="<%= locals.parents ? parents[1].email : null %>"></td>
         </tr>
-        <tr>
-            <td><input style="width: 100%;" type="text" class="guardian" name="guardian" placeholder="Name of Guardian" ></td>
-            <td><input style="width: 100%;" type="text" class="guardianoccupation" name="guardianoccupation" placeholder="Occupation" ></td>
-            <td><input style="width: 100%;" type="text" class="guardianoffice" name="guardianoffice" placeholder="Office" ></td>
-            <td><input style="width: 100%;" type="number" class="guardiancontact" name="guardiancontact" placeholder="Contact Number" ></td>
-            <td><input style="width: 100%;" type="text" class="guardianemail" name="guardianemail" placeholder="Email Address" ></td>
+        <tr class="guardian-info">
+            <td><input style="width: 100%;" type="text" class="guardian" name="guardian" placeholder="Name of Guardian" value="<%= locals.parents ? parents[2].name : null %>"></td>
+            <td><input style="width: 100%;" type="text" class="guardianoccupation" name="guardianoccupation" placeholder="Occupation" value="<%= locals.parents ? parents[2].occupation : null %>"></td>
+            <td><input style="width: 100%;" type="text" class="guardianoffice" name="guardianoffice" placeholder="Office" value="<%= locals.parents ? parents[2].office : null %>"></td>
+            <td><input style="width: 100%;" type="number" class="guardiancontact" name="guardiancontact" placeholder="Contact Number" value="<%= locals.parents ? parents[2].contact : null %>"></td>
+            <td><input style="width: 100%;" type="text" class="guardianemail" name="guardianemail" placeholder="Email Address" value="<%= locals.parents ? parents[2].name : null %>"></td>
         </tr>
     </table>
 </div>

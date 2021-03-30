@@ -10,26 +10,6 @@
             <h1 class="student-record-title">Student Record Management</h1>
 
             <div class="student-record-subcontainer">
-                <!-- <form class="student-record-subcontainer-side">
-
-                    <h2>Search for Student</h2>
-
-                    <div>
-                        <label for="firstname">First Name</label>
-                        <input type="text" name="firstname" class="name" placeholder="Enter First Name">
-                    </div>
-
-                    <div>
-                        <label for="lastname">Last Name</label>
-                        <input type="text" name="lastname" class="last" placeholder="Enter Last Name">
-                    </div>
-
-                    <button>Search</button>
-
-                    <div class="search-results">
-
-                    </div>
-                </form> -->
 
                 <form action="/student-record" method="POST" class="student-record-subcontainer-info">
 
@@ -144,6 +124,14 @@
                         </div>
 
                         <%- include('./partials/sibling-table.ejs') %>
+
+                        <div class="radio-input" id="parentsyn">
+                            <p>New Parents?</p>
+                            <input type="radio" class="parents-radio" name="parentsyn" value="yes" checked>
+                            <label for="yes">Yes</label>
+                            <input type="radio" class="parents-radio" name="parentsyn" value="no" >
+                            <label for="no">No</label>
+                        </div>
                         <%- include('./partials/parentsguardian.ejs') %>
 
                         <button>Submit</button>

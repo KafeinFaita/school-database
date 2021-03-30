@@ -9,7 +9,7 @@ const {
     teacher_get, record_api_get,
     parent_api_get, inquiry_get,
     inq_post, parents_get,
-    dashboard_get } = require('../controllers/mainController') 
+    parents_one_get, dashboard_get } = require('../controllers/mainController') 
 
 const router = express.Router()
 
@@ -20,6 +20,7 @@ router.get('/login', login_get);
 router.get('/student-record', studentRecord_get)
 router.get('/student-record/submit', studentSubmit_get)
 router.get('/student-record/parents', parents_get)
+router.get('/student-record/parents/:id', parents_one_get)
 router.get('/student-record/:id', studentRecord_get_one)
 router.get('/section', section_get)
 router.get('/teacher', teacher_get)

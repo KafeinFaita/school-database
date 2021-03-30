@@ -117,9 +117,18 @@ module.exports.parents_get = async (req, res) => {
         return names
     })
 
-    const id = parent.map(par => par._id)
+    const idNum = parent.map(par => par._id)
 
-    res.render('parents', { studentNames, parentNames })
+    res.render('parents', { studentNames, parentNames, idNum })
+}
+
+module.exports.parents_one_get = async (req, res) => {
+    try {
+        const parent = await Parent.findById(req.params.id)
+        res.render('parents-one', { parents: parent.parentsguardian })
+    } catch (error) {
+        res.send(error)
+    }
 }
 
 module.exports.errorPage_get = (req, res) => {
