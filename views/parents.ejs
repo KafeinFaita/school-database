@@ -21,12 +21,12 @@
                                 
                                 <% for(let x = 0; x < idNum.length; x++) { %>
                                     <tr>
-                                        <th><%= idNum[x] %></th>
+                                        <td><%= idNum[x] %></td>
                                         <% parentNames[x].forEach(parent => { %>
-                                            <th><%= parent %></th>
+                                            <td><%= parent %></td>
                                         <% }) %>
-                                        <th><%= studentNames[x] %></th>
-                                        <th><button><a href="/student-record/parents/<%= idNum[x] %>">Edit Info</a></button></th>
+                                        <td><%= studentNames[x] %></td>
+                                        <td><a class="edit-parent" href="/student-record/parents/<%= idNum[x] %>">Edit Info</a></td>
                                     </tr>
                                     
                                 <% } %>

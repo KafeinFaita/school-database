@@ -900,3 +900,71 @@ select {
   padding: 10px;
   border-radius: 10px;
 }
+/* Parents page */
+.parents-table td{
+  padding:10px;
+}
+.edit-parent{
+  background: #1a598a;
+  width: 100px;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 20px;
+  border: none;
+  text-transform: uppercase;
+  text-decoration:none;
+  font-size:14px;
+  font-weight: 600;
+  color: whitesmoke;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.edit-parent:hover{
+  background:lightcyan;
+  color:black;
+}
+/* parents/guardian page */
+.parents-guardian-container{
+  display:flex;
+}
+.parents-guardian-subcontainer{
+  width:80%;
+}
+.parents-guardian{
+  margin-top:10px;
+  width:100%;
+}
+.mother-info input,
+.father-info input,
+.guardian-info input{
+  padding:7px;
+  outline:none;
+  border-radius:5px;
+  border:1px solid rgb(155, 151, 151);
+}
+.parent-form{
+  display:flex;
+  flex-direction:column;
+}
+.update-parent{
+  background: #1a598a;
+  align-self: center;
+  width: 100px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  text-transform: uppercase;
+  text-decoration:none;
+  font-size:14px;
+  font-weight: 600;
+  color: whitesmoke;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.update-parent:hover{
+  background:lightcyan;
+  color:black;
+}
