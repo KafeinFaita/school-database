@@ -660,6 +660,7 @@ select {
   display: flex;
   flex-direction: row;
   background: #ccc9c98c;
+  height:100%;
 }
 .dashboard-subcontainer {
   width: 80%;
