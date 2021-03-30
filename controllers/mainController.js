@@ -122,6 +122,15 @@ module.exports.parents_get = async (req, res) => {
     res.render('parents', { studentNames, parentNames, idNum })
 }
 
+module.exports.parents_one_get = async (req, res) => {
+    try {
+        const parent = await Parent.findById(req.params.id)
+        res.render('parents-one', { parents: parent.parentsguardian })
+    } catch (error) {
+        res.send(error)
+    }
+}
+
 module.exports.errorPage_get = (req, res) => {
     
     res.status(404).render('404')
