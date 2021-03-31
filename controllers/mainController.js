@@ -12,7 +12,7 @@ const Department = require('../models/Department')
 //GET requests
 
 module.exports.index_get = (req, res) => {
-    res.redirect('/student-record')
+    res.redirect('/dashboard')
 }
 
 module.exports.dashboard_get = async (req, res) => {
@@ -125,7 +125,7 @@ module.exports.parents_get = async (req, res) => {
 module.exports.parents_one_get = async (req, res) => {
     try {
         const parent = await Parent.findById(req.params.id)
-        res.render('parents-one', { parents: parent.parentsguardian })
+        res.render('parents-one', { parents: parent.parentsguardian, url: req.url })
     } catch (error) {
         res.send(error)
     }
@@ -259,19 +259,53 @@ module.exports.inq_post = async (req, res) => {
     }
 }
 
-//PUT request
+// PUT&PATCH request
 
 module.exports.studentRecord_put_one = async (req, res) => {
 
     try {
-        console.log(req.body)
         const updateStudent = await StudentRecord.findByIdAndUpdate(req.params.id, req.body)
-        console.log(req.params.id)
         res.redirect('/')
     } catch (err) {
         console.log(err)
     }
     
+}
+
+module.exports.parents_one_put = async (req, res) => {
+    
+    const parentsGuardian = {
+        parentsguardian: [
+            {
+                name: req.body.mothername,
+                occupation: req.body.motheroccupation,
+                office: req.body.motheroffice,
+                contact: req.body.mothercontact,
+                email: req.body.motheremail
+            },
+            {
+                name: req.body.fathername,
+                occupation: req.body.fatheroccupation,
+                office: req.body.fatheroffice,
+                contact: req.body.fathercontact,
+                email: req.body.fatheremail
+            },
+            {
+                name: req.body.guardian,
+                occupation: req.body.guardianoccupation,
+                office: req.body.guardianoffice,
+                contact: req.body.guardiancontact,
+                email: req.body.guardianemail
+            }
+        ]
+    }
+    
+    try {
+        const updateParent = await Parent.findByIdAndUpdate(req.params.id, parentsGuardian)
+        res.redirect('/student-record/parents')
+    } catch (error) {
+        res.send(error)
+    }
 }
 
 //DELETE request
