@@ -302,7 +302,7 @@ module.exports.parents_one_put = async (req, res) => {
     
     try {
         const updateParent = await Parent.findByIdAndUpdate(req.params.id, parentsGuardian)
-        res.redirect('/student-record/parents')
+        res.redirect('/parents')
     } catch (error) {
         res.send(error)
     }
