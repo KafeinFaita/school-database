@@ -86,19 +86,6 @@
                         </div>
 
                         <div class="info-input">
-                            <label for="nationality">Nationality</label><br>
-                            <input type="text" name="nationality" value='<%= student.nationality %>' required>
-                        </div>
-
-                        <div class="radio-input">
-                            <p>Gender:</p>
-                            <input type="radio" id="male" name="gender" value="male" required>
-                            <label for="male">Male</label>
-                            <input type="radio" id="female" name="gender" value="female">
-                            <label for="female">Female</label>
-                        </div>
-
-                        <div class="info-input">
                             <label for="mobile">Mobile Number</label><br>
                             <input type="number" name="mobile" min="0" value='<%= student.mobile %>' required>
                         </div>
@@ -106,6 +93,25 @@
                         <div class="info-input">
                             <label for="email">Email Address</label><br>
                             <input type="email" name="email" value='<%= student.email %>' required>
+                        </div>
+
+                        <div class="info-input">
+                            <label for="nationality">Nationality</label><br>
+                            <input type="text" name="nationality" value='<%= student.nationality %>' required>
+                        </div>
+
+                        <div class="radio-input">
+                            <div class="gender-container">
+                                <p>Gender:</p>
+                                <input type="radio" id="male" name="gender" value="male">
+                                <label for="male">Male</label>
+                                <input type="radio" id="female" name="gender" value="female">
+                                <label for="female">Female</label>
+                            </div>
+                            <div class="verified-container">
+                                <p>Verified:</p>
+                                <input type="checkbox" name="verified" class="verified-box">
+                            </div>
                         </div>
 
                         <button>Update</button>
