@@ -759,8 +759,8 @@ select {
 }
 .social-media-container{
   display:flex;
-  justify-content: center;
   justify-content: space-around;
+  margin:10px;
 }
 .fa-facebook{
   text-decoration: none;
@@ -793,6 +793,7 @@ select {
 .socmeds{
   align-self: center;
   color:whitesmoke;
+  text-decoration: none;
 }
 .social-media-one{
   display:flex;
@@ -804,6 +805,7 @@ select {
   text-transform: uppercase;
   font-weight: 800;
   font-size: larger;
+  cursor:pointer;
 }
 .social-media-two{
   display:flex;
@@ -815,6 +817,7 @@ select {
   text-transform: uppercase;
   font-weight: 800;
   font-size: larger;
+  cursor:pointer;
 }
 .social-media-three{
   display:flex;
@@ -826,6 +829,7 @@ select {
   text-transform: uppercase;
   font-weight: 800;
   font-size: larger;
+  cursor:pointer;
 }
 .social-media-four{
   display:flex;
@@ -837,6 +841,7 @@ select {
   text-transform: uppercase;
   font-weight: 800;
   font-size: larger;
+  cursor:pointer;
 }
 
 /* Parents page */
