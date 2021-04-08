@@ -637,7 +637,7 @@ select {
 }
 /* parents-tables */
 .parents-form-container {
-  background: whitesmoke;
+  background:rgb(222,222,226);
   display: flex;
   flex-direction: row;
 }
@@ -654,9 +654,12 @@ select {
   margin: 5px;
   border-collapse: collapse;
   overflow: scroll;
+  background:#FFFFFF;
 }
 .parents-table th {
   padding: 5px;
+  background:rgb(0,132,255);
+  color:white;
 }
 .parents-table td {
   text-align: center;
@@ -744,6 +747,7 @@ select {
 }
 .counter {
   font-size: x-large;
+  color:rgb(63, 63, 71);
 }
 .dashboard-chart {
   display: flex;
@@ -756,11 +760,11 @@ select {
   flex: 1;
 }
 .chart {
-  background: whitesmoke;
+  background: rgb(255,255,255);
   padding: 10px;
   margin: 5px;
   border-radius: 10px;
-  width: 100%;
+  width: 95%;
   overflow: hidden;
 }
 
@@ -836,8 +840,8 @@ select {
 }
 
 /* Parents page */
-.parents-table td{
-  padding:10px;
+.parents-table tr:nth-child(even) {
+  background-color: #f5eeee;
 }
 .edit-parent{
   background: #1a598a;
@@ -862,6 +866,16 @@ select {
 /* parents/guardian page */
 .parents-guardian-container{
   display:flex;
+  background:rgb(222,222,226);
+}
+.parents-guardian th{
+  margin:0;
+  background:rgb(0,132,255);
+  padding:10px;
+  color:white;
+}
+.parents-guardian tr:nth-child(even) {
+  background-color: #f5eeee;
 }
 .parents-guardian-subcontainer{
   width:80%;
@@ -869,6 +883,7 @@ select {
 .parents-guardian{
   margin-top:10px;
   width:100%;
+  background:#FFFFFF;
 }
 .mother-info input,
 .father-info input,
@@ -907,7 +922,7 @@ select {
 .user-info-container{
   display:flex;
   justify-content: space-between;
-  height:50px;
+  height:30px;
   background:rgb(245,245,245);
 }
 .user-info{
@@ -944,13 +959,13 @@ select {
   height:30px;
   align-self: center;
 }
-.user-info-logout h3{
+.user-info-logout h4{
   align-self: center;
 }
 .dropdown-menu{
   background:rgb(255, 255, 255);
   position:absolute;
-  margin-top:50px;
+  margin-top:30px;
   width:150px;
   border-radius:10px;
   display:none;
