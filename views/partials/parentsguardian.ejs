@@ -1,9 +1,10 @@
 <div class="info-input" style="flex:100%">
+    <%- include('./usernavigation.ejs') %>
     <h2 class="parents-title" style="flex:100%">Parents/Guardian</h2>
 
     <table class="parents-guardian">
         <tr>
-            <th></th>
+            <th>Parent</th>
             <th>Name</th>
             <th>Occupation</th>
             <th>Office</th>
@@ -34,5 +35,8 @@
             <td><input style="width: 100%;" type="number" class="guardiancontact" name="guardiancontact" placeholder="Contact Number" value="<%= locals.parents ? parents[2].contact : null %>"></td>
             <td><input style="width: 100%;" type="text" class="guardianemail" name="guardianemail" placeholder="Email Address" value="<%= locals.parents ? parents[2].name : null %>"></td>
         </tr>
+
+        <input type="hidden" name="parentid" class="parent-id"/>
+
     </table>
 </div>
