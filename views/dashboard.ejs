@@ -14,7 +14,7 @@
                     <h3>Admin</h3>
                     <img class="notification" src="https://static.thenounproject.com/png/338473-200.png" alt="notification">
                     <img class="menu-show" src="https://www.logolynx.com/images/logolynx/23/23938578fb8d88c02bc59906d12230f3.png" alt="admin">
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu" style="display: none;">
                         <ul>
                             <a href="#"><li>Logout</li></a>
                             <a href="#"><li>Give Feedback</li></a>
@@ -83,12 +83,17 @@
         const showMenu = document.querySelector('.menu-show');
         const dropDown = document.querySelector('.dropdown-menu')
 
-        showMenu.addEventListener('click',() => {
-            if(dropDown.style.display === "none"){
+        showMenu.addEventListener('click', () => {
+            if (dropDown.style.display === "none"){
+                console.log('block na')
                 dropDown.style.display = "block";
-            } else {
+            } else if (dropDown.style.display === "block") {
+                console.log('wala na')
                 dropDown.style.display = "none";
             }
+            // const dropDownStyle = getComputedStyle(dropDown);
+            // console.log(dropDownStyle.display)
+
         })
 
     </script>
