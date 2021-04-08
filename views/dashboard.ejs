@@ -6,7 +6,25 @@
     <div class="dashboard-main-container">
         <%- include('./partials/navigation.ejs') %>
         <div class="dashboard-subcontainer">
-            <h1 class="dashboard-title">School Management Dashboard</h1>
+            <div class="user-info-container">
+                <div class="user-info">
+                    <p>School Management System</p>
+                </div>
+                <div class="user-info-logout">
+                    <h3>Admin</h3>
+                    <img class="notification" src="https://static.thenounproject.com/png/338473-200.png" alt="notification">
+                    <img class="menu-show" src="https://www.logolynx.com/images/logolynx/23/23938578fb8d88c02bc59906d12230f3.png" alt="admin">
+                    <div class="dropdown-menu">
+                        <ul>
+                            <a href="#"><li>Logout</li></a>
+                            <a href="#"><li>Give Feedback</li></a>
+                            <a href="#"><li>Settings</li></a>
+                            <a href="#"><li>Switch Account</li></a>
+                        </ul>  
+                    </div>               
+                </div>
+            </div>
+            <h2 class="dashboard-title">School Management Dashboard</h2>
             <div class="dashboard-main-content">
                 <div class="dashboard-titles">
                         <div class="names1">
@@ -53,13 +71,27 @@
                             <a href="#" class="socmeds" for="youtube">Youtube</a>
                         </div>
                         <div class="social-media-four">
-                            <a href="#" class="fa fa-google"></a>       
-                            <a href="#" class="socmeds" for="google">Google</a>                                               
+                            <a href="#" class="fa fa-instagram"></a>       
+                            <a href="#" class="socmeds" for="instagram">Instagram</a>                                               
                         </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+
+        const showMenu = document.querySelector('.menu-show');
+        const dropDown = document.querySelector('.dropdown-menu')
+
+        showMenu.addEventListener('click',() => {
+            if(dropDown.style.display === "none"){
+                dropDown.style.display = "block";
+            } else {
+                dropDown.style.display = "none";
+            }
+        })
+
+    </script>
     <script src="/scripts/charts.js"></script>
     <script src="/scripts/dashboard.js"></script>
 </body>
