@@ -27,6 +27,15 @@
   line-height: 59px;
   padding-left: 20px;
   background: rgb(0, 132, 255);
+  cursor:pointer;
+  transition:transform 250ms;
+}
+.sidebar .text:hover{
+  transform:translateY(-5px);
+}
+.text a{
+  color:white;
+  text-decoration:none;
 }
 
 /* nav */
@@ -199,24 +208,21 @@ nav ul li a span.rotate {
 
 .student-record-parent {
   display: flex;
-  width: 100vw;
+  width: 100%;
   height: 100%;
+}
+.student-record-title{
+  background: linear-gradient(to right, #0066cc 0%, #66ffff 100%);
+  color:#FFFFFF;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 .student-record-form {
   display: flex;
   flex-direction: column;
   flex: 100%;
   overflow: scroll;
-}
-
-.student-record-title {
-  background: linear-gradient(to right, #3399ff 0%, #66ffff 100%);
-  color: white;
-  text-align: center;
-  font-family: "Varela Round", sans-serif;
-  text-transform: uppercase;
-  padding: 5px;
-  font-weight: 900;
 }
 .student-record-subcontainer {
   display: flex;
@@ -270,13 +276,15 @@ nav ul li a span.rotate {
 .personal-title,
 .parents-title {
   flex: 100%;
-  margin: 10px;
-  padding: 10px;
-  background: linear-gradient(to right, #3399ff 0%, #66ffff 100%);
+  padding: 5px;
+  margin: 0;
+  font-size:25px;
+  text-align: center;
   color: white;
-  border-radius: 5px;
+  background: linear-gradient(to right, #0066cc 0%, #66ffff 100%);
+  text-align: center;
+  border-bottom: 1px solid rgb(214, 211, 211);
   text-transform: uppercase;
-  font-weight: 900;
 }
 .student-record-subcontainer-info {
   flex: 80%;
@@ -451,7 +459,7 @@ select {
   height: 100%;
 }
 .student-record-table-container h1 {
-  background: #343434;
+  background: linear-gradient(to right, #0066cc 0%, #66ffff 100%);
   border-radius: 5px;
   color: white;
   text-align: center;
@@ -460,7 +468,6 @@ select {
   padding: 5px;
   font-weight: 900;
 }
-
 .student-records a {
   text-decoration: none;
   background: #1a598a;
@@ -548,15 +555,12 @@ select {
   padding: 10px;
 }
 .student-records th {
-  background: #1b1b1b;
+  background: rgb(0,132,255);
   color: white;
-  padding: 3px;
+  padding: 10px;
 }
 .student-records tr:nth-child(even) {
-  background: white;
-}
-.student-records tr:nth-child(odd) {
-  background: rgb(207, 203, 203);
+  background: #f5eeee;
 }
 /* inquiry form start */
 .inquiry-form-container {
@@ -576,7 +580,7 @@ select {
 .inquiry-title {
   text-align: center;
   padding: 10px;
-  background: linear-gradient(to right, #3399ff 0%, #66ffff 100%);
+  background: linear-gradient(to right, #0066cc 0%, #66ffff 100%);
   color: whitesmoke;
   text-transform: uppercase;
 }
@@ -642,10 +646,7 @@ select {
   justify-content: center;
   width: 80%;
 }
-.parents-title {
-  margin: 0;
-  text-align: center;
-}
+
 .parents-table {
   width: 95%;
   margin: 5px;
