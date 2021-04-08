@@ -24,6 +24,8 @@ const guardianOffice = document.querySelector('.guardianoffice')
 const guardianContact = document.querySelector('.guardiancontact')
 const guardianEmail = document.querySelector('.guardianemail')
 
+const parentId = document.querySelector(".parent-id")
+
 siblingTable.style.display = 'none'  
 
 siblingRadio.forEach(radio => {
@@ -81,8 +83,6 @@ siblingSearchButton.addEventListener('click', async () => {
                                         return stud._id === data._id
                                     })
                                 }) 
-             
-                                // start here
 
                                 motherName.value = filteredParent.parentsguardian[0].name
                                 motherOccupation.value = filteredParent.parentsguardian[0].occupation
@@ -101,7 +101,10 @@ siblingSearchButton.addEventListener('click', async () => {
                                 guardianOffice.value = filteredParent.parentsguardian[2].office
                                 guardianContact.value = filteredParent.parentsguardian[2].contact
                                 guardianEmail.value = filteredParent.parentsguardian[2].email
-                                // eto border end
+
+                                console.log(filteredParent._id)
+                                parentId.value = filteredParent._id
+                     
                             })
 
                             td.appendChild(btn)
