@@ -1,0 +1,1 @@
+const dataRow = document.querySelector('.data-rows')

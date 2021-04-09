@@ -24,6 +24,12 @@
                     <button type="button" class="search">Search</button>
                     <button type="button" class="refresh">Refresh List</button>
                 </div>
+
+                <select class="school-year">
+                    <option disabled selected>Select School Year</option>
+                    <option value="21-22">2021-2022</option>
+                    <option value="22-23">2022-2023</option>
+                </select>
             </div>  
                 
                 <table class="student-records">
@@ -39,7 +45,7 @@
                         <th>Actions</th>
                     </tr>
                     
-                    <% for(let x = 0;x < record.length ; x++) { %>
+                    <!-- <% for(let x = 0;x < record.length ; x++) { %>
                         <tr class="data-rows">
                             <td><%= record[x].firstname %></td>
                             <td><%= record[x].middlename %></td>
@@ -53,7 +59,7 @@
                                 <a href="/student-record/<%= record[x]._id %>">View Entry</a>
                             </td>
                         </tr>
-                    <% } %>
+                    <% } %> -->
                 </table>
                 <a class="add-student" href="/student-record/submit"><button>Add Student</button></a>
             </div>
@@ -69,8 +75,54 @@
         const fname = document.querySelector('.search-fname')
         const lname = document.querySelector('.search-lname')
 
+        
+        const schoolYear = document.querySelector('.school-year')
+
         const records = '<%- JSON.stringify(record) %>'
         const recordsData = JSON.parse(records)
+
+        //filter data based on sy
+
+        schoolYear.addEventListener('change', e => {
+            const dataRows = document.querySelectorAll('.data-rows')
+            const selectedByYear = recordsData.filter(student => student.syEnrolled.includes(e.target.value))
+
+            dataRows.forEach(tr => {
+                console.log('working')
+                tr.remove()
+            })
+
+            console.log(selectedByYear)
+
+            selectedByYear.forEach(rec => {
+
+                const data = (category) => category.find(categ => Object.values(categ).includes(e.target.value)).data
+
+                const tr = document.createElement('tr')
+                tr.classList.add("data-rows");
+                const info = [rec.firstname, rec.middlename, rec.lastname, data(rec.grade).title, data(rec.section).name, data(rec.department).name, rec.lrn, rec.verified]
+
+                for(let x = 0; x < 9; x++) {
+                    const td = document.createElement('td')
+
+                    if (x <= 7){
+                        const text = document.createTextNode(info[x])
+                        td.appendChild(text)
+                    } else {
+                        const a = document.createElement('a')
+                        const text = document.createTextNode('View Entry')
+                        a.appendChild(text)
+                        a.href = `/student-record/${rec._id}`
+                        td.appendChild(a)
+                    }
+                    
+                    tr.appendChild(td)
+                }
+                studentTable.appendChild(tr)
+            })
+        })
+
+        //
 
         refresh.addEventListener('click', () => {
             location.reload()

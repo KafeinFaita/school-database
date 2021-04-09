@@ -15,6 +15,11 @@
 
                 <form action="<%= url %>?_method=PUT" method="POST" class="student-record-subcontainer-info">
 
+                    <select name="sy" class="sy">
+                        <option value="21-22" selected>2021-2022</option>
+                        <option value="22-23">2022-2023</option>
+                    </select>
+
                     <div class="student-record-subcontainer-body">
                         <div class="info-input">
                             <label for="department">Department</label><br>
@@ -46,6 +51,9 @@
                         <div class="info-input">
                             <label for="section">Section</label><br>
                             <select name="section" id="section" required>
+                                <% sections.forEach(section => { %>
+                                    <option value="<%= section._id %>"><%= section.name %></option>
+                                <% }) %>
                                 
                             </select>
                         </div>
@@ -128,8 +136,6 @@
     </div>
 
     <script>
-        const sections = '<%- JSON.stringify(sections) %>'
-        const sectionsArray = JSON.parse(sections)
 
         const studentTemp = '<%- JSON.stringify(student) %>'
         const studentData = JSON.parse(studentTemp)
@@ -139,19 +145,41 @@
 
         const sectionSelect = document.getElementById('section')
 
-        sectionsArray.forEach(section => {
+        const department = document.getElementById('department')
+        const grade = document.getElementById('grade')
+        const section = document.getElementById('section')
+        const sy = document.querySelector('.sy')
 
-            const opt = document.createElement("option")
-            opt.text = section.name
-            opt.value = section._id
-            if (section.name === studentData.section.name){
-                opt.selected = true;
+        sy.addEventListener('change', e => {
+            if (studentData.syEnrolled.includes(e.target.value)) { 
+
+                const getInfo = (category, details) => {
+                    const data = category.find(categ => Object.values(categ).includes(e.target.value)).data._id
+
+                    Array.from(details.options).forEach(det => {
+                        if (det.value === data) {
+                            det.selected = true
+                        }
+                    })
+                }
+                getInfo(studentData.department, department)
+                getInfo(studentData.grade, grade)
+                getInfo(studentData.section, section)
             }
 
-            sectionSelect.add(opt)
         })
 
-        console.log(studentData.gender)
+        // sectionsArray.forEach(section => {
+
+        //     const opt = document.createElement("option")
+        //     opt.text = section.name
+        //     opt.value = section._id
+        //     if (section.name === studentData.section.name){
+        //         opt.selected = true;
+        //     }
+
+        //     sectionSelect.add(opt)
+        // })
 
         if (male.value === studentData.gender) {
             male.checked = true
