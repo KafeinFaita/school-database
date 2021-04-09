@@ -5,6 +5,7 @@
     <div class="parents-guardian-container">
         <%- include('./partials/navigation.ejs') %>
         <div class="parents-guardian-subcontainer">
+            <%- include('./partials/usernavigation.ejs') %>
             <form class="parent-form" action="<%= url %>?_method=PUT" method="POST">
                 <%- include('./partials/parentsguardian.ejs') %> 
                 <input class="update-parent" type="submit" name="submit" value="Update">
