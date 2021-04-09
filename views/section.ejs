@@ -7,19 +7,33 @@
         <%- include('./partials/navigation.ejs') %>
 
         <div class="section-sub">
-            <form action="/section" method="POST">
-                <h2>Add Section</h2>
-                <input type="text" name="sectionName" id="sectionName">
+            <form class="section-form" action="/section" method="POST">
+                <%- include('./partials/usernavigation.ejs')%>
+                <h2 class="section-title">Add Section</h2>
+                <div class="section-form">
+                    <label for="sectionName">Name of Section</label>
+                    <input type="text" name="sectionName" id="sectionName">
+                    
+                    <button>Submit</button>
+                </div>
+                <div class="section-name-container">
                 
-                <button>Submit</button>
-
                 <% sections.forEach(sect => { %>
-                    <div style="display: flex;">
-                        <h3><%= sect.name %></h3>
-                        <button type="button" class="delete-button" data-_id="<%= sect.id %>">Delete</button>
+               
+                    <div class="section-box">
+                        <div class="section-container">
+                            <div class="section-content">
+                                
+                                <h3><i style='font-size:24px' class='fas'>&#xf0c0;</i><%= sect.name %></h3>
+                                <span>Students:</span>
+                                <span>Adviser:</span>
+                                <button type="button" class="delete-button" data-_id="<%= sect.id %>">Delete</button>
+                            </div>
+                        </div>
                     </div>
-
+               
                 <% }) %> 
+            </div>
             </form>
         </div>
     </div>

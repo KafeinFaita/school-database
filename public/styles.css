@@ -463,7 +463,113 @@ select {
 
 .section-main {
   display: flex;
+  background:#DEDEE2;
+}
+.section-sub{
+  width:80%;
+}
+
+.section-content button{
+  width:100px;
+  padding:5px;
+  color:white;
+  font-weight: bold;
+  margin-top:10px;
+  align-self:center;
+  background:rgb(39, 39, 107);
+  text-transform: uppercase;
+  border:none;
+  border-radius: 20px;
+  transition:0.4s;
+  cursor:pointer;
+}
+.section-sub button:hover{
+  background:lightcyan;
+  color:black;
+}
+.section-form{
+  display:flex;
+  flex-direction: column;
+}
+.section-form label{
+  margin-left:10px;
+  margin-top:10px;
+}
+.section-form input{
+  margin-left:10px;
+  width:200px;
+  padding:5px;
+  border-radius:5px;
+  border:1px solid rgb(179, 165, 165);
+  outline:none;
+}
+.section-form button{
+  width:100px;
+  padding:5px;
+  color:white;
+  font-weight: bold;
+  margin-top:10px;
+  margin-left:10px;
+  background:rgb(39, 39, 107);
+  text-transform: uppercase;
+  border:none;
+  border-radius: 20px;
+  transition:0.4s;
+  cursor:pointer;
+}
+.section-title{
+  text-align: center;
+  padding: 10px;
+  background: linear-gradient(to right, #0066cc 0%, #66ffff 100%);
+  color: whitesmoke;
+  text-transform: uppercase;
+}
+.section-name-container{
+  display:flex;
+  justify-content: space-around;
   flex-wrap: wrap;
+}
+.section-box{
+  display:flex;
+  flex-wrap: wrap;
+}
+.section-container{
+  display:flex;
+  justify-content: space-around;
+  flex: 1 9 21%; 
+  margin:5px;
+  height: 150px;
+}
+.section-container h3{
+  text-align:center;
+}
+.section-container button{
+  width:100px;
+  padding:5px;
+  color:white;
+  font-weight: bold;
+  background:rgb(39, 39, 107);
+  text-transform: uppercase;
+  border:none;
+  border-radius: 20px;
+  transition:0.4s;
+  cursor:pointer;
+}
+.section-container button:hover{
+  background:lightcyan;
+  color:black;
+}
+.section-content{
+  background:#FFFFFF;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding:40px;
+  border-radius:20px;
+}
+.section-content i {
+  color:#0084FF;
+  margin-right:10px;
 }
 
 /* record table */
