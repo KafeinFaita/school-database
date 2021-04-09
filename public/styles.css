@@ -212,16 +212,20 @@ nav ul li a span.rotate {
   height: 100%;
 }
 .student-record-title{
+  margin: 0;
+  padding: 10px;
+  color: white;
   background: linear-gradient(to right, #0066cc 0%, #66ffff 100%);
-  color:#FFFFFF;
   text-align: center;
+  font-weight:600;
+  font-size:28px;
+  border-bottom: 1px solid rgb(214, 211, 211);
   text-transform: uppercase;
-  font-weight: 500;
 }
 .student-record-form {
   display: flex;
   flex-direction: column;
-  flex: 100%;
+  width:80%;
   overflow: scroll;
 }
 .student-record-subcontainer {
@@ -273,13 +277,23 @@ nav ul li a span.rotate {
   border-radius: 7px;
   background-color: white;
 }
-.personal-title,
-.parents-title {
+.personal-title{
   flex: 100%;
   padding: 5px;
+  width:100%;
   margin: 0;
+  align-self: center;
   font-size:25px;
   text-align: center;
+  color: white;
+  background: linear-gradient(to right, #0066cc 0%, #66ffff 100%);
+  text-align: center;
+  border-bottom: 1px solid rgb(214, 211, 211);
+  text-transform: uppercase;
+}
+.parents-title {
+  margin: 0;
+  padding: 10px;
   color: white;
   background: linear-gradient(to right, #0066cc 0%, #66ffff 100%);
   text-align: center;
@@ -304,6 +318,7 @@ nav ul li a span.rotate {
 .info-input,
 .radio-input {
   flex: 50%;
+  margin-top:10px;
 }
 .radio-input {
   display: flex;
@@ -457,16 +472,6 @@ select {
   background: whitesmoke;
   display: flex;
   height: 100%;
-}
-.student-record-table-container h1 {
-  background: linear-gradient(to right, #0066cc 0%, #66ffff 100%);
-  border-radius: 5px;
-  color: white;
-  text-align: center;
-  font-family: "Varela Round", sans-serif;
-  text-transform: uppercase;
-  padding: 5px;
-  font-weight: 900;
 }
 .student-records a {
   text-decoration: none;
@@ -668,7 +673,7 @@ select {
   height: 1000px;
   width: 1000px;
 }
-/* star dashboard */
+/* start dashboard */
 .dashboard-main-container {
   display: flex;
   flex-direction: row;
