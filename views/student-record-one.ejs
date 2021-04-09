@@ -50,6 +50,9 @@
                         <div class="info-input">
                             <label for="section">Section</label><br>
                             <select name="section" id="section" required>
+                                <% sections.forEach(section => { %>
+                                    <option value="<%= section._id %>"><%= section.name %></option>
+                                <% }) %>
                                 
                             </select>
                         </div>
@@ -132,8 +135,6 @@
     </div>
 
     <script>
-        const sections = '<%- JSON.stringify(sections) %>'
-        const sectionsArray = JSON.parse(sections)
 
         const studentTemp = '<%- JSON.stringify(student) %>'
         const studentData = JSON.parse(studentTemp)
@@ -144,31 +145,40 @@
         const sectionSelect = document.getElementById('section')
 
         const department = document.getElementById('department')
+        const grade = document.getElementById('grade')
+        const section = document.getElementById('section')
         const sy = document.querySelector('.sy')
 
         sy.addEventListener('change', e => {
             if (studentData.syEnrolled.includes(e.target.value)) { 
-                const test = studentData.department.find(dept => Object.values(dept).includes(e.target.value)).data._id
-                Array.from(department.options).forEach(dept => {
-                    if (dept.value === test) {
-                        dept.selected = true
-                    }
-                })
+
+                const getInfo = (category, details) => {
+                    const data = category.find(categ => Object.values(categ).includes(e.target.value)).data._id
+
+                    Array.from(details.options).forEach(det => {
+                        if (det.value === data) {
+                            det.selected = true
+                        }
+                    })
+                }
+                getInfo(studentData.department, department)
+                getInfo(studentData.grade, grade)
+                getInfo(studentData.section, section)
             }
 
         })
 
-        sectionsArray.forEach(section => {
+        // sectionsArray.forEach(section => {
 
-            const opt = document.createElement("option")
-            opt.text = section.name
-            opt.value = section._id
-            if (section.name === studentData.section.name){
-                opt.selected = true;
-            }
+        //     const opt = document.createElement("option")
+        //     opt.text = section.name
+        //     opt.value = section._id
+        //     if (section.name === studentData.section.name){
+        //         opt.selected = true;
+        //     }
 
-            sectionSelect.add(opt)
-        })
+        //     sectionSelect.add(opt)
+        // })
 
         if (male.value === studentData.gender) {
             male.checked = true
