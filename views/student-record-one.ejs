@@ -7,20 +7,28 @@
         <%- include('./partials/navigation.ejs') %>
 
         <div class="student-record-form">
-            
+            <%- include('./partials/usernavigation.ejs') %>
+
             <h1 class="student-record-title">Student Record Management</h1>
 
             <div class="student-record-subcontainer">
 
                 <form action="<%= url %>?_method=PUT" method="POST" class="student-record-subcontainer-info">
-
-                    <select name="sy" class="sy">
-                        <option value="21-22" selected>2021-2022</option>
-                        <option value="22-23">2022-2023</option>
-                    </select>
-
-                    <div class="student-record-subcontainer-body">
-                        <div class="info-input">
+                <div class="user-profile">
+                    <div class="user-image">
+                        <div class="school-year-input">
+                            <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png" alt="profile">
+                        </div>
+                    </div>
+                    <div class="school-year-info">
+                        <div class="school-year-input">              
+                            <label for="sy">School Year</label>
+                            <select name="sy" class="sy">
+                                <option value="21-22" selected>2021-2022</option>
+                                <option value="22-23">2022-2023</option>
+                            </select>                       
+                        </div>
+                        <div class="school-year-input">    
                             <label for="department">Department</label><br>
                             <select name="department" id="department" required>
                                 <option value="" disabled selected>Select Department</option>
@@ -30,13 +38,11 @@
                                 <% }) %>
                             </select>
                         </div>
-
-                        <div class="info-input">
+                        <div class="school-year-input">   
                             <label for="lrn">LRN</label><br>
-                            <input type="number" name="lrn" value='<%= student.lrn %>' required>
+                            <input class="lrn" type="number" name="lrn" value='<%= student.lrn %>' required>
                         </div>
-
-                        <div class="info-input">
+                        <div class="school-year-input">   
                             <label for="grade">Grade/Level</label><br>
                             <select name="grade" id="grade" required>
                                 <option value="" disabled selected>Select Grade/Level</option>
@@ -46,17 +52,20 @@
                                 <% }) %>
                             </select>
                         </div>
+                    
+                    <div class="school-year-input">   
+                        <label for="section">Section</label><br>
+                        <select name="section" id="section" required>
+                            <% sections.forEach(section => { %>
+                                <option value="<%= section._id %>"><%= section.name %></option>
+                            <% }) %>
+                            
+                        </select>
+                    </div>
+                </div>
 
-                        <div class="info-input">
-                            <label for="section">Section</label><br>
-                            <select name="section" id="section" required>
-                                <% sections.forEach(section => { %>
-                                    <option value="<%= section._id %>"><%= section.name %></option>
-                                <% }) %>
-                                
-                            </select>
-                        </div>
-
+                    <div class="student-record-subcontainer-body">
+                      
                         <h2 class="personal-title" style="flex: 100%;">Personal Information</h2>
 
                         <div class="info-input">
