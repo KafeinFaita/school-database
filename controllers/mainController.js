@@ -175,7 +175,6 @@ module.exports.student_record_post = async (req, res) => {
             sy: req.body.sy,
             data: req.body.department
         }],
-        lrn: req.body.lrn,
         grade: [{
             sy: req.body.sy,
             data: req.body.grade
@@ -184,6 +183,7 @@ module.exports.student_record_post = async (req, res) => {
             sy: req.body.sy,
             data: req.body.section
         }],
+        lrn: req.body.lrn,
         lastname: req.body.lastname,
         dob: req.body.dob,
         firstname: req.body.firstname,
@@ -283,7 +283,33 @@ module.exports.inq_post = async (req, res) => {
 module.exports.studentRecord_put_one = async (req, res) => {
 
     try {
-        const updateStudent = await StudentRecord.findByIdAndUpdate(req.params.id, req.body)
+
+        const getStudent = await StudentRecord.findById(req.params.id).populate('section.data grade.data department.data').exec()
+
+        const addData = (existingData, bodyData) => getStudent.syEnrolled.includes(req.body.sy) ? existingData : [ ...existingData, { sy: req.body.sy, data: bodyData } ]
+
+        const newData = {
+            department: addData(getStudent.department, req.body.department),
+            grade: addData(getStudent.grade, req.body.grade),
+            section: addData(getStudent.section, req.body.section),
+            lrn: req.body.lrn,
+            lastname: req.body.lastname,
+            dob: req.body.dob,
+            firstname: req.body.firstname,
+            birthplace: req.body.birthplace,
+            middlename: req.body.middlename,
+            religion: req.body.religion,
+            address: req.body.address,
+            nationality: req.body.nationality,
+            gender: req.body.gender,
+            mobile: req.body.mobile,
+            email: req.body.email,
+            syEnrolled: getStudent.syEnrolled.includes(req.body.sy) ? getStudent.syEnrolled : [ ...getStudent.syEnrolled, req.body.sy ]
+        }
+
+
+
+        const updateStudent = await StudentRecord.findByIdAndUpdate(req.params.id, newData)
         res.redirect('/')
     } catch (err) {
         console.log(err)
