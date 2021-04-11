@@ -128,7 +128,8 @@
                             </div>
                             <div class="verified-container">
                                 <p>Verified:</p>
-                                <input type="checkbox" name="verified" class="verified-box">
+                                <% const isVerified = student.verified ? 'checked' : null %>
+                                <input type="checkbox" name="verified" class="verified-box" <%= isVerified %> >
                             </div>
                         </div>
 

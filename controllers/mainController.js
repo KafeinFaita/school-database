@@ -131,6 +131,10 @@ module.exports.parents_one_get = async (req, res) => {
     }
 }
 
+module.exports.fee_assess_get = (req, res) => {
+    res.render('fee-assess')
+}
+
 module.exports.errorPage_get = (req, res) => {
     
     res.status(404).render('404')
@@ -150,6 +154,7 @@ module.exports.parent_api_get = async (req, res) => {
     const parent = await Parent.find().populate('student').exec()
     res.json(parent)
 }
+
 
 
 //POST requests
@@ -304,11 +309,9 @@ module.exports.studentRecord_put_one = async (req, res) => {
             gender: req.body.gender,
             mobile: req.body.mobile,
             email: req.body.email,
-            syEnrolled: getStudent.syEnrolled.includes(req.body.sy) ? getStudent.syEnrolled : [ ...getStudent.syEnrolled, req.body.sy ]
+            syEnrolled: getStudent.syEnrolled.includes(req.body.sy) ? getStudent.syEnrolled : [ ...getStudent.syEnrolled, req.body.sy ],
+            verified: req.body.verified ?  true : false
         }
-
-
-
         const updateStudent = await StudentRecord.findByIdAndUpdate(req.params.id, newData)
         res.redirect('/')
     } catch (err) {
