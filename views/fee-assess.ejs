@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <div class="fees-main-container">
+        <%- include('./partials/navigation.ejs') %>
+        <div class="fee-sub-container">
+            <%- include('./partials/usernavigation.ejs') %>
+            <h1>Fees Assessment</h1>
+            <div class="student-fee-container">
+                <div class="student-fee-input">
+                    <label for="books">Books:</label> <br>
+                    <input type="text" name="books" id="books">
+                </div>
+                <div class="student-fee-input">
+                    <label for="miscellaneous">Miscellaneous:</label> <br>
+                    <input type="text" name="miscellaneous" id="miscellaneous">
+                </div>
+                <div class="student-fee-input">
+                    <label for="tuition">Tuition Fee:</label> <br>
+                    <input type="text" name="tuition" id="tuition">
+                </div>
+                <div class="student-fee-input">
+                    <label for="total">Total:</label> <br>
+                    <input type="text" name="total" id="total">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

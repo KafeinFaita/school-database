@@ -1153,3 +1153,41 @@ select {
   
 }
 /* end student profile */
+/* Fees Page*/
+.fees-main-container{
+  display:flex;
+}
+.fee-sub-container{
+  width:80%;
+  background:rgb(222,222,226);
+}
+.fee-sub-container h1{
+  margin: 0;
+  padding: 10px;
+  color: white;
+  background: linear-gradient(to right, #0066cc 0%, #66ffff 100%);
+  text-align: center;
+  font-weight:600;
+  font-size:28px;
+  border-bottom: 1px solid rgb(214, 211, 211);
+  text-transform: uppercase;
+}
+.student-fee-container{
+  display:flex;
+  flex-wrap: wrap;
+  width:50%;
+  margin:10px;
+}
+.student-fee-container input{
+  width: 75%;
+  border: 0.5px solid rgba(0, 0, 0, 0.192);
+  border-radius: 5px;
+  font-size: 14px;
+  color: #1b1b1b;
+  padding: 9px;
+  margin: 5px;
+  transition: 0.4s;
+  outline: none;
+  background: #fff;
+}
+/* End of Fee */
