@@ -265,6 +265,7 @@ nav ul li a span.rotate {
 }
 .student-record-subcontainer-side button:hover {
   background: lightcyan;
+  color:black;
 }
 .search-results {
   width: 100%;
@@ -1174,12 +1175,13 @@ select {
 }
 .student-fee-container{
   display:flex;
+  flex-direction: column;
   flex-wrap: wrap;
   width:50%;
   margin:10px;
 }
-.student-fee-container input{
-  width: 75%;
+.student-fee-input input{
+  width: 40%;
   border: 0.5px solid rgba(0, 0, 0, 0.192);
   border-radius: 5px;
   font-size: 14px;
@@ -1189,5 +1191,22 @@ select {
   transition: 0.4s;
   outline: none;
   background: #fff;
+}
+.submit-fee{
+  background: #1a598a;
+  width:100px;
+  margin-left:11%;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  color: whitesmoke;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 5px;
+  transition: 0.4s;
+}
+.submit-fee:hover{
+  background:lightcyan;
+  color:black;
 }
 /* End of Fee */
