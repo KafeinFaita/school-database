@@ -47,6 +47,24 @@ const recordSchema = new Schema({
     verified: {
         type: Boolean,
         default: false
+    },
+    fees: {
+        books: {
+            type: Number,
+            default: 0
+        },
+        tuition: {
+            type: Number,
+            default: 0
+        },
+        misc: {
+            type: Number,
+            default: 0
+        },
+        total: {
+            type: Number,
+            default: 0
+        }
     }
 })
 

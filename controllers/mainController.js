@@ -131,8 +131,15 @@ module.exports.parents_one_get = async (req, res) => {
     }
 }
 
-module.exports.fee_assess_get = (req, res) => {
-    res.render('fee-assess')
+module.exports.fee_assess_get = async (req, res) => {
+
+    try {
+        const student = await StudentRecord.findById(req.params.id)
+        res.render('fee-assess', { books: student.fees.books, tuition: student.fees.tuition, misc: student.fees.misc, url: req.url })
+    } catch (error) {
+        res.render('404')
+    }
+    
 }
 
 module.exports.errorPage_get = (req, res) => {
@@ -354,6 +361,19 @@ module.exports.parents_one_put = async (req, res) => {
     } catch (error) {
         res.send(error)
     }
+}
+
+module.exports.fee_assess_put = async (req, res) => {
+
+    try {
+        const student = await StudentRecord.findByIdAndUpdate(req.params.id, {
+            fees: req.body
+        })
+        res.redirect(`/student-record/${req.params.id}`)
+    } catch (error) {
+        res.send(error)
+    }
+    
 }
 
 //DELETE request

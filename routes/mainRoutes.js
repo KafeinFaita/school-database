@@ -10,7 +10,8 @@ const {
     parent_api_get, inquiry_get,
     inq_post, parents_get,
     parents_one_get, dashboard_get,
-    parents_one_put, fee_assess_get } = require('../controllers/mainController') 
+    parents_one_put, fee_assess_get,
+    fee_assess_put } = require('../controllers/mainController') 
 
 const router = express.Router()
 
@@ -23,12 +24,12 @@ router.get('/student-record/submit', studentSubmit_get)
 router.get('/parents', parents_get)
 router.get('/parents/:id', parents_one_get)
 router.get('/student-record/:id', studentRecord_get_one)
+router.get('/student-record/:id/fee-assess', fee_assess_get)
 router.get('/section', section_get)
 router.get('/teacher', teacher_get)
 router.get('/inquiry', inquiry_get)
 router.get('/api/student-record', record_api_get)
 router.get('/api/parent', parent_api_get)
-router.get('/fee-assess', fee_assess_get)
 router.get('*', errorPage_get)
 
 router.post('/login', login_post)
@@ -38,6 +39,7 @@ router.post('/inquiry', inq_post)
 
 router.put('/student-record/:id', studentRecord_put_one)
 router.put('/parents/:id', parents_one_put)
+router.put('/student-record/:id/fee-assess', fee_assess_put)
 
 router.delete('/student-record/:id', studentRecord_delete_one)
 router.delete('/section/:id', section_delete)

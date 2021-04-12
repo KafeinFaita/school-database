@@ -7,28 +7,39 @@
         <div class="fee-sub-container">
             <%- include('./partials/usernavigation.ejs') %>
             <h1>Fees Assessment</h1>
-            <form action="" method="POST">
+            <form action="<%= url %>?_method=PUT" method="POST">
                 <div class="student-fee-container">
                     <div class="student-fee-input">
                         <label for="books">Books:</label> <br>
-                        <input type="text" name="books" id="books">
+                        <input type="text" name="books" value="<%= books %>" id="books" oninput="compute()">
                     </div>
                     <div class="student-fee-input">
                         <label for="miscellaneous">Miscellaneous:</label> <br>
-                        <input type="text" name="miscellaneous" id="miscellaneous">
+                        <input type="text" name="misc" value="<%= misc %>" id="misc" oninput="compute()">
                     </div>
                     <div class="student-fee-input">
                         <label for="tuition">Tuition Fee:</label> <br>
-                        <input type="text" name="tuition" id="tuition">
+                        <input type="text" name="tuition" value="<%= tuition %>" id="tuition" oninput="compute()">
                     </div>
                     <div class="student-fee-input">
                         <label for="total">Total:</label> <br>
-                        <input type="text" name="total" id="total">
+                        <input type="text" name="total" id="total" value=<%= books + misc + tuition %> readonly>
                     </div>
-                    <input class="submit-fee" type="submit" name="submit" value="submit">
+                    <button>Update Fees</button>
                 </div>
                
             </form>
+
+            <script>
+                const books = document.getElementById('books')
+                const misc = document.getElementById('misc')
+                const tuition = document.getElementById('tuition')
+                const total = document.getElementById('total')
+
+                const compute = () => {
+                    total.value = +books.value + +misc.value + +tuition.value
+                }
+            </script>
         </div>
     </div>
 </body>
