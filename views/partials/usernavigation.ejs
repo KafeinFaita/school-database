@@ -20,14 +20,16 @@
 
     const showMenu = document.querySelector('.menu-show');
     const dropDown = document.querySelector('.dropdown-menu')
-    const body = document.querySelector('body')
+    const container = document.querySelector('body')
 
     showMenu.addEventListener('click',() => {
         if(dropDown.style.display === "block"){               
             dropDown.style.display = "none";
-        } else {              
+        } else{              
             dropDown.style.display = "block";
         }
     })
+    
+   
 
 </script>
