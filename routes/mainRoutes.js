@@ -11,7 +11,7 @@ const {
     inq_post, parents_get,
     parents_one_get, dashboard_get,
     parents_one_put, fee_assess_get,
-    fee_assess_put } = require('../controllers/mainController') 
+    fee_assess_put, profile_get } = require('../controllers/mainController') 
 
 const router = express.Router()
 
@@ -30,6 +30,7 @@ router.get('/teacher', teacher_get)
 router.get('/inquiry', inquiry_get)
 router.get('/api/student-record', record_api_get)
 router.get('/api/parent', parent_api_get)
+router.get('/profile', profile_get)
 router.get('*', errorPage_get)
 
 router.post('/login', login_post)

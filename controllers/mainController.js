@@ -142,6 +142,10 @@ module.exports.fee_assess_get = async (req, res) => {
     
 }
 
+module.exports.profile_get = (req, res) => {
+    res.render('profile')
+}
+
 module.exports.errorPage_get = (req, res) => {
     
     res.status(404).render('404')
