@@ -1210,3 +1210,89 @@ select {
   color:black;
 }
 /* End of Fee */
+/* start of profile */
+.profile-main-container{
+  display:flex;
+}
+.profile-sub-container{
+  width:80%;
+  background:rgb(222,222,226);
+}
+.profile-title{
+  padding:10px;
+}
+.profile-container{
+  display:flex;
+  justify-content: space-around;
+}
+.admin-profile{
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  height:50%;
+  width:40%;
+}
+.admin-image{
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+}
+.admin-image .cover{
+  width:100%;
+  height:150px;
+}
+.admin-image .profile{
+  align-self: center;
+  margin-top:50px;
+  position:absolute;
+  border-radius:100px;
+  width:150px;
+  border:1px solid rgb(145, 142, 142);
+}
+.about-admin{
+  display:flex;
+  text-align: center;
+  flex-direction: column;
+  margin-top:50px;
+}
+.social-media-logo .fab {
+  width:100px;
+  background:rgb(69, 110, 221);
+  color:white;
+  border-radius:10px;
+  padding:10px;
+  cursor:pointer;
+}
+.view-profile{
+  align-self: center;
+  width:250px;
+  margin:5px;
+  padding:10px;
+  border-radius:5px;
+  border:1px solid rgb(165, 152, 152);
+  cursor:pointer;
+  transition:0.4s;
+}
+.admin-follower{
+  margin-top:10px;
+  display:flex;
+  justify-content: center;
+}
+.admin-follower .post,
+.admin-follower .follower{
+  border-right:1px solid rgb(189, 180, 180);
+  padding:20px;
+}
+.admin-follower .following{
+  padding:20px;
+}
+.about-profile{
+  background:lightgreen;
+  height:100%;
+  width:60%;
+}
+.profile-navigator{
+  display:flex;
+  justify-content:space-around;
+}
+/* end of profile */

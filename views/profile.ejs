@@ -1,1 +1,69 @@
-<h1>test</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
+<body>
+    <div class="profile-main-container">
+        <%- include('./partials/navigation.ejs') %>
+        <div class="profile-sub-container">
+            <%- include('./partials/usernavigation.ejs') %>
+            <div class="profile-title"><h2>Admin Profile</h2></div>
+            <div class="profile-container">
+                <div class="admin-profile">
+                    <div class="admin-image">
+                        <img class="cover" src="https://cdn.pizap.com/pizapfiles/images/photo_backgrounds_textures_app05.jpg" alt="cover">
+                        <img class="profile" src="https://png.pngtree.com/png-vector/20190321/ourmid/pngtree-vector-users-icon-png-image_856952.jpg" alt="profile">
+                    </div>
+                    <div class="about-admin">
+                        <h1>Admin</h1>
+                        <h4>Description about admin</h4>
+                        <div class="social-media-logo">
+                            <i class="fab fa-facebook-f"></i>
+                            <i class="fab fa-twitter-square"></i>
+                            <i class="fab fa-instagram-square"></i>
+                        </div>
+                        <button class="view-profile">View Full Profile</button>
+
+                        <div class="admin-follower">
+                            <div class="post">
+                                <h5>125</h5>
+                                <label for="post">Post</label>
+                            </div>
+                            <div class="follower">
+                                <h5>25k</h5>
+                                <label for="follower">Followers</label>
+                            </div>
+                            <div class="following">
+                                <h5>134</h5>
+                                <label for="following">Following</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-profile">
+                    <div class="profile-navigator">
+                        <a href="#"><h4>Profile</h4></a>
+                        <a href="#"><h4>Timeline</h4></a>
+                        <a href="#"><h4>Settings</h4></a>
+                    </div>
+                    <div class="profile-view">
+                        <div class="name-email">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" value="paulpdoa">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" value="polopdoandres@gmail.com">
+                        </div>
+                        <div class="number-date">
+                            <label for="bday">Birthday</label>
+                            <input type="text" name="bday" id="bday" value="03/21/1998">
+                            <label for="G"></label>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
