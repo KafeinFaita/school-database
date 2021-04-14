@@ -27,15 +27,15 @@
   line-height: 59px;
   padding-left: 20px;
   background: rgb(0, 132, 255);
-  cursor:pointer;
-  transition:transform 250ms;
+  cursor: pointer;
+  transition: transform 250ms;
 }
-.sidebar .text:hover{
-  transform:translateY(-5px);
+.sidebar .text:hover {
+  transform: translateY(-5px);
 }
-.text a{
-  color:white;
-  text-decoration:none;
+.text a {
+  color: white;
+  text-decoration: none;
 }
 
 /* nav */
@@ -211,21 +211,21 @@ nav ul li a span.rotate {
   width: 100%;
   height: 100%;
 }
-.student-record-title{
+.student-record-title {
   margin: 0;
   padding: 10px;
   color: white;
   background: linear-gradient(to right, #0066cc 0%, #66ffff 100%);
   text-align: center;
-  font-weight:600;
-  font-size:28px;
+  font-weight: 600;
+  font-size: 28px;
   border-bottom: 1px solid rgb(214, 211, 211);
   text-transform: uppercase;
 }
 .student-record-form {
   display: flex;
   flex-direction: column;
-  width:80%;
+  width: 80%;
   overflow: scroll;
 }
 .student-record-subcontainer {
@@ -265,7 +265,7 @@ nav ul li a span.rotate {
 }
 .student-record-subcontainer-side button:hover {
   background: lightcyan;
-  color:black;
+  color: black;
 }
 .search-results {
   width: 100%;
@@ -278,13 +278,13 @@ nav ul li a span.rotate {
   border-radius: 7px;
   background-color: white;
 }
-.personal-title{
+.personal-title {
   flex: 100%;
   padding: 5px;
-  width:100%;
+  width: 100%;
   margin: 0;
   align-self: center;
-  font-size:25px;
+  font-size: 25px;
   text-align: center;
   color: white;
   background: linear-gradient(to right, #0066cc 0%, #66ffff 100%);
@@ -319,7 +319,7 @@ nav ul li a span.rotate {
 .info-input,
 .radio-input {
   flex: 50%;
-  margin-top:10px;
+  margin-top: 10px;
 }
 .radio-input {
   display: flex;
@@ -464,113 +464,113 @@ select {
 
 .section-main {
   display: flex;
-  background:#DEDEE2;
+  background: #dedee2;
 }
-.section-sub{
-  width:80%;
+.section-sub {
+  width: 80%;
 }
 
-.section-content button{
-  width:100px;
-  padding:5px;
-  color:white;
+.section-content button {
+  width: 100px;
+  padding: 5px;
+  color: white;
   font-weight: bold;
-  margin-top:10px;
-  align-self:center;
-  background:rgb(39, 39, 107);
+  margin-top: 10px;
+  align-self: center;
+  background: rgb(39, 39, 107);
   text-transform: uppercase;
-  border:none;
+  border: none;
   border-radius: 20px;
-  transition:0.4s;
-  cursor:pointer;
+  transition: 0.4s;
+  cursor: pointer;
 }
-.section-sub button:hover{
-  background:lightcyan;
-  color:black;
+.section-sub button:hover {
+  background: lightcyan;
+  color: black;
 }
-.section-form{
-  display:flex;
+.section-form {
+  display: flex;
   flex-direction: column;
 }
-.section-form label{
-  margin-left:10px;
-  margin-top:10px;
+.section-form label {
+  margin-left: 10px;
+  margin-top: 10px;
 }
-.section-form input{
-  margin-left:10px;
-  width:200px;
-  padding:5px;
-  border-radius:5px;
-  border:1px solid rgb(179, 165, 165);
-  outline:none;
+.section-form input {
+  margin-left: 10px;
+  width: 200px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid rgb(179, 165, 165);
+  outline: none;
 }
-.section-form button{
-  width:100px;
-  padding:5px;
-  color:white;
+.section-form button {
+  width: 100px;
+  padding: 5px;
+  color: white;
   font-weight: bold;
-  margin-top:10px;
-  margin-left:10px;
-  background:rgb(39, 39, 107);
+  margin-top: 10px;
+  margin-left: 10px;
+  background: rgb(39, 39, 107);
   text-transform: uppercase;
-  border:none;
+  border: none;
   border-radius: 20px;
-  transition:0.4s;
-  cursor:pointer;
+  transition: 0.4s;
+  cursor: pointer;
 }
-.section-title{
+.section-title {
   text-align: center;
   padding: 10px;
   background: linear-gradient(to right, #0066cc 0%, #66ffff 100%);
   color: whitesmoke;
   text-transform: uppercase;
 }
-.section-name-container{
-  display:flex;
+.section-name-container {
+  display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
-.section-box{
-  display:flex;
+.section-box {
+  display: flex;
   flex-wrap: wrap;
 }
-.section-container{
-  display:flex;
+.section-container {
+  display: flex;
   justify-content: space-around;
-  flex: 1 9 21%; 
-  margin:5px;
+  flex: 1 9 21%;
+  margin: 5px;
   height: 150px;
 }
-.section-container h3{
-  text-align:center;
+.section-container h3 {
+  text-align: center;
 }
-.section-container button{
-  width:100px;
-  padding:5px;
-  color:white;
+.section-container button {
+  width: 100px;
+  padding: 5px;
+  color: white;
   font-weight: bold;
-  background:rgb(39, 39, 107);
+  background: rgb(39, 39, 107);
   text-transform: uppercase;
-  border:none;
+  border: none;
   border-radius: 20px;
-  transition:0.4s;
-  cursor:pointer;
+  transition: 0.4s;
+  cursor: pointer;
 }
-.section-container button:hover{
-  background:lightcyan;
-  color:black;
+.section-container button:hover {
+  background: lightcyan;
+  color: black;
 }
-.section-content{
-  background:#FFFFFF;
-  display:flex;
+.section-content {
+  background: #ffffff;
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding:40px;
-  border-radius:20px;
+  padding: 40px;
+  border-radius: 20px;
 }
 .section-content i {
-  color:#0084FF;
-  margin-right:10px;
+  color: #0084ff;
+  margin-right: 10px;
 }
 
 /* record table */
@@ -667,7 +667,7 @@ select {
   padding: 10px;
 }
 .student-records th {
-  background: rgb(0,132,255);
+  background: rgb(0, 132, 255);
   color: white;
   padding: 10px;
 }
@@ -750,7 +750,7 @@ select {
 }
 /* parents-tables */
 .parents-form-container {
-  background:rgb(222,222,226);
+  background: rgb(222, 222, 226);
   display: flex;
   flex-direction: row;
 }
@@ -764,12 +764,12 @@ select {
   margin: 5px;
   border-collapse: collapse;
   overflow: scroll;
-  background:#FFFFFF;
+  background: #ffffff;
 }
 .parents-table th {
   padding: 5px;
-  background:rgb(0,132,255);
-  color:white;
+  background: rgb(0, 132, 255);
+  color: white;
 }
 .parents-table td {
   text-align: center;
@@ -857,7 +857,7 @@ select {
 }
 .counter {
   font-size: x-large;
-  color:rgb(63, 63, 71);
+  color: rgb(63, 63, 71);
 }
 .dashboard-chart {
   display: flex;
@@ -870,7 +870,7 @@ select {
   flex: 1;
 }
 .chart {
-  background: rgb(255,255,255);
+  background: rgb(255, 255, 255);
   padding: 10px;
   margin: 5px;
   border-radius: 10px;
@@ -879,17 +879,17 @@ select {
 }
 
 #line-chart {
-  width: auto;
-  height: 100%;
+  height: auto;
   padding: 0;
   margin: auto;
   display: block;
 }
 .empty-container {
-  height: 50vh;
+  height: auto;
   border-radius: 10px;
   overflow: hidden;
   text-align: center;
+  width: 100%;
 }
 .social-media-container {
   display: flex;
@@ -995,15 +995,15 @@ select {
   color: black;
 }
 /* parents/guardian page */
-.parents-guardian-container{
-  display:flex;
-  background:rgb(222,222,226);
+.parents-guardian-container {
+  display: flex;
+  background: rgb(222, 222, 226);
 }
-.parents-guardian th{
-  margin:0;
-  background:rgb(0,132,255);
-  padding:10px;
-  color:white;
+.parents-guardian th {
+  margin: 0;
+  background: rgb(0, 132, 255);
+  padding: 10px;
+  color: white;
 }
 .parents-guardian tr:nth-child(even) {
   background-color: #f5eeee;
@@ -1011,10 +1011,10 @@ select {
 .parents-guardian-subcontainer {
   width: 80%;
 }
-.parents-guardian{
-  margin-top:10px;
-  width:100%;
-  background:#FFFFFF;
+.parents-guardian {
+  margin-top: 10px;
+  width: 100%;
+  background: #ffffff;
 }
 .mother-info input,
 .father-info input,
@@ -1053,8 +1053,8 @@ select {
 .user-info-container {
   display: flex;
   justify-content: space-between;
-  height:30px;
-  background:rgb(245,245,245);
+  height: 30px;
+  background: rgb(245, 245, 245);
 }
 .user-info {
   display: flex;
@@ -1090,16 +1090,16 @@ select {
   height: 30px;
   align-self: center;
 }
-.user-info-logout h4{
+.user-info-logout h4 {
   align-self: center;
 }
-.dropdown-menu{
-  background:rgb(255, 255, 255);
-  position:absolute;
-  margin-top:30px;
-  width:150px;
-  border-radius:10px;
-  display:none;
+.dropdown-menu {
+  background: rgb(255, 255, 255);
+  position: absolute;
+  margin-top: 30px;
+  width: 150px;
+  border-radius: 10px;
+  display: none;
 }
 .user-info-logout li {
   list-style: none;
@@ -1116,71 +1116,71 @@ select {
   outline: none;
 }
 /* student-profile */
-.user-profile{
-  display:flex;
-  justify-content:space-around;
-  flex-wrap:wrap;
+.user-profile {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
-.user-image{
-  display:flex;
+.user-image {
+  display: flex;
   flex-direction: column;
 }
-.school-year-input img{
-  width:200px;
-  border:1px solid rgb(184, 168, 168);
-  border-radius:100px;
-  margin-top:20%;
+.school-year-input img {
+  width: 200px;
+  border: 1px solid rgb(184, 168, 168);
+  border-radius: 100px;
+  margin-top: 20%;
 }
-.school-year-input input,.school-year-input select{
-  width:80%;
-  padding:8px;
-  border:none;
-  outline:none;
-  border-radius:5px;
-  border:1px solid rgb(196, 183, 183);
+.school-year-input input,
+.school-year-input select {
+  width: 80%;
+  padding: 8px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid rgb(196, 183, 183);
 }
-.lrn{
-  margin-left:5px;
+.lrn {
+  margin-left: 5px;
 }
-.sy{
-  display:flex;
-  border-radius:5px;
+.sy {
+  display: flex;
+  border-radius: 5px;
   align-self: center;
-  width:300px;
+  width: 300px;
 }
-.school-year-info{
-  margin-top:10px;
-  width:50%;
-  
+.school-year-info {
+  margin-top: 10px;
+  width: 50%;
 }
 /* end student profile */
 /* Fees Page*/
-.fees-main-container{
-  display:flex;
+.fees-main-container {
+  display: flex;
 }
-.fee-sub-container{
-  width:80%;
-  background:rgb(222,222,226);
+.fee-sub-container {
+  width: 80%;
+  background: rgb(222, 222, 226);
 }
-.fee-sub-container h1{
+.fee-sub-container h1 {
   margin: 0;
   padding: 10px;
   color: white;
   background: linear-gradient(to right, #0066cc 0%, #66ffff 100%);
   text-align: center;
-  font-weight:600;
-  font-size:28px;
+  font-weight: 600;
+  font-size: 28px;
   border-bottom: 1px solid rgb(214, 211, 211);
   text-transform: uppercase;
 }
-.student-fee-container{
-  display:flex;
+.student-fee-container {
+  display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width:50%;
-  margin:10px;
+  width: 50%;
+  margin: 10px;
 }
-.student-fee-input input{
+.student-fee-input input {
   width: 40%;
   border: 0.5px solid rgba(0, 0, 0, 0.192);
   border-radius: 5px;
@@ -1192,10 +1192,10 @@ select {
   outline: none;
   background: #fff;
 }
-.submit-fee{
+.submit-fee {
   background: #1a598a;
-  width:100px;
-  margin-left:11%;
+  width: 100px;
+  margin-left: 11%;
   border: none;
   border-radius: 30px;
   cursor: pointer;
@@ -1205,94 +1205,94 @@ select {
   padding: 5px;
   transition: 0.4s;
 }
-.submit-fee:hover{
-  background:lightcyan;
-  color:black;
+.submit-fee:hover {
+  background: lightcyan;
+  color: black;
 }
 /* End of Fee */
 /* start of profile */
-.profile-main-container{
-  display:flex;
+.profile-main-container {
+  display: flex;
 }
-.profile-sub-container{
-  width:80%;
-  background:rgb(222,222,226);
+.profile-sub-container {
+  width: 80%;
+  background: rgb(222, 222, 226);
 }
-.profile-title{
-  padding:10px;
+.profile-title {
+  padding: 10px;
 }
-.profile-container{
-  display:flex;
+.profile-container {
+  display: flex;
   justify-content: space-around;
 }
-.admin-profile{
-  display:flex;
+.admin-profile {
+  display: flex;
   flex-direction: column;
-  justify-content:center;
-  height:50%;
-  width:40%;
+  justify-content: center;
+  height: 50%;
+  width: 40%;
 }
-.admin-image{
-  display:flex;
+.admin-image {
+  display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
 }
-.admin-image .cover{
-  width:100%;
-  height:150px;
+.admin-image .cover {
+  width: 100%;
+  height: 150px;
 }
-.admin-image .profile{
+.admin-image .profile {
   align-self: center;
-  margin-top:50px;
-  position:absolute;
-  border-radius:100px;
-  width:150px;
-  border:1px solid rgb(145, 142, 142);
+  margin-top: 50px;
+  position: absolute;
+  border-radius: 100px;
+  width: 150px;
+  border: 1px solid rgb(145, 142, 142);
 }
-.about-admin{
-  display:flex;
+.about-admin {
+  display: flex;
   text-align: center;
   flex-direction: column;
-  margin-top:50px;
+  margin-top: 50px;
 }
 .social-media-logo .fab {
-  width:100px;
-  background:rgb(69, 110, 221);
-  color:white;
-  border-radius:10px;
-  padding:10px;
-  cursor:pointer;
+  width: 100px;
+  background: rgb(69, 110, 221);
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
 }
-.view-profile{
+.view-profile {
   align-self: center;
-  width:250px;
-  margin:5px;
-  padding:10px;
-  border-radius:5px;
-  border:1px solid rgb(165, 152, 152);
-  cursor:pointer;
-  transition:0.4s;
+  width: 250px;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(165, 152, 152);
+  cursor: pointer;
+  transition: 0.4s;
 }
-.admin-follower{
-  margin-top:10px;
-  display:flex;
+.admin-follower {
+  margin-top: 10px;
+  display: flex;
   justify-content: center;
 }
 .admin-follower .post,
-.admin-follower .follower{
-  border-right:1px solid rgb(189, 180, 180);
-  padding:20px;
+.admin-follower .follower {
+  border-right: 1px solid rgb(189, 180, 180);
+  padding: 20px;
 }
-.admin-follower .following{
-  padding:20px;
+.admin-follower .following {
+  padding: 20px;
 }
-.about-profile{
-  background:lightgreen;
-  height:100%;
-  width:60%;
+.about-profile {
+  background: lightgreen;
+  height: 100%;
+  width: 60%;
 }
-.profile-navigator{
-  display:flex;
-  justify-content:space-around;
+.profile-navigator {
+  display: flex;
+  justify-content: space-around;
 }
 /* end of profile */
