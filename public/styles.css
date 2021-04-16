@@ -344,7 +344,7 @@ input[type="radio"] {
   width: 20%;
 }
 .student-record-subcontainer-body .info-input input,
-select {
+.student-record-subcontainer-body select {
   width: 75%;
   border: 0.5px solid rgba(0, 0, 0, 0.192);
   border-radius: 5px;
@@ -1226,10 +1226,14 @@ select {
   justify-content: space-around;
 }
 .admin-profile {
+  background:#FFFFFF;
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 50%;
+  margin:10px;
+  padding:10px;
+  border-radius:10px;
   width: 40%;
 }
 .admin-image {
@@ -1255,15 +1259,10 @@ select {
   flex-direction: column;
   margin-top: 50px;
 }
-.social-media-logo .fab {
-  width: 100px;
-  background: rgb(69, 110, 221);
-  color: white;
-  border-radius: 10px;
-  padding: 10px;
-  cursor: pointer;
-}
 .view-profile {
+  background:rgb(0,132,255);
+  color:white;
+  font-weight:800;
   align-self: center;
   width: 250px;
   margin: 5px;
@@ -1273,26 +1272,76 @@ select {
   cursor: pointer;
   transition: 0.4s;
 }
-.admin-follower {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-}
-.admin-follower .post,
-.admin-follower .follower {
-  border-right: 1px solid rgb(189, 180, 180);
-  padding: 20px;
-}
-.admin-follower .following {
-  padding: 20px;
+.view-profile:hover{
+  background:lightcyan;
+  color:black;
 }
 .about-profile {
-  background: lightgreen;
-  height: 100%;
+  background:#FFFFFF;
+  border-radius:10px;
+  height: auto;
   width: 60%;
+  margin:10px;
+}
+.name-email,
+.number-date,
+.profile-address,
+.about-me{
+  display:flex;
+  justify-content:safe;
+  flex-wrap: wrap;
+  margin-left:10px;
 }
 .profile-navigator {
   display: flex;
+  padding:10px;
   justify-content: space-around;
 }
+.profile-navigator a {
+  text-decoration: none;
+  color:black;
+  transition:0.4s;
+}
+.profile-navigator a:hover{
+  color:lightseagreen;
+}
+.profile-navigator h4 {
+  padding:10px;
+}
+.divider{
+  border:0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+.profile-view{
+  height:100%;
+  margin-top:10px;
+  
+}
+.profile-view input,.profile-view select{
+  padding:10px;
+  margin:5px;
+  width:170px;
+  border-radius:5px;
+  outline:none;
+  border:1px solid rgb(170, 162, 162);
+}
+.profile-view textarea{
+  border-radius:5px;
+  outline:none;
+  border:1px solid rgb(170, 162, 162);
+  width:300px;
+  height:50px;
+}
+.name-email .profile-input input{
+  width:250px;
+}
+.profile-address .profile-input{
+  margin:5px;
+}
+.profile-input textarea{
+  width:350px;
+}
+
+
 /* end of profile */

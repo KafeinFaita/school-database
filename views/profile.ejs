@@ -18,27 +18,7 @@
                     <div class="about-admin">
                         <h1>Admin</h1>
                         <h4>Description about admin</h4>
-                        <div class="social-media-logo">
-                            <i class="fab fa-facebook-f"></i>
-                            <i class="fab fa-twitter-square"></i>
-                            <i class="fab fa-instagram-square"></i>
-                        </div>
                         <button class="view-profile">View Full Profile</button>
-
-                        <div class="admin-follower">
-                            <div class="post">
-                                <h5>125</h5>
-                                <label for="post">Post</label>
-                            </div>
-                            <div class="follower">
-                                <h5>25k</h5>
-                                <label for="follower">Followers</label>
-                            </div>
-                            <div class="following">
-                                <h5>134</h5>
-                                <label for="following">Following</label>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="about-profile">
@@ -46,19 +26,45 @@
                         <a href="#"><h4>Profile</h4></a>
                         <a href="#"><h4>Timeline</h4></a>
                         <a href="#"><h4>Settings</h4></a>
-                    </div>
+                    </div> 
+                    <hr class="divider">
                     <div class="profile-view">
                         <div class="name-email">
-                            <label for="name">Name</label>
-                            <input type="text" name="name" id="name" value="paulpdoa">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" id="email" value="polopdoandres@gmail.com">
+                            <div class="profile-input">
+                                <label for="name">Name</label><br>
+                                <input type="text" name="name" id="name" value="paulpdoa">
+                            </div>
+                            <div class="profile-input">
+                                <label for="email">Email</label><br>
+                                <input type="email" name="email" id="email" value="polopdoandres@gmail.com">
+                            </div>
                         </div>
                         <div class="number-date">
-                            <label for="bday">Birthday</label>
-                            <input type="text" name="bday" id="bday" value="03/21/1998">
-                            <label for="G"></label>
-
+                            <div class="profile-input">
+                                <label for="bday">Birthday</label><br>
+                                <input type="text" name="bday" id="bday" value="03/21/1998"><br>
+                            </div>
+                            <div class="profile-input">
+                                <label for="gender">Gender</label><br>
+                                <select id="gender">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select><br>
+                            </div>
+                            <div class="profile-input">
+                                <label for="phone">Phone Number</label><br>
+                                <input type="number" name="phone" id="phone" value="093424242442">
+                            </div>
+                        </div>
+                        <div class="profile-address">
+                            <div class="profile-input">
+                                <label for="address">Address</label><br>
+                                <input type="text" name="address" id="address" value="Daang Amaya 2 Tanza, Cavite">
+                            </div>
+                            <div class="profile-input">
+                                <label for="about">About Me</label><br>
+                                <textarea name="about">I am Paul Andres</textarea>
+                            </div>
                         </div>
                     </div>
                 </div>
