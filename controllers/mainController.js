@@ -7,13 +7,21 @@ const Parent = require('../models/ParentGuardian')
 const Inq = require('../models/Inq')
 
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 const Department = require('../models/Department')
 
 // handle errors
 const handleErrors = (err) => {
+    console.log(err.message, err.code)
     let errors = { username: '', password: ''}
 
-    console.log(err)
+    if (err.message === 'Incorrect username') {
+        errors.username = 'That username is not registered'
+    }
+
+    if (err.message === 'Incorrect password') {
+        errors.password = 'Incorrect password'
+    }
 
     // duplicate error code
     if (err.code === 11000) {
@@ -28,6 +36,15 @@ const handleErrors = (err) => {
         })        
     }
     return errors
+}
+
+//create token
+
+const maxAge = 3 * 24 * 60 * 60
+const createToken = id => {
+    return jwt.sign({ id }, 'schooldb secret', {
+        expiresIn: maxAge
+    })
 }
 
 //GET requests
@@ -195,15 +212,29 @@ module.exports.register_post = async (req, res) => {
     const { username, password } = req.body
     
     try {
-        // const hashedPass = await bcrypt.hash(req.body.password, 10)
-        // console.log(hashedPass)
-
         const saveUser = await User.create({ username, password })
-        res.status(201).send(saveUser)
+        const token = createToken(saveUser._id)
+        res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 })
+        res.status(201).json( { user: saveUser._id } )
     }
     catch(err) {
         const errors = handleErrors(err)
         res.status(400).json({errors})
+    }
+}
+
+module.exports.login_post = async (req, res ) => {
+    const { username, password } = req.body
+    
+    try {
+        const user = await User.login(username, password)
+        const token = createToken(user._id)
+        res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 })
+        res.status(200).json({ user: user._id })
+    } catch (err) {
+        const errors = handleErrors(err)
+        console.log(errors)
+        res.status(400).json({ errors })
     }
 }
 
