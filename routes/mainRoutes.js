@@ -1,7 +1,7 @@
 const express = require('express')
 const { 
     index_get, login_get, 
-    login_post, register_get, 
+    register_post, register_get, 
     studentRecord_get, studentSubmit_get, errorPage_get,
     student_record_post, studentRecord_get_one, 
     studentRecord_put_one, studentRecord_delete_one,
@@ -33,7 +33,7 @@ router.get('/api/parent', parent_api_get)
 router.get('/profile', profile_get)
 router.get('*', errorPage_get)
 
-router.post('/login', login_post)
+router.post('/register', register_post)
 router.post('/student-record', student_record_post)
 router.post('/section', section_post)
 router.post('/inquiry', inq_post)

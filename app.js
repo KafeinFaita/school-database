@@ -12,13 +12,14 @@ app.use(express.urlencoded({extended: true}))
 const PORT = process.env.PORT || 3000;
 const dbURI = "mongodb+srv://kafein:kafeinfaita@cluster0.3xefo.mongodb.net/school-db?retryWrites=true&w=majority"
 
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true })
     .then(result => app.listen(PORT))
     .catch(err => console.log(err))
 
 app.set('view engine', 'ejs')
 
 app.use(mainRoutes)
+
 
 
 

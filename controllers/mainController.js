@@ -9,6 +9,27 @@ const Inq = require('../models/Inq')
 const bcrypt = require('bcrypt')
 const Department = require('../models/Department')
 
+// handle errors
+const handleErrors = (err) => {
+    let errors = { username: '', password: ''}
+
+    console.log(err)
+
+    // duplicate error code
+    if (err.code === 11000) {
+        errors.username = "Username is already registered."
+        return errors
+    }
+
+    // validation errors
+    if (err.message.includes('user validation failed')) {
+        Object.values(err.errors).forEach(({properties}) => {
+            errors[properties.path] = properties.message
+        })        
+    }
+    return errors
+}
+
 //GET requests
 
 module.exports.index_get = (req, res) => {
@@ -168,19 +189,21 @@ module.exports.parent_api_get = async (req, res) => {
 
 
 
-//POST requests
+// POST requests
 
-module.exports.login_post = async (req, res) => {   
+module.exports.register_post = async (req, res) => {   
+    const { username, password } = req.body
+    
     try {
-        const hashedPass = await bcrypt.hash(req.body.password, 10)
-        console.log(hashedPass)
-        const user = new User({ username: req.body.username, password: hashedPass })
+        // const hashedPass = await bcrypt.hash(req.body.password, 10)
+        // console.log(hashedPass)
 
-        const saveGrade = await user.save()
-        res.send(req.body)
+        const saveUser = await User.create({ username, password })
+        res.status(201).send(saveUser)
     }
     catch(err) {
-        res.send(err)
+        const errors = handleErrors(err)
+        res.status(400).json({errors})
     }
 }
 
