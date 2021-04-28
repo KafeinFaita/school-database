@@ -8,7 +8,6 @@ const Inq = require('../models/Inq')
 
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const Department = require('../models/Department')
 
 // handle errors
 const handleErrors = (err) => {
@@ -70,6 +69,12 @@ module.exports.dashboard_get = async (req, res) => {
 module.exports.login_get = (req, res) => {
     res.render('login')
 }
+
+module.exports.logout_get = (req, res) => {
+    res.cookie('jwt', '', { maxAge: 1 })
+    res.redirect('/login')
+}
+
 
 module.exports.register_get = (req, res) => {
     res.render('register')
@@ -215,7 +220,7 @@ module.exports.register_post = async (req, res) => {
         const saveUser = await User.create({ username, password })
         const token = createToken(saveUser._id)
         res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 })
-        res.status(201).json( { user: saveUser._id } )
+        res.status(201).json({ user: saveUser._id })
     }
     catch(err) {
         const errors = handleErrors(err)

@@ -21,7 +21,13 @@
                 <span class="fas fa-caret-down second"></span>
             </a>
             <ul class="reg-show">
-                <li><a href="/student-record">Student Record Management</a></li>
+                <% const authLink = (role, href, text) => { %>
+                    <% if (user.roles.includes(role)) { %>
+                        <li><a href=<%= href %>> <%= text %> </a></li>
+                    <% } %>
+                <% } %>
+
+                <% authLink('Admin', '/student-record', "Student Record Management") %>
                 <li><a href="/parents">Parents</a></li>
                 <li><a href="#">Teacher</a></li>
                 <li><a href="#">Subject</a></li>

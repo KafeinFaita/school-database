@@ -14,6 +14,11 @@ const userSchema = new Schema({
         type: String,
         required: [true, 'Please enter a password'],
         minLength: [6, "Minimum password length is 6"]
+    },
+    roles: {
+        type: Array,
+        required: true,
+        default: ["Admin"]
     }
 })
 
@@ -25,7 +30,6 @@ const userSchema = new Schema({
  // static method to login user
  userSchema.statics.login = async function(username, password) {
      const user = await this.findOne({ username })
-     console.log(user)
      if (user) {
         const auth = await bcrypt.compare(password, user.password)
         if (auth) return user
