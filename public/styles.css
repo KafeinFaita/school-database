@@ -1312,9 +1312,9 @@ input[type="radio"] {
 }
 .profile-view{
   margin-top:10px;
-  background:red;
   display:flex;
   flex-direction: column;
+  align-items: center;
   
 }
 .profile-view input,.profile-view select{
