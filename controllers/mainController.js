@@ -7,7 +7,44 @@ const Parent = require('../models/ParentGuardian')
 const Inq = require('../models/Inq')
 
 const bcrypt = require('bcrypt')
-const Department = require('../models/Department')
+const jwt = require('jsonwebtoken')
+
+// handle errors
+const handleErrors = (err) => {
+    console.log(err.message, err.code)
+    let errors = { username: '', password: ''}
+
+    if (err.message === 'Incorrect username') {
+        errors.username = 'That username is not registered'
+    }
+
+    if (err.message === 'Incorrect password') {
+        errors.password = 'Incorrect password'
+    }
+
+    // duplicate error code
+    if (err.code === 11000) {
+        errors.username = "Username is already registered."
+        return errors
+    }
+
+    // validation errors
+    if (err.message.includes('user validation failed')) {
+        Object.values(err.errors).forEach(({properties}) => {
+            errors[properties.path] = properties.message
+        })        
+    }
+    return errors
+}
+
+//create token
+
+const maxAge = 3 * 24 * 60 * 60
+const createToken = id => {
+    return jwt.sign({ id }, 'schooldb secret', {
+        expiresIn: maxAge
+    })
+}
 
 //GET requests
 
@@ -32,6 +69,12 @@ module.exports.dashboard_get = async (req, res) => {
 module.exports.login_get = (req, res) => {
     res.render('login')
 }
+
+module.exports.logout_get = (req, res) => {
+    res.cookie('jwt', '', { maxAge: 1 })
+    res.redirect('/login')
+}
+
 
 module.exports.register_get = (req, res) => {
     res.render('register')
@@ -168,19 +211,35 @@ module.exports.parent_api_get = async (req, res) => {
 
 
 
-//POST requests
+// POST requests
 
-module.exports.login_post = async (req, res) => {   
+module.exports.register_post = async (req, res) => {   
+    const { username, password } = req.body
+    
     try {
-        const hashedPass = await bcrypt.hash(req.body.password, 10)
-        console.log(hashedPass)
-        const user = new User({ username: req.body.username, password: hashedPass })
-
-        const saveGrade = await user.save()
-        res.send(req.body)
+        const saveUser = await User.create({ username, password })
+        const token = createToken(saveUser._id)
+        res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 })
+        res.status(201).json({ user: saveUser._id })
     }
     catch(err) {
-        res.send(err)
+        const errors = handleErrors(err)
+        res.status(400).json({errors})
+    }
+}
+
+module.exports.login_post = async (req, res ) => {
+    const { username, password } = req.body
+    
+    try {
+        const user = await User.login(username, password)
+        const token = createToken(user._id)
+        res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 })
+        res.status(200).json({ user: user._id })
+    } catch (err) {
+        const errors = handleErrors(err)
+        console.log(errors)
+        res.status(400).json({ errors })
     }
 }
 

@@ -2,16 +2,18 @@
     <div class="user-info">
         <p>School Management System</p>
     </div>
+    
     <div class="user-info-logout">
-        <h4>Admin</h4>
+     
+        <h4>Welcome, <%= user.username %>!</h4>
         <img class="notification" src="https://static.thenounproject.com/png/338473-200.png" alt="notification">
         <img class="menu-show" src="https://www.logolynx.com/images/logolynx/23/23938578fb8d88c02bc59906d12230f3.png" alt="admin">
+        
         <div class="dropdown-menu">
             <ul>
-                <a href="#"><li>Logout</li></a>
-                <a href="#"><li>Give Feedback</li></a>
-                <a href="#"><li>Settings</li></a>
+                <a href="#"><li>Profile</li></a>
                 <a href="#"><li>Switch Account</li></a>
+                <a href="/logout"><li>Logout</li></a>
             </ul>  
         </div>               
     </div>

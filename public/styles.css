@@ -154,7 +154,12 @@ nav ul li a span.rotate {
   font-size: 20px;
   padding: 8px 0;
   margin: 8px 0;
-  border-bottom: 1px solid #4caf50;
+  border-bottom: 1px solid rgb(18, 125, 247);
+}
+.password,
+.username{
+  font-size: 12px;
+  color:red;
 }
 .pass {
   width: 100%;
@@ -162,7 +167,7 @@ nav ul li a span.rotate {
   font-size: 20px;
   padding: 8px 0;
   margin: 8px 0;
-  border-bottom: 1px solid #4caf50;
+  border-bottom: 1px solid rgb(18, 125, 247);
 }
 .user i {
   width: 26px;
@@ -176,26 +181,25 @@ nav ul li a span.rotate {
 }
 .user input {
   border: none;
-  outline: none;
+
   background: none;
   font-size: 18px;
-  width: 80px;
+  width: 300px;
   float: left;
   margin: 0 10px;
 }
 .pass input {
   border: none;
-  outline: none;
   background: none;
   font-size: 18px;
-  width: 80px;
+  width: 300px;
   float: left;
   margin: 0 10px;
 }
 .btn {
   width: 100%;
   background: none;
-  border: 2px solid #4caf50;
+  border: 2px solid rgb(18, 125, 247);
   color: black;
   padding: 5px;
   font-size: 18px;
@@ -1068,9 +1072,9 @@ input[type="radio"] {
 }
 .user-info-logout {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   margin-right: 10px;
-  width: 15%;
+  width: 50%;
 }
 .user-info-logout img {
   outline: none;
@@ -1089,6 +1093,7 @@ input[type="radio"] {
   width: 30px;
   height: 30px;
   align-self: center;
+  margin:8px;
 }
 .user-info-logout h4 {
   align-self: center;
@@ -1101,6 +1106,7 @@ input[type="radio"] {
   border-radius: 10px;
   display: none;
 }
+
 .user-info-logout li {
   list-style: none;
   padding: 10px;
