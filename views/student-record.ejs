@@ -11,25 +11,27 @@
             <h1 class="student-record-title">Student Record Table</h1>
             <div class="student-record-table-subcontainer">
             <div class="student-search-div">
-                <div class="search-div">
-                    <label for="search-fname">First Name</label>
+                <div class="search-div col-one">
+                    <label for="search-fname">First Name</label><br/>
                     <input type="text" class="search-fname">
                 </div>
-                <div class="search-div">
-                    <label for="search-lname">Last Name</label>
+                <div class="search-div col-two">
+                    <label for="search-lname">Last Name</label><br/>
                     <input type="text" class="search-lname">
                     
                 </div>
-                <div class="search-div">
+                <div class="search-div col-three">
                     <button type="button" class="search">Search</button>
                     <button type="button" class="refresh">Refresh List</button>
                 </div>
-
-                <select class="school-year">
-                    <option disabled selected>Select School Year</option>
-                    <option value="21-22">2021-2022</option>
-                    <option value="22-23">2022-2023</option>
-                </select>
+                <div class="search-div col-four">
+                    <select class="school-year">
+                        <option disabled selected>Select School Year</option>
+                        <option value="21-22">2021-2022</option>
+                        <option value="22-23">2022-2023</option>
+                    </select>
+                </div>
+               
             </div>  
                 
                 <table class="student-records">

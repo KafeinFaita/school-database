@@ -2,29 +2,29 @@
 <html lang="en">
     <%- include('./partials/head.ejs') %>
 <body>
-<form class="reg-form">
-    <div class="container"> 
-
-        <div class="login">
-            <h1>Register</h1>
-            <div class="user">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                <label for="username">Username</label><br>
-                <input type="text" name="username"><br>
-                <p class="username error"></p>
+    <form class="reg-form">
+        <div class="container">
+            <div class="login">
+                <div class="login-logo">
+                    <img src="/images/phone.png" alt="phone-logo">
+                </div>
+                <div class="login-form">
+                    <h1>Register</h1>
+                    <div class="input-login">
+                        <label for="username">Username:</label><br/>
+                        <input type="text" name="username" placeholder="Enter username">
+                        <div class="username error"></div>
+                    </div>
+                    <div class="input-login">
+                        <label for="password">Password:</label><br/>
+                        <input type="password" name="password" placeholder="Enter password">
+                        <div class="password error"></div>
+                    </div>
+                    <button>Register</button>
+                </div>
             </div>
-            <div class="pass">
-                <i class="fa fa-lock" aria-hidden="true"></i>
-                <label for="password">Password</label><br>
-                <input type="password" name="password"><br>
-                <p class="password error"></p>
-            </div>
-            <button class='btn'>Sign Up</button>
-        </div>    
-
-    </div>
-</form>
-
+        </div>
+    </form>
 <script>
     const form = document.querySelector('.reg-form')
     const userError = document.querySelector('.username.error')
