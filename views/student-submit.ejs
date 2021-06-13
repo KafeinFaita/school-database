@@ -8,7 +8,7 @@
 
         <div class="student-record-form">
             <%- include('./partials/usernavigation.ejs') %>
-            <h1 class="student-record-title">Student Record Management</h1>
+            <h1 class="student-record-title">Add new student</h1>
 
             <div class="student-record-subcontainer">
 
@@ -116,7 +116,7 @@
                             <input type="email" name="email" placeholder="Enter Email Address" required>
                         </div>
 
-                        <div class="radio-input" id="siblingyn">
+                        <div class="radio-input sibling" id="siblingyn">
                             <p>Sibling/s studying at CSI?</p>
                             <input type="radio" class="sibling-radio" name="siblingyn" value="yes">
                             <label for="yes">Yes</label>
@@ -126,7 +126,7 @@
 
                         <%- include('./partials/sibling-table.ejs') %>
 
-                        <div class="radio-input" id="parentsyn">
+                        <div class="radio-input sibling" id="parentsyn">
                             <p>New Parents?</p>
                             <input type="radio" class="parents-radio" name="parentsyn" value="yes" checked>
                             <label for="yes">Yes</label>
