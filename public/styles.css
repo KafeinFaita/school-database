@@ -1,4 +1,4 @@
-@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+@import "https://stackpathbootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 * {
   margin: 0;
@@ -83,6 +83,11 @@ nav ul li a {
   display: block;
   width: 100%;
   border-left: 3px solid transparent;
+  transition:0.4s;
+}
+nav ul li a:hover {
+  background:white;
+  color:black;
 }
 nav i {
   padding-right: 3px;
@@ -246,6 +251,7 @@ nav ul li a span.rotate {
   flex-direction: column;
   width: 80%;
   overflow: scroll;
+  background:whitesmoke;
 }
 .student-record-subcontainer {
   display: flex;
@@ -338,17 +344,9 @@ nav ul li a span.rotate {
   flex: 50%;
   margin-top: 10px;
 }
-.radio-input {
-  display: flex;
-  justify-content: space-around;
-  position: relative;
-  margin-top: 20px;
-  margin-bottom: 12px;
-  font-size: 18px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+
+.sibling {
+  margin:5px;
 }
 input[type="radio"] {
   transform: scale(1.2);
@@ -477,6 +475,27 @@ input[type="radio"] {
 }
 /*  end for error page */
 
+/* sibling table */
+.sibling-table button {
+  width:150px;
+  color:white;
+  background:rgb(20, 116, 241);
+  border:none;
+  border-radius:4px;
+  transition:0.4s;
+  cursor:pointer;
+  padding:5px;
+}
+.sibling-search-input {
+  padding:5px;
+  width:200px;
+  border:1px solid rgb(224, 214, 214);
+  border-radius:3px;
+  outline:none;
+  margin:4px;
+}
+/* end of sibling table */
+
 /* section css */
 
 .section-main {
@@ -486,21 +505,6 @@ input[type="radio"] {
 .section-sub {
   width: 80%;
 }
-
-.section-content button {
-  width: 100px;
-  padding: 5px;
-  color: white;
-  font-weight: bold;
-  margin-top: 10px;
-  align-self: center;
-  background: rgb(39, 39, 107);
-  text-transform: uppercase;
-  border: none;
-  border-radius: 20px;
-  transition: 0.4s;
-  cursor: pointer;
-}
 .section-sub button:hover {
   background: lightcyan;
   color: black;
@@ -508,6 +512,21 @@ input[type="radio"] {
 .section-form {
   display: flex;
   flex-direction: column;
+}
+.add-section {
+  width: 100px;
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 10px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  transition: 0.4s;
+  cursor: pointer;
+  background:rgb(3, 180, 3);
+  margin:5px;
 }
 .section-form label {
   margin-left: 10px;
@@ -521,74 +540,46 @@ input[type="radio"] {
   border: 1px solid rgb(179, 165, 165);
   outline: none;
 }
-.section-form button {
-  width: 100px;
-  padding: 5px;
-  color: white;
-  font-weight: bold;
-  margin-top: 10px;
-  margin-left: 10px;
-  background: rgb(39, 39, 107);
-  text-transform: uppercase;
-  border: none;
-  border-radius: 20px;
-  transition: 0.4s;
-  cursor: pointer;
-}
 .section-title {
   text-align: center;
   padding: 10px;
-  background: linear-gradient(to right, #0066cc 0%, #66ffff 100%);
-  color: whitesmoke;
+  color: black;
   text-transform: uppercase;
+  border-bottom:1px solid rgb(216, 203, 203);
 }
-.section-name-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+.section-table {
+  display:block;
+  height: auto;
+  overflow:scroll;
+  border-collapse: collapse;
 }
-.section-box {
-  display: flex;
-  flex-wrap: wrap;
+.section-table th {
+  background: rgba(0, 0, 0, 0.808);
+  color: white;
+  padding: 10px;  
+  width:30%;
+  color:white;
 }
-.section-container {
-  display: flex;
-  justify-content: space-around;
-  flex: 1 9 21%;
-  margin: 5px;
-  height: 150px;
+.section-table tr:nth-child(even) {
+  background: #f5eeee;
 }
-.section-container h3 {
+.section-table td {
+  padding:5px;
   text-align: center;
 }
-.section-container button {
-  width: 100px;
-  padding: 5px;
-  color: white;
-  font-weight: bold;
-  background: rgb(39, 39, 107);
-  text-transform: uppercase;
-  border: none;
-  border-radius: 20px;
-  transition: 0.4s;
-  cursor: pointer;
+.section-table button {
+  padding:5px;
+  background:rgb(236, 47, 47);
+  color:white;
+  font-weight:bold;
+  text-align: center;
+  border:none;
+  border-radius:4px;
+  width:100%;
+  transition:0.4s;
+  cursor:pointer;
 }
-.section-container button:hover {
-  background: lightcyan;
-  color: black;
-}
-.section-content {
-  background: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 40px;
-  border-radius: 20px;
-}
-.section-content i {
-  color: #0084ff;
-  margin-right: 10px;
-}
+
 
 /* record table */
 
@@ -1006,7 +997,7 @@ input[type="radio"] {
   background-color: #f5eeee;
 }
 .edit-parent {
-  background: #1a598a;
+  background: rgb(19, 206, 19);
   width: 100px;
   margin: 10px;
   padding: 5px;
@@ -1025,14 +1016,14 @@ input[type="radio"] {
   background: lightcyan;
   color: black;
 }
-/* parents/guardian page */
+/* parents-guardian page */
 .parents-guardian-container {
   display: flex;
   background: rgb(222, 222, 226);
 }
 .parents-guardian th {
   margin: 0;
-  background: rgb(0, 132, 255);
+  background: rgba(0, 0, 0, 0.808);
   padding: 10px;
   color: white;
 }
@@ -1060,7 +1051,7 @@ input[type="radio"] {
   flex-direction: column;
 }
 .update-parent {
-  background: #1a598a;
+  background: #2a5be2;
   align-self: center;
   width: 100px;
   margin: 10px;
@@ -1079,6 +1070,11 @@ input[type="radio"] {
 .update-parent:hover {
   background: lightcyan;
   color: black;
+}
+.parent {
+  color:black;
+  font-weight:bold;
+  font-size:20px;
 }
 /* start of navbar */
 .user-info-container {
@@ -1259,7 +1255,6 @@ input[type="radio"] {
 }
 .profile-sub-container {
   width: 80%;
-  background: rgb(222, 222, 226);
 }
 .profile-title {
   padding: 10px;
@@ -1330,7 +1325,12 @@ input[type="radio"] {
 .profile-address,
 .about-me{
   display:flex;
-  justify-content: flex-start;
+  justify-content: center;
+  margin:5px;
+  width:100%;
+}
+.about-me textarea {
+  width:100%;
 }
 .profile-navigator {
   display: flex;
