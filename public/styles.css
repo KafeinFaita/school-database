@@ -162,6 +162,9 @@ nav ul li a span.rotate {
   background:whitesmoke;
   padding:100px;
 }
+.login-logo {
+  align-self:center;
+}
 .login-logo img {
   width:300px;
 }
@@ -226,6 +229,10 @@ nav ul li a span.rotate {
   width:200px;
   border-radius:4px;
   font-weight: bold;
+}
+.owned-account {
+  text-align:center;
+  text-decoration: none;
 }
 /* login and reg end */
 
